@@ -51,30 +51,34 @@ watch(menuOpen, (value) => {
 
 <template>
   <header>
-    <nav class="main-nav main-nav--desktop">
-      <ul class="main-nav__items">
-        <span>
-          <router-link :to="{ name: 'home' }">
-            <img
-              src="/logo_fonpacifico.svg"
-              alt="logo de fonpacifico"
-            />
-          </router-link>
-        </span>
-        <li>
-          <router-link :to="{ name: 'nosotros' }">Nosotros</router-link>
-        </li>
-        <li>
-          <router-link :to="{ name: 'contratacion' }">Contratacion</router-link>
-        </li>
-        <li>
-          <router-link :to="{ name: 'transparencia' }"
-            >Transparencia</router-link
-          >
-        </li>
-      </ul>
-      <button class="cta-button">Contacto</button>
-    </nav>
+    <div class="fp-container">
+      <nav class="main-nav main-nav--desktop">
+        <ul class="main-nav__items">
+          <span>
+            <router-link :to="{ name: 'home' }">
+              <img
+                src="/logo_fonpacifico.svg"
+                alt="logo de fonpacifico"
+              />
+            </router-link>
+          </span>
+          <li>
+            <router-link :to="{ name: 'nosotros' }">Nosotros</router-link>
+          </li>
+          <li>
+            <router-link :to="{ name: 'contratacion' }"
+              >Contratacion</router-link
+            >
+          </li>
+          <li>
+            <router-link :to="{ name: 'transparencia' }"
+              >Transparencia</router-link
+            >
+          </li>
+        </ul>
+        <button class="cta-button">Contacto</button>
+      </nav>
+    </div>
     <div class="main-nav main-nav--mobile">
       <span>
         <router-link
@@ -121,7 +125,6 @@ header {
   padding: 0 1rem;
   margin: 0 auto;
   z-index: 10;
-  max-width: 1440px;
 
   @include breakpoint-min('lg') {
     padding: 0 3rem;
