@@ -50,7 +50,7 @@ watch(menuOpen, (value) => {
 </script>
 
 <template>
-  <header class="fp-container">
+  <header>
     <nav class="main-nav main-nav--desktop">
       <ul class="main-nav__items">
         <span>
@@ -113,6 +113,20 @@ watch(menuOpen, (value) => {
 
 <style lang="scss" scoped>
 @use '../sass/abstracts' as *;
+
+header {
+  position: sticky;
+  background-color: get-color('white');
+  top: 0;
+  padding: 0 1rem;
+  margin: 0 auto;
+  z-index: 10;
+  max-width: 1440px;
+
+  @include breakpoint-min('lg') {
+    padding: 0 3rem;
+  }
+}
 
 summary {
   list-style: none;
