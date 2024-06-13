@@ -1,0 +1,41 @@
+<script setup>
+import ServicesListItem from './ServicesListItem.vue';
+import { servicesList } from '../../content/homeView';
+
+console.log(servicesList);
+</script>
+
+<template>
+  <ul class="services-list">
+    <services-list-item
+      v-for="service in servicesList"
+      :icon="service.icon"
+      :heading="service.heading"
+      :description="service.description"
+    />
+  </ul>
+</template>
+
+<style lang="scss" scoped>
+@use '../../sass/abstracts/_mixins' as *;
+
+.services-list {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@include breakpoint-min('sm') {
+  .services-list {
+    grid-column: 2 / -2;
+  }
+}
+
+@include breakpoint-min('lg') {
+  .services-list {
+    grid-column: 6 / span 5;
+    gap: 3rem;
+  }
+}
+</style>

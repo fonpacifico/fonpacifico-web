@@ -4,7 +4,7 @@
 // Media Queries //
 // ============= //
 
-// Min-width breakpoint
+// Min-breakpointwidth 
 @mixin breakpoint-min($size) {
     $size: get-breakpoint($size);
 
@@ -16,7 +16,7 @@
 @mixin breakpoint-max($size) {
     $size: get-breakpoint($size);
 
-    @media only screen and (max-width: $size) {
+    @media only screen and (max-width: $size - 1) {
         @content;
     }
 }
@@ -91,15 +91,16 @@
     }
 }
 
-// ==== //
-// Grid //
-// ==== //
-@mixin grid($columns, $rows, $areas, $gap: 0) {
-    display: grid;
-    grid-template-columns: $columns;
-    grid-template-rows: $rows;
-    grid-template-areas: $areas;
-    gap: $gap;
+@mixin compute-grid($columns, $gap, $max-width) {
+    $gap-count: $columns - 1;
+    $column-width: calc(($max-width - ($gap-count * $gap)) / $columns);
+    $column-width-percent: calc(($column-width / $max-width) * 100%);
+    $gap-width-percent: calc(($gap / $max-width) * 100%);
+
+    --grid-gap: #{$gap-width-percent};
+    --grid-column: #{$column-width-percent};
+    --grid-columns: #{$columns};
+    --grid-max-width: #{$max-width};
 }
 
 // For checkboxes and radio buttons
