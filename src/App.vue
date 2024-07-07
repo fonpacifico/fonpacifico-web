@@ -1,10 +1,10 @@
 <script setup>
 import MainNav from './globals/MainNav.vue';
+import MainFooter from './globals/MainFooter.vue';
 </script>
 
 <template>
   <main-nav />
-
   <router-view v-slot="{ Component }">
     <transition
       name="slide"
@@ -13,7 +13,7 @@ import MainNav from './globals/MainNav.vue';
       <component :is="Component" />
     </transition>
   </router-view>
-  <footer>footer</footer>
+  <main-footer />
 </template>
 
 <style scope>

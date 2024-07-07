@@ -10,27 +10,38 @@
 .#{$prefix}container {
     margin: 0 1rem;
     max-width: calc(100% - 2rem);
-    
+    padding: 0 1rem;
+
     @include breakpoint-min('lg') {
         margin: 0 auto;
         width: calc(100% - 6rem);
         max-width: calc(1440px - 6rem);
+        padding: 0 2rem;
     }
 }
 
+.#{$prefix}dark {
+    background-color: get-color('primary-dark');
+    color: get-color('white');
+}
+
 .#{$prefix}grid {
-    @include compute-grid(2, 32px, 318px);
-    
-    display: grid;
-    grid-template-columns: repeat(var(--grid-columns), var(--grid-column));
-    gap: var(--grid-gap);
+    display: flex;
+    flex-flow: column nowrap;
+    place-content: center;
 
     @include breakpoint-min('sm') {
+        display: grid;
+        grid-template-columns: repeat(var(--grid-columns), var(--grid-column));
+        gap: var(--grid-gap);
+        @include compute-grid(1, 48px, 1248px);
+    }
+    @include breakpoint-min('md') {
         @include compute-grid(8, 48px, 1248px);
     }
     
     @include breakpoint-min('lg') {
-        @include compute-grid(10, 48px, 1408px);
+        @include compute-grid(12, 48px, 1408px);
     }
 }
 
@@ -40,6 +51,9 @@
 
 .#{$prefix}padded-bottom {
     padding-block: 0 8rem;
+}
+.#{$prefix}padded-top {
+    padding-block: 8rem 0;
 }
 
 /* Video container */

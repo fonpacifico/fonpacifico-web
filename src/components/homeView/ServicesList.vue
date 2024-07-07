@@ -34,7 +34,7 @@ console.log(servicesList);
 
 @include breakpoint-min('lg') {
   .services-list {
-    grid-column: 6 / span 5;
+    grid-column: 7 / span 6;
     gap: 3rem;
   }
 }

@@ -1,7 +1,7 @@
 <script setup>
 import { ref, computed, watch } from 'vue';
 import MobileMenuItem from './MobileMenuItem.vue';
-import { mainNavLinks } from '../content/nav';
+import { mainNavLinks } from '@/content/nav';
 
 const navLinkData = computed(() =>
   mainNavLinks.map((link) => ({
@@ -197,6 +197,12 @@ summary {
     .main-nav__items {
       display: flex;
       gap: 2rem;
+
+      li {
+        display: flex;
+        place-content: center;
+        place-items: center;
+      }
     }
   }
 }

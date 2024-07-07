@@ -92,28 +92,35 @@ const eyebrowClasses = computed(() => [
     width: fit-content;
   }
 
+  &__subheading {
+    font-size: 1.215rem;
+    grid-column: 1 / -1;
+  }
+
   @include breakpoint-min('sm') {
     grid-column: 2 / -2;
   }
 
   @include breakpoint-min('md') {
     &--centered {
-      grid-column: 3 / -3;
+      grid-column: 2 / -2;
       text-align: center;
       place-items: center;
     }
   }
 
   @include breakpoint-min('lg') {
-    grid-column: 1 / span 5;
+    grid-column: 1 / span 6;
     text-align: left;
     place-items: flex-start;
+  }
 
-    &__subheading {
-      font-size: 1.215rem;
-    }
+  &--centered {
+    grid-column: 1 / -1;
+    text-align: center;
+    place-items: center;
 
-    &--centered {
+    @include breakpoint-min('lg') {
       grid-column: 3 / -3;
       text-align: center;
       place-items: center;
