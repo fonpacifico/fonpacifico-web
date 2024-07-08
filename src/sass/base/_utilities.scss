@@ -55,6 +55,9 @@
 .#{$prefix}padded-top {
     padding-block: 8rem 0;
 }
+.#{$prefix}padded-top--small {
+    padding-block: 4rem 0;
+}
 
 /* Video container */
 .#{$prefix}video-container {

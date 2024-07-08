@@ -266,3 +266,51 @@ export const programasInteres = [
 		image: "/programas_interes/redes_lab.png",
 	},
 ];
+
+export const statisticsHeading = {
+	heading: "Superamos las expectativas como ejecutores de Regalías",
+	subheading:
+		"Cada logro es un paso adelante en nuestra misión de incrementar el desarrollo social de Colombia.",
+	alignment: "left",
+};
+
+export const statisticsItems = [
+	{
+		heading: "$250+",
+		text: "Mil millones invertidos en proyectos",
+	},
+	{
+		heading: "10",
+		text: "Departamentos en los que tenemos presencia",
+	},
+	{
+		heading: "110",
+		text: "Poyectos como ejecutores de Regalías",
+	},
+	{
+		heading: "77,7",
+		text: "De puntaje total en el IGPR",
+	},
+];
+
+export const newsLetterData = {
+	img: "/newsletter-background.png",
+	heading: "Trabajemos juntos",
+	subheading: "Soluciones integrales para el desarrollo de proyectos",
+	ctas: [
+		{
+			text: "Escribir al correo",
+			href: "mailto:info@fonpacifico.org",
+		},
+		{
+			text: "Contacto",
+			href: "#",
+		},
+	],
+};
+
+export const homeHero = {
+	heading: "Un aliado estratégico para proyectos de interés público",
+	subheading: "Contamos con una amplia experiencia y un profundo conocimiento del sector público, que nos permite ofrecer soluciones integrales que garantizan el éxito de sus proyectos.",
+	alignment: "centered",
+};

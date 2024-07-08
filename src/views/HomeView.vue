@@ -5,7 +5,9 @@ import SociosEstrategicos from '@/components/homeView/SociosEstrategicos.vue';
 import CarouselSection from '@/globals/CarouselSection.vue';
 import CopyBlock from '@/globals/CopyBlock.vue';
 import ProgramasInteres from '@/components/homeView/ProgramasInteres.vue';
-
+import StatisticsSection from '@/components/homeView/StatisticsSection.vue';
+import NewsLetter from '@/components/homeView/NewsLetter.vue';
+import HomeHero from '@/components/homeView/HomeHero.vue';
 import { carouselItems } from '@/content/homeView';
 
 import * as content from '@/content/homeView';
@@ -13,18 +15,34 @@ import * as content from '@/content/homeView';
 
 <template>
   <div>
-    <programas-interes :items="content.programasInteres" />
-    <socios-estrategicos
-      :sociositems="content.sociosEstrategicos.sociosItems"
-      :asociadosItems="content.sociosEstrategicos.asociadosItems"
-    >
+    <home-hero>
       <template #heading>
         <copy-block
-          :heading="content.sociosEstrategicos.heading"
-          :subHeading="content.sociosEstrategicos.subheading"
+          :heading="content.homeHero.heading"
+          :subHeading="content.homeHero.subheading"
+          :alignment="content.homeHero.alignment"
         />
       </template>
-    </socios-estrategicos>
+    </home-hero>
+    <services-section>
+      <template #heading>
+        <copy-block
+          :eyebrow="content.servicesEyebrow"
+          :heading="content.servicesHeading"
+          :subHeading="content.servicesSubheading"
+          :ctas="content.servicesCtas"
+        />
+      </template>
+    </services-section>
+    <statistics-section :items="content.statisticsItems">
+      <template #heading>
+        <copy-block
+          :heading="content.statisticsHeading.heading"
+          :subHeading="content.statisticsHeading.subheading"
+          :alignment="content.statisticsHeading.alignment"
+        />
+      </template>
+    </statistics-section>
     <proyects-grid>
       <template #heading>
         <copy-block
@@ -52,16 +70,19 @@ import * as content from '@/content/homeView';
         />
       </template>
     </carousel-section>
-    <services-section>
+    <socios-estrategicos
+      :sociositems="content.sociosEstrategicos.sociosItems"
+      :asociadosItems="content.sociosEstrategicos.asociadosItems"
+    >
       <template #heading>
         <copy-block
-          :eyebrow="content.servicesEyebrow"
-          :heading="content.servicesHeading"
-          :subHeading="content.servicesSubheading"
-          :ctas="content.servicesCtas"
+          :heading="content.sociosEstrategicos.heading"
+          :subHeading="content.sociosEstrategicos.subheading"
         />
       </template>
-    </services-section>
+    </socios-estrategicos>
+    <programas-interes :items="content.programasInteres" />
+    <news-letter />
   </div>
 </template>
 

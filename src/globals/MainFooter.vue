@@ -23,7 +23,7 @@ const footerAddresses = [
 </script>
 
 <template>
-  <footer class="fp-padded">
+  <footer>
     <div class="fp-container">
       <nav class="footer__menu">
         <span>
@@ -93,7 +93,7 @@ const footerAddresses = [
 footer {
   background-color: get-color('primary-dark');
   color: get-color('white');
-  padding: 2rem 1rem;
+  padding: 5rem 1rem;
 }
 
 .footer {

@@ -8,7 +8,7 @@ defineProps({
 </script>
 
 <template>
-  <section class="fp-container fp-padded-top programas-interes">
+  <section class="fp-container fp-padded-bottom programas-interes">
     <div class="programas-interes__heading">
       <h2>Programas de interés público</h2>
       <p>
