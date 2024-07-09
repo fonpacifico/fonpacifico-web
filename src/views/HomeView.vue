@@ -14,7 +14,7 @@ import * as content from '@/content/homeView';
 </script>
 
 <template>
-  <div>
+  <main>
     <home-hero>
       <template #heading>
         <copy-block
@@ -83,7 +83,7 @@ import * as content from '@/content/homeView';
     </socios-estrategicos>
     <programas-interes :items="content.programasInteres" />
     <news-letter />
-  </div>
+  </main>
 </template>
 
 <style lang="scss">
