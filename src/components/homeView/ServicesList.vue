@@ -1,8 +1,6 @@
 <script setup>
 import ServicesListItem from './ServicesListItem.vue';
 import { servicesList } from '../../content/homeView';
-
-console.log(servicesList);
 </script>
 
 <template>

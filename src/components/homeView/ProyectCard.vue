@@ -8,15 +8,10 @@ const props = defineProps({
   },
 });
 
-const classes = computed(() => {
-  if (props.project.style) {
-    console.log(props.project.style);
-  }
-  return {
-    card: true,
-    [`card-${props.project.style}`]: true,
-  };
-});
+const classes = computed(() => ({
+  card: true,
+  [`card-${props.project.style}`]: true,
+}));
 </script>
 
 <template>

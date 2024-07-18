@@ -28,3 +28,4 @@ import MainFooter from './globals/MainFooter.vue';
   opacity: 0;
 }
 </style>
+./globals/MainNav.vue

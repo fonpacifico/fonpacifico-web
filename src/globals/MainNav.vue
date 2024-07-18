@@ -1,50 +1,21 @@
 <script setup>
-import { ref, computed, watch } from 'vue';
-import MobileMenuItem from './MobileMenuItem.vue';
-import { mainNavLinks } from '@/content/nav';
+import { ref, onMounted, onUnmounted } from 'vue';
 
-const navLinkData = computed(() =>
-  mainNavLinks.map((link) => ({
-    name: link.name,
-    text: link.text,
-    sublinks: link.sublinks,
-  }))
-);
+const showMenu = ref(false);
+const isDesktop = ref(false);
 
-const menuOpen = ref(false);
-
-const toggleMenu = () => {
-  menuOpen.value = !menuOpen.value;
-};
-
-const closeMenu = () => {
-  menuOpen.value = false;
-  shouldShowLinks.value = false;
-};
-
-const hamburgerMenuClasses = computed(() => {
-  return {
-    'hamburger-button': true,
-    'hamburger-button--open': menuOpen.value,
-  };
+const menuClasses = ref({
+  nav: true,
+  'nav--open': showMenu.value,
 });
 
-const mainNavItemsClasses = computed(() => {
-  return {
-    'main-nav-items': true,
-    'main-nav-items--open': menuOpen.value,
-  };
-});
+const mql = window.matchMedia('(max-width: 1024px)');
 
-const shouldShowLinks = computed(() => {
-  return menuOpen.value;
-});
-
-watch(menuOpen, (value) => {
-  if (value) {
-    document.body.classList.add('menu-open');
-  } else {
-    document.body.classList.remove('menu-open');
+mql.addEventListener('change', (e) => {
+  if (e.matches) {
+    showMenu.value = false;
+    isDesktop.value = false;
+    console.log(isDesktop.value);
   }
 });
 </script>
@@ -52,203 +23,360 @@ watch(menuOpen, (value) => {
 <template>
   <header>
     <div class="fp-container">
-      <nav class="main-nav main-nav--desktop">
-        <ul class="main-nav__items">
-          <span>
-            <router-link :to="{ name: 'home' }">
-              <img
-                src="/logo_fonpacifico.svg"
-                alt="logo de fonpacifico"
-              />
-            </router-link>
-          </span>
-          <li>
-            <router-link :to="{ name: 'nosotros' }">Nosotros</router-link>
-          </li>
-          <li>
-            <router-link :to="{ name: 'contratacion' }"
-              >Contratacion</router-link
-            >
-          </li>
-          <li>
-            <router-link :to="{ name: 'transparencia' }"
-              >Transparencia</router-link
-            >
-          </li>
-        </ul>
-        <button class="cta-button">Contacto</button>
-      </nav>
-    </div>
-    <div class="main-nav main-nav--mobile">
       <span>
-        <router-link
-          @click="closeMenu"
-          :to="{ name: 'home' }"
-        >
+        <router-link :to="{ name: 'home' }">
           <img
+            class="logo"
             src="/logo_fonpacifico.svg"
             alt="logo de fonpacifico"
           />
         </router-link>
       </span>
-
-      <button
-        @click="toggleMenu"
-        :class="hamburgerMenuClasses"
+      <nav
+        class="nav"
+        :class="{ open: showMenu }"
       >
-        <span class="hamburger-button__line"></span>
-        <span class="hamburger-button__line"></span>
-        <span class="hamburger-button__line"></span>
+        <ul class="nav__list">
+          <li class="nav__list-item">
+            <button>
+              Nosotros
+              <span class="material-symbols-outlined">keyboard_arrow_down</span>
+            </button>
+            <div class="nav__submenu">
+              <ul class="fp-container">
+                <li>
+                  <router-link
+                    :to="{ name: 'home' }"
+                    :tabindex="showMenu ? 0 : -1"
+                    @click="(e) => e.target.blur()"
+                    >Acerca de Fonpacífico <br />
+                    <span class="subtitle">Conoce más sobre nosotros</span>
+                  </router-link>
+                </li>
+                <li>
+                  <router-link
+                    :to="{ name: 'nosotros' }"
+                    :tabindex="showMenu ? 0 : -1"
+                    @click="(e) => e.target.blur()"
+                    >Servicios <br />
+                    <span class="subtitle"
+                      >Soluciones para tus necesidades</span
+                    >
+                  </router-link>
+                </li>
+                <li>
+                  <router-link
+                    :to="{ name: 'contratacion' }"
+                    :tabindex="showMenu ? 0 : -1"
+                    @click="(e) => e.target.blur()"
+                    >Programas y cursos <br />
+                    <span class="subtitle">Desarrollados por nosotros</span>
+                  </router-link>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav__list-item">
+            <button>
+              Contratación
+              <span class="material-symbols-outlined">keyboard_arrow_down</span>
+            </button>
+            <div class="nav__submenu">
+              <ul class="fp-container">
+                <li>
+                  <router-link
+                    :to="{ name: 'home' }"
+                    :tabindex="showMenu ? 0 : -1"
+                    @click="(e) => e.target.blur()"
+                    >Convocatorias <br />
+                    <span class="subtitle"
+                      >Abiertas, en proceso y finalizadas</span
+                    >
+                  </router-link>
+                </li>
+                <li>
+                  <router-link
+                    :to="{ name: 'home' }"
+                    :tabindex="showMenu ? 0 : -1"
+                    @click="(e) => e.target.blur()"
+                    >Manual de contratación (PDF) <br />
+                    <span class="subtitle">Descarga nuestro manual en PDF</span>
+                  </router-link>
+                </li>
+                <li>
+                  <router-link
+                    :to="{ name: 'home' }"
+                    :tabindex="showMenu ? 0 : -1"
+                    @click="(e) => e.target.blur()"
+                    >Documentos precontractuales<br />
+                    <span class="subtitle">
+                      Acceso a PDFs de nuestro documentos
+                    </span>
+                  </router-link>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav__list-item">
+            <button>
+              Asociados Técnicos
+              <span class="material-symbols-outlined">keyboard_arrow_down</span>
+            </button>
+            <div class="nav__submenu">
+              <ul class="fp-container">
+                <li>
+                  <router-link
+                    :to="{ name: 'home' }"
+                    :tabindex="showMenu ? 0 : -1"
+                    @click="(e) => e.target.blur()"
+                    >Servicios <br />
+                    <span class="subtitle"
+                      >Soluciones para tus necesidades</span
+                    >
+                  </router-link>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav__list-item">
+            <button>
+              Transparencia
+              <span class="material-symbols-outlined">keyboard_arrow_down</span>
+            </button>
+            <div class="nav__submenu">
+              <ul class="fp-container">
+                <li>
+                  <router-link
+                    :to="{ name: 'home' }"
+                    :tabindex="showMenu ? 0 : -1"
+                    @click="(e) => e.target.blur()"
+                    >Información pública <br />
+                    <span class="subtitle">Datos de interés público</span>
+                  </router-link>
+                </li>
+                <li>
+                  <router-link
+                    :to="{ name: 'home' }"
+                    :tabindex="showMenu ? 0 : -1"
+                    @click="(e) => e.target.blur()"
+                    >PQRSD <br />
+                    <span class="subtitle"
+                      >Instrumento de solicitud de Fonpacífico</span
+                    >
+                  </router-link>
+                </li>
+                <li>
+                  <router-link
+                    :to="{ name: 'home' }"
+                    :tabindex="showMenu ? 0 : -1"
+                    @click="(e) => e.target.blur()"
+                    >Políticas <br />
+                    <span class="subtitle"
+                      >Relacionadas con el uso del sitio web</span
+                    >
+                  </router-link>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+        <router-link
+          class="contact-button"
+          :to="{ name: 'home' }"
+          >Contacto</router-link
+        >
+      </nav>
+      <button
+        class="nav__toggle"
+        @click="showMenu = !showMenu"
+      >
+        <span class="material-symbols-outlined">{{
+          showMenu ? 'close' : 'menu'
+        }}</span>
       </button>
     </div>
-    <nav :class="mainNavItemsClasses">
-      <ul class="main-nav-items__list">
-        <mobile-menu-item
-          v-for="link in navLinkData"
-          :main-link="link"
-          :sublinks="link.sublinks"
-          :is-closed="menuOpen === false"
-          @close-menu="closeMenu"
-        />
-      </ul>
-    </nav>
   </header>
 </template>
 
 <style lang="scss" scoped>
 @use '../sass/abstracts' as *;
 
-header {
-  position: sticky;
-  background-color: get-color('white');
-  top: 0;
-  padding: 0 1rem;
-  margin: 0 auto;
-  z-index: 10;
-
-  @include breakpoint-min('lg') {
-    padding: 0 3rem;
-  }
+.logo {
+  margin-right: 16px;
 }
 
-summary {
-  list-style: none;
+.material-symbols-outlined {
+  font-size: 2rem;
 }
 
-.hamburger-button {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  width: 2rem;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-
-  &__line {
-    display: block;
-    width: 100%;
-    height: 0.25rem;
-    background-color: get-color('primary');
-    border-radius: 0.5rem;
-    transition: all 0.3s ease-in-out;
-
-    &:nth-child(1) {
-      transform: translateY(0.5rem);
-    }
-
-    &:nth-child(2) {
-      transform: translateY(0);
-    }
-
-    &:nth-child(3) {
-      transform: translateY(-0.5rem);
-    }
-  }
-
-  &--open {
-    .hamburger-button__line {
-      &:nth-child(1) {
-        transform: translateY(1rem) rotate(45deg);
-      }
-
-      &:nth-child(2) {
-        opacity: 0;
-      }
-
-      &:nth-child(3) {
-        transform: translateY(-1rem) rotate(-45deg);
-      }
-    }
-  }
-
-  @include breakpoint-min('md') {
-    display: none;
-  }
-}
-
-.main-nav--desktop {
+.subtitle {
   display: none;
 
-  @include breakpoint-min('md') {
+  @include breakpoint-min('md2') {
+    font-size: 14px;
+    font-weight: 400;
+  }
+}
+
+.contact-button {
+  display: block;
+  background-color: get-color('primary');
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 2rem;
+  text-align: center;
+  font-weight: 700;
+  width: calc(100% - 2rem);
+  margin: 2rem auto 0;
+
+  @include breakpoint-min('md2') {
+    width: fit-content;
+    margin: 0;
+  }
+}
+
+header {
+  width: 100%;
+  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  place-items: center;
+  height: 64px;
+
+  > .fp-container {
     display: flex;
+    width: 100%;
+    place-items: center;
+  }
+}
+
+.nav {
+  position: fixed;
+  top: 64px;
+  width: 100%;
+  right: 100%;
+  bottom: 0;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(0);
+  background-color: white;
+
+  &.open {
+    transform: translateX(100%);
+  }
+
+  @include breakpoint-min('md2') {
+    position: static;
+    right: 0;
+    transform: none;
+    display: flex;
+    place-items: center;
     place-content: space-between;
-    padding-block: 1.5rem;
 
-    .main-nav__items {
-      display: flex;
-      gap: 2rem;
-
-      li {
-        display: flex;
-        place-content: center;
-        place-items: center;
-      }
+    &.open {
+      transform: none;
     }
   }
-}
 
-.main-nav--mobile {
-  display: flex;
-  padding-block: 1.5rem;
-  place-content: space-between;
-  place-items: center;
+  &__toggle {
+    display: block;
+    margin-left: auto;
+    background: transparent;
+    color: get-color('primary');
 
-  @include breakpoint-min('md') {
-    display: none;
-  }
-
-  & + .main-nav-items--open::before {
-    content: '';
-    width: 100%;
-    top: 0;
-    left: 0;
-    position: absolute;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-  }
-}
-
-.main-nav-items {
-  position: fixed;
-  background-color: get-color('white');
-  width: calc(100% + 1rem);
-  left: calc(100% + 1rem);
-  height: 100%;
-  transition: all 0.3s ease-in-out;
-  padding: 2rem 1rem;
-
-  @include breakpoint-min('md') {
-    display: none;
-  }
-
-  &--open {
-    left: 0;
-    width: 100%;
+    @include breakpoint-min('md2') {
+      display: none;
+    }
   }
 
   &__list {
     display: flex;
     flex-flow: column nowrap;
-    gap: 1rem;
+
+    @include breakpoint-min('md2') {
+      flex-flow: row nowrap;
+      place-content: center;
+    }
+
+    &-item:focus {
+      color: get-color('primary');
+    }
+
+    &-item:focus-within {
+      .nav__submenu {
+        display: block;
+      }
+
+      > button > span {
+        transform: rotate(180deg);
+      }
+    }
+
+    &-item > button {
+      cursor: pointer;
+      background: transparent;
+      border: 0;
+      display: flex;
+      place-items: center;
+      place-content: space-between;
+      width: 100%;
+      padding: 1rem 2rem;
+      white-space: nowrap;
+      font-weight: 700;
+      font-size: 20px;
+      color: get-color('primary');
+
+      span {
+        transition: transform 0.3s ease-in-out;
+      }
+
+      @include breakpoint-min('md2') {
+        color: black;
+        font-size: 16px;
+
+        span {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__submenu {
+    display: none;
+    background: white;
+    border-top: 1px solid white;
+
+    @include breakpoint-min('md2') {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      width: 100vw;
+      padding: 2rem 0;
+    }
+
+    > ul {
+      display: flex;
+      place-content: flex-start;
+      flex-flow: column nowrap;
+
+      @include breakpoint-min('md2') {
+        flex-flow: row nowrap;
+      }
+
+      > li {
+        padding: 1rem 0.5rem;
+
+        @include breakpoint-min('md2') {
+          padding: 1rem 2rem;
+        }
+
+        > a {
+          font-weight: 700;
+        }
+      }
+    }
   }
 }
 </style>
