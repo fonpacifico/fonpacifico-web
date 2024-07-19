@@ -28,6 +28,31 @@ const routes = [
 		component: () => import("./views/ServiciosView.vue"),
 	},
 	{
+		path: "/programas-y-cursos",
+		name: "programasYCursos",
+		component: () => import("./views/ProgramasYCursosView.vue"),
+	},
+	{
+		path: "/convocatorias",
+		name: "convocatorias",
+		component: () => import("./views/ConvocatoriasView.vue"),
+	},
+	{
+		path: "/inscripcion",
+		name: "inscripcion",
+		component: () => import("./views/InscripcionView.vue"),
+	},
+	{
+		path: "/pqrsd",
+		name: "pqrsd",
+		component: () => import("./views/PQRSDView.vue"),
+	},
+	{
+		path: "/politicas",
+		name: "politicas",
+		component: () => import("./views/PoliticasView.vue"),
+	},
+	{
 		path: "/:pathMatch(.*)*",
 		name: "notFound",
 		component: () => import("./views/NotFoundView.vue"),

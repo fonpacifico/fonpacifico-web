@@ -1,13 +1,13 @@
 <script setup>
-import ServicesSection from '@/components/homeView/ServicesSection.vue';
-import ProyectsGrid from '@/components/homeView/ProyectsGrid.vue';
-import SociosEstrategicos from '@/components/homeView/SociosEstrategicos.vue';
+import ServicesSection from '@/components/ServicesSection.vue';
+import ProyectsGrid from '@/components/ProyectsGrid.vue';
+import SociosEstrategicos from '@/components/SociosEstrategicos.vue';
 import CarouselSection from '@/globals/CarouselSection.vue';
 import CopyBlock from '@/globals/CopyBlock.vue';
-import ProgramasInteres from '@/components/homeView/ProgramasInteres.vue';
-import StatisticsSection from '@/components/homeView/StatisticsSection.vue';
-import NewsLetter from '@/components/homeView/NewsLetter.vue';
-import HomeHero from '@/components/homeView/HomeHero.vue';
+import ProgramasInteres from '@/components/ProgramasInteres.vue';
+import StatisticsSection from '@/components/StatisticsSection.vue';
+import NewsLetter from '@/components/NewsLetter.vue';
+import HomeHero from '@/components/HomeHero.vue';
 import { carouselItems } from '@/content/homeView';
 
 import * as content from '@/content/homeView';

@@ -1,5 +1,5 @@
 <script setup>
-import ProyectCard from '@/components/homeView/ProyectCard.vue';
+import ProyectCard from '@/components/ProyectCard.vue';
 
 import { projectCards } from '@/content/homeView';
 </script>

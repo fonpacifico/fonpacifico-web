@@ -1,6 +1,6 @@
 <script setup>
 import ServicesListItem from './ServicesListItem.vue';
-import { servicesList } from '../../content/homeView';
+import { servicesList } from '../content/homeView';
 </script>
 
 <template>
@@ -15,7 +15,7 @@ import { servicesList } from '../../content/homeView';
 </template>
 
 <style lang="scss" scoped>
-@use '../../sass/abstracts/_mixins' as *;
+@use '../sass/abstracts/_mixins' as *;
 
 .services-list {
   grid-column: 1 / -1;
@@ -37,3 +37,4 @@ import { servicesList } from '../../content/homeView';
   }
 }
 </style>
+../content/homeView

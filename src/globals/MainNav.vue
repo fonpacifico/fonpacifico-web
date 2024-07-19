@@ -46,7 +46,7 @@ mql.addEventListener('change', (e) => {
               <ul class="fp-container">
                 <li>
                   <router-link
-                    :to="{ name: 'home' }"
+                    :to="{ name: 'nosotros' }"
                     :tabindex="showMenu ? 0 : -1"
                     @click="(e) => e.target.blur()"
                     >Acerca de Fonpacífico <br />
@@ -55,7 +55,7 @@ mql.addEventListener('change', (e) => {
                 </li>
                 <li>
                   <router-link
-                    :to="{ name: 'nosotros' }"
+                    :to="{ name: 'servicios' }"
                     :tabindex="showMenu ? 0 : -1"
                     @click="(e) => e.target.blur()"
                     >Servicios <br />
@@ -66,7 +66,7 @@ mql.addEventListener('change', (e) => {
                 </li>
                 <li>
                   <router-link
-                    :to="{ name: 'contratacion' }"
+                    :to="{ name: 'programasYCursos' }"
                     :tabindex="showMenu ? 0 : -1"
                     @click="(e) => e.target.blur()"
                     >Programas y cursos <br />
@@ -85,7 +85,7 @@ mql.addEventListener('change', (e) => {
               <ul class="fp-container">
                 <li>
                   <router-link
-                    :to="{ name: 'home' }"
+                    :to="{ name: 'convocatorias' }"
                     :tabindex="showMenu ? 0 : -1"
                     @click="(e) => e.target.blur()"
                     >Convocatorias <br />
@@ -95,6 +95,7 @@ mql.addEventListener('change', (e) => {
                   </router-link>
                 </li>
                 <li>
+                  <!-- link a drive -->
                   <router-link
                     :to="{ name: 'home' }"
                     :tabindex="showMenu ? 0 : -1"
@@ -104,6 +105,7 @@ mql.addEventListener('change', (e) => {
                   </router-link>
                 </li>
                 <li>
+                  <!-- link a drive -->
                   <router-link
                     :to="{ name: 'home' }"
                     :tabindex="showMenu ? 0 : -1"
@@ -126,12 +128,12 @@ mql.addEventListener('change', (e) => {
               <ul class="fp-container">
                 <li>
                   <router-link
-                    :to="{ name: 'home' }"
+                    :to="{ name: 'inscripcion' }"
                     :tabindex="showMenu ? 0 : -1"
                     @click="(e) => e.target.blur()"
-                    >Servicios <br />
+                    >Inscripción de asociado técnico <br />
                     <span class="subtitle"
-                      >Soluciones para tus necesidades</span
+                      >Regístrate para ser asociado de Fonpacífico</span
                     >
                   </router-link>
                 </li>
@@ -147,7 +149,7 @@ mql.addEventListener('change', (e) => {
               <ul class="fp-container">
                 <li>
                   <router-link
-                    :to="{ name: 'home' }"
+                    :to="{ name: 'transparencia' }"
                     :tabindex="showMenu ? 0 : -1"
                     @click="(e) => e.target.blur()"
                     >Información pública <br />
@@ -156,7 +158,7 @@ mql.addEventListener('change', (e) => {
                 </li>
                 <li>
                   <router-link
-                    :to="{ name: 'home' }"
+                    :to="{ name: 'pqrsd' }"
                     :tabindex="showMenu ? 0 : -1"
                     @click="(e) => e.target.blur()"
                     >PQRSD <br />
@@ -167,7 +169,7 @@ mql.addEventListener('change', (e) => {
                 </li>
                 <li>
                   <router-link
-                    :to="{ name: 'home' }"
+                    :to="{ name: 'politicas' }"
                     :tabindex="showMenu ? 0 : -1"
                     @click="(e) => e.target.blur()"
                     >Políticas <br />

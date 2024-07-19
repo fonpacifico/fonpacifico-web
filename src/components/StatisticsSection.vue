@@ -23,7 +23,7 @@ defineProps({
 </template>
 
 <style lang="scss">
-@use '../../sass/abstracts' as *;
+@use '../sass/abstracts' as *;
 
 .statistics-section {
   row-gap: 4rem;

@@ -11,23 +11,7 @@ import * as content from '@/content/serviciosView';
 </script>
 
 <template>
-  <main>
-    <carousel-section :items="carouselItems">
-      <template #heading>
-        <copy-block
-          alignment="centered"
-          :eyebrow="{
-            text: 'EXPERIENCIAS COMPARTIDAS',
-            color: 'blue',
-            position: 'center',
-          }"
-          heading="Fomentando el desarrollo territorial y social"
-        />
-      </template>
-    </carousel-section>
-    <programas-interes :items="content.programasInteres" />
-    <news-letter />
-  </main>
+  <main>Inscripcion</main>
 </template>
 
 <style scoped></style>

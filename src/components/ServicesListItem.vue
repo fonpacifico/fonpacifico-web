@@ -28,7 +28,7 @@ defineProps({
 </template>
 
 <style lang="scss" scoped>
-@use '../../sass/abstracts' as *;
+@use '../sass/abstracts' as *;
 
 .services-list__item {
   display: flex;
