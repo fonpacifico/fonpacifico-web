@@ -11,8 +11,11 @@ const modalContent = ref(null);
 
 const openModal = (project) => {
   modalContent.value = project;
-  console.log(modalContent.value);
   modalElement.value.showModal();
+};
+
+const handleCloseModal = () => {
+  modalContent.value = null;
 };
 </script>
 
@@ -33,6 +36,7 @@ const openModal = (project) => {
     <dialog
       ref="modalElement"
       class="modal-element"
+      @close="handleCloseModal"
     >
       <template v-if="modalContent">
         <div class="modal-element__wrapper">

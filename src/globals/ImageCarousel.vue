@@ -9,13 +9,8 @@ const props = defineProps({
 });
 
 const carouselTrackElement = ref();
-const containerElement = ref();
 const carouselItemCount = computed(() => props.items.length);
 const selectedCarouselItem = ref(0);
-
-let resizeTimeout;
-let scrollTimeout;
-let mediaQuery;
 
 const goTo = (index) => {
   if (index < props.items.length && index >= 0) {
@@ -44,9 +39,7 @@ const getCarouselItemWidth = () => {
   return carouselItemWidth;
 };
 
-onMounted(() => {
-  mediaQuery = matchMedia('(min-width: 768px)');
-});
+onMounted(() => {});
 </script>
 <template>
   <div class="carousel">
