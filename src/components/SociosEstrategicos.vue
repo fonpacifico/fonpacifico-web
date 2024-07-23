@@ -79,7 +79,6 @@ defineProps({
   @include breakpoint-min('sm') {
     flex-flow: row wrap;
     place-items: flex-start;
-    // background: red;
   }
 
   li {

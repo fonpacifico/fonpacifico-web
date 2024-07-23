@@ -110,6 +110,23 @@ export const projectCards = [
 		link: "https://www.google.com",
 		image: "/project-card-1.png",
 		style: "large",
+		images: [
+			{
+				image: "/test.jpg",
+			},
+			{
+				image: "/test.jpg",
+			},
+			{
+				image: "/test.jpg",
+			},
+		],
+		modalDescription: "lorem description",
+		modalData: {
+			convenio: "convenio",
+			fecha: "2XXX",
+			proposito: "proposito del proyecto",
+		},
 	},
 	{
 		id: 2,
@@ -119,6 +136,23 @@ export const projectCards = [
 		link: "https://www.google.com",
 		image: "/project-card-1.png",
 		style: "small",
+		images: [
+			{
+				image: "/test.jpg",
+			},
+			{
+				image: "/test.jpg",
+			},
+			{
+				image: "/test.jpg",
+			},
+		],
+		modalDescription: "lorem description",
+		modalData: {
+			convenio: "convenio",
+			ano: "2XXX",
+			proposito: "proposito del proyecto",
+		},
 	},
 	{
 		id: 3,
@@ -128,6 +162,23 @@ export const projectCards = [
 		link: "https://www.google.com",
 		image: "/project-card-1.png",
 		style: "small",
+		images: [
+			{
+				image: "/test.jpg",
+			},
+			{
+				image: "/test.jpg",
+			},
+			{
+				image: "/test.jpg",
+			},
+		],
+		modalDescription: "lorem description",
+		modalData: {
+			convenio: "convenio",
+			ano: "2XXX",
+			proposito: "proposito del proyecto",
+		},
 	},
 	{
 		id: 4,
@@ -137,6 +188,23 @@ export const projectCards = [
 		link: "https://www.google.com",
 		image: "/project-card-1.png",
 		style: "large",
+		images: [
+			{
+				image: "/project-card-1.png",
+			},
+			{
+				image: "/project-card-1.png",
+			},
+			{
+				image: "/project-card-1.png",
+			},
+		],
+		modalDescription: "lorem description",
+		modalData: {
+			convenio: "convenio",
+			ano: "2XXX",
+			proposito: "proposito del proyecto",
+		},
 	},
 ];
 
@@ -311,6 +379,7 @@ export const newsLetterData = {
 
 export const homeHero = {
 	heading: "Un aliado estratégico para proyectos de interés público",
-	subheading: "Contamos con una amplia experiencia y un profundo conocimiento del sector público, que nos permite ofrecer soluciones integrales que garantizan el éxito de sus proyectos.",
+	subheading:
+		"Contamos con una amplia experiencia y un profundo conocimiento del sector público, que nos permite ofrecer soluciones integrales que garantizan el éxito de sus proyectos.",
 	alignment: "centered",
 };

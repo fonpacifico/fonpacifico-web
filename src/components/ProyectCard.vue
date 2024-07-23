@@ -8,6 +8,8 @@ const props = defineProps({
   },
 });
 
+const emit = defineEmits(['cardClick']);
+
 const classes = computed(() => ({
   card: true,
   [`card-${props.project.style}`]: true,
@@ -20,14 +22,10 @@ const classes = computed(() => ({
       <div class="card__text">
         <h3>{{ project.name }}</h3>
         <p>{{ project.description }}</p>
-        <a
-          :href="project.link"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <button @click="emit('cardClick')">
           Ver mas
           <span class="material-symbols-outlined">arrow_forward</span>
-        </a>
+        </button>
       </div>
       <div class="card__image">
         <img
