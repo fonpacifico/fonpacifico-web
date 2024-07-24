@@ -139,6 +139,7 @@ const handleCloseModal = () => {
 
   &__carousel {
     overflow: hidden;
+    position: relative;
   }
 
   &__header {

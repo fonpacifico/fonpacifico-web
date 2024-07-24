@@ -18,6 +18,11 @@ mql.addEventListener('change', (e) => {
     console.log(isDesktop.value);
   }
 });
+
+const closeMenu = (e) => {
+  e.target.blur();
+  showMenu.value = false;
+};
 </script>
 
 <template>
@@ -48,7 +53,7 @@ mql.addEventListener('change', (e) => {
                   <router-link
                     :to="{ name: 'nosotros' }"
                     :tabindex="showMenu ? 0 : -1"
-                    @click="(e) => e.target.blur()"
+                    @click="(e) => closeMenu(e)"
                     >Acerca de Fonpacífico <br />
                     <span class="subtitle">Conoce más sobre nosotros</span>
                   </router-link>
@@ -57,7 +62,7 @@ mql.addEventListener('change', (e) => {
                   <router-link
                     :to="{ name: 'servicios' }"
                     :tabindex="showMenu ? 0 : -1"
-                    @click="(e) => e.target.blur()"
+                    @click="(e) => closeMenu(e)"
                     >Servicios <br />
                     <span class="subtitle"
                       >Soluciones para tus necesidades</span
@@ -68,7 +73,7 @@ mql.addEventListener('change', (e) => {
                   <router-link
                     :to="{ name: 'programasYCursos' }"
                     :tabindex="showMenu ? 0 : -1"
-                    @click="(e) => e.target.blur()"
+                    @click="(e) => closeMenu(e)"
                     >Programas y cursos <br />
                     <span class="subtitle">Desarrollados por nosotros</span>
                   </router-link>
@@ -87,7 +92,7 @@ mql.addEventListener('change', (e) => {
                   <router-link
                     :to="{ name: 'convocatorias' }"
                     :tabindex="showMenu ? 0 : -1"
-                    @click="(e) => e.target.blur()"
+                    @click="(e) => closeMenu(e)"
                     >Convocatorias <br />
                     <span class="subtitle"
                       >Abiertas, en proceso y finalizadas</span
@@ -99,7 +104,7 @@ mql.addEventListener('change', (e) => {
                   <router-link
                     :to="{ name: 'home' }"
                     :tabindex="showMenu ? 0 : -1"
-                    @click="(e) => e.target.blur()"
+                    @click="(e) => closeMenu(e)"
                     >Manual de contratación (PDF) <br />
                     <span class="subtitle">Descarga nuestro manual en PDF</span>
                   </router-link>
@@ -109,7 +114,7 @@ mql.addEventListener('change', (e) => {
                   <router-link
                     :to="{ name: 'home' }"
                     :tabindex="showMenu ? 0 : -1"
-                    @click="(e) => e.target.blur()"
+                    @click="(e) => closeMenu(e)"
                     >Documentos precontractuales<br />
                     <span class="subtitle">
                       Acceso a PDFs de nuestro documentos
@@ -130,7 +135,7 @@ mql.addEventListener('change', (e) => {
                   <router-link
                     :to="{ name: 'inscripcion' }"
                     :tabindex="showMenu ? 0 : -1"
-                    @click="(e) => e.target.blur()"
+                    @click="(e) => closeMenu(e)"
                     >Inscripción de asociado técnico <br />
                     <span class="subtitle"
                       >Regístrate para ser asociado de Fonpacífico</span
@@ -151,7 +156,7 @@ mql.addEventListener('change', (e) => {
                   <router-link
                     :to="{ name: 'transparencia' }"
                     :tabindex="showMenu ? 0 : -1"
-                    @click="(e) => e.target.blur()"
+                    @click="(e) => closeMenu(e)"
                     >Información pública <br />
                     <span class="subtitle">Datos de interés público</span>
                   </router-link>
@@ -160,7 +165,7 @@ mql.addEventListener('change', (e) => {
                   <router-link
                     :to="{ name: 'pqrsd' }"
                     :tabindex="showMenu ? 0 : -1"
-                    @click="(e) => e.target.blur()"
+                    @click="(e) => closeMenu(e)"
                     >PQRSD <br />
                     <span class="subtitle"
                       >Instrumento de solicitud de Fonpacífico</span
@@ -171,7 +176,7 @@ mql.addEventListener('change', (e) => {
                   <router-link
                     :to="{ name: 'politicas' }"
                     :tabindex="showMenu ? 0 : -1"
-                    @click="(e) => e.target.blur()"
+                    @click="(e) => closeMenu(e)"
                     >Políticas <br />
                     <span class="subtitle"
                       >Relacionadas con el uso del sitio web</span
@@ -184,7 +189,8 @@ mql.addEventListener('change', (e) => {
         </ul>
         <router-link
           class="contact-button"
-          :to="{ name: 'home' }"
+          :to="{ name: 'contacto' }"
+          @click="(e) => closeMenu(e)"
           >Contacto</router-link
         >
       </nav>
