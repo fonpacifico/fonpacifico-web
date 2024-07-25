@@ -15,7 +15,10 @@ defineProps({
 </script>
 
 <template>
-  <section class="fp-container fp-padded socios-section">
+  <section
+    class="fp-container fp-padded socios-section"
+    v-fade-in
+  >
     <div class="fp-grid socios-main-heading">
       <slot name="heading" />
     </div>

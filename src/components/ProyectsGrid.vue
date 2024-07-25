@@ -12,15 +12,20 @@ const modalContent = ref(null);
 const openModal = (project) => {
   modalContent.value = project;
   modalElement.value.showModal();
+  document.body.style.overflowY = 'hidden';
 };
 
 const handleCloseModal = () => {
   modalContent.value = null;
+  document.body.style.overflowY = 'auto';
 };
 </script>
 
 <template>
-  <section class="proyects-section fp-padded fp-dark">
+  <section
+    class="proyects-section fp-padded fp-dark"
+    v-fade-in
+  >
     <div class="fp-container fp-grid">
       <slot name="heading" />
 
@@ -39,33 +44,35 @@ const handleCloseModal = () => {
       @close="handleCloseModal"
     >
       <template v-if="modalContent">
-        <div class="modal-element__wrapper">
-          <div class="modal-element__header">
-            <h2>{{ modalContent.name }}</h2>
-            <button @click="modalElement.close()">close</button>
-          </div>
+        <div class="modal-element__scrollable">
+          <div class="modal-element__wrapper">
+            <div class="modal-element__header">
+              <h2>{{ modalContent.name }}</h2>
+              <button @click="modalElement.close()">close</button>
+            </div>
 
-          <div class="modal-element__carousel">
-            <image-carousel :items="modalContent.images" />
-          </div>
+            <div class="modal-element__carousel">
+              <image-carousel :items="modalContent.images" />
+            </div>
 
-          <div class="modal-element__content">
-            <article>
-              <h3>Descripción</h3>
-              <p>{{ modalContent.modalDescription }}</p>
-            </article>
-            <aside>
-              <h4>Convenio interadministrativo</h4>
-              <p>{{ modalContent.modalData.convenio }}</p>
-            </aside>
-            <aside>
-              <h4>Año</h4>
-              <p>{{ modalContent.modalData.fecha }}</p>
-            </aside>
-            <aside>
-              <h4>Proyecto para</h4>
-              <p>{{ modalContent.modalData.proposito }}</p>
-            </aside>
+            <div class="modal-element__content">
+              <article>
+                <h3>Descripción</h3>
+                <p>{{ modalContent.modalDescription }}</p>
+              </article>
+              <aside>
+                <h4>Convenio interadministrativo</h4>
+                <p>{{ modalContent.modalData.convenio }}</p>
+              </aside>
+              <aside>
+                <h4>Año</h4>
+                <p>{{ modalContent.modalData.fecha }}</p>
+              </aside>
+              <aside>
+                <h4>Proyecto para</h4>
+                <p>{{ modalContent.modalData.proposito }}</p>
+              </aside>
+            </div>
           </div>
         </div>
       </template>
@@ -125,10 +132,22 @@ const handleCloseModal = () => {
   max-width: calc(100% - 6rem);
   max-height: calc(100% - 6rem);
   border-radius: 1.5rem;
-  padding: 3rem;
+  padding: 3rem 1.5rem 3rem 3rem;
+  overflow: hidden;
+
+  @include breakpoint-min('lg') {
+    max-width: 1280px;
+    margin: 3rem auto;
+  }
 
   &::backdrop {
     background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  &__scrollable {
+    overflow-y: scroll;
+    height: 100%;
+    padding-right: calc(1.5rem - 6px);
   }
 
   &__wrapper {
@@ -197,5 +216,35 @@ const handleCloseModal = () => {
       grid-area: data3;
     }
   }
+}
+
+.modal-element__scrollable::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+.modal-element__scrollable::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: #d6d6d6;
+}
+
+.modal-element__scrollable::-webkit-scrollbar-track:hover {
+  background-color: #c2c2c2;
+}
+
+.modal-element__scrollable::-webkit-scrollbar-track:active {
+  background-color: #c2b2b2;
+}
+
+.modal-element__scrollable::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: get-color('primary');
+}
+
+.modal-element__scrollable::-webkit-scrollbar-thumb:hover {
+  background-color: darken(get-color('primary'), 5%);
+}
+
+.modal-element__scrollable::-webkit-scrollbar-thumb:active {
+  background-color: darken(get-color('primary'), 10%);
 }
 </style>

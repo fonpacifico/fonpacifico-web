@@ -16,7 +16,10 @@ defineProps({
 </script>
 
 <template>
-  <li class="services-list__item">
+  <li
+    class="services-list__item"
+    v-fade-in
+  >
     <span class="services-list__item-icon"
       ><img
         src="/services-icon.svg"

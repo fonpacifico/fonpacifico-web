@@ -8,7 +8,10 @@ defineProps({
 </script>
 
 <template>
-  <li class="socio">
+  <li
+    class="socio"
+    v-fade-in
+  >
     <div class="socio__image">
       <img
         :src="item.image"

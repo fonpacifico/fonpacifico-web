@@ -17,7 +17,7 @@ const classes = computed(() => ({
 </script>
 
 <template>
-  <li>
+  <li v-fade-in>
     <div :class="classes">
       <div class="card__text">
         <h3>{{ project.name }}</h3>

@@ -1,6 +1,8 @@
-<script setup></script>
 <template>
-  <section class="newsletter-section">
+  <section
+    class="newsletter-section"
+    v-fade-in
+  >
     <div class="newsletter-section--backdrop fp-padded">
       <div class="newsletter-section__content fp-container">
         <div class="newsletter-section__content-text">

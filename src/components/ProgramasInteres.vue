@@ -8,7 +8,10 @@ defineProps({
 </script>
 
 <template>
-  <section class="fp-container fp-padded-bottom programas-interes">
+  <section
+    class="fp-container fp-padded-bottom programas-interes"
+    v-fade-in
+  >
     <div class="programas-interes__heading">
       <h2>Programas de interés público</h2>
       <p>

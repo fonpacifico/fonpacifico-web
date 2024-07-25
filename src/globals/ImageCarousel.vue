@@ -15,7 +15,6 @@ const selectedCarouselItem = ref(0);
 const goTo = (index) => {
   if (index < props.items.length && index >= 0) {
     const scrollPosition = getCarouselItemWidth() * index;
-    console.log(scrollPosition);
 
     selectedCarouselItem.value = index;
     carouselTrackElement.value.parentElement.scrollLeft = scrollPosition;
@@ -36,7 +35,6 @@ const goToPrevious = () => {
 
 const getCarouselItemWidth = () => {
   const carouselItemWidth = carouselTrackElement.value.children[0].clientWidth;
-  console.log(carouselItemWidth);
 
   return carouselItemWidth;
 };
@@ -89,7 +87,7 @@ onMounted(() => {});
 
 .carousel {
   scroll-behavior: smooth;
-  width: 100vw;
+  width: 100%;
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
@@ -126,6 +124,7 @@ onMounted(() => {});
       position: absolute;
       top: calc(50% - 1rem);
       padding: 0 0.5rem;
+      pointer-events: none;
     }
 
     &__arrow {
@@ -136,6 +135,7 @@ onMounted(() => {});
       display: flex;
       place-content: center;
       background-color: get-color('white');
+      pointer-events: all;
 
       @include breakpoint-min('md') {
         padding: 1rem;

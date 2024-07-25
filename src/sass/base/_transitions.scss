@@ -1,0 +1,9 @@
+[data-fade-in]:not(.fade-in) {
+  opacity: 0;
+  transform: translateY(40px);
+}
+[data-fade-in].fade-in {
+  opacity: 1;
+  transform: translateY(0);
+  transition: transform .5s ease-in-out, opacity .5s ease-in-out;
+}
