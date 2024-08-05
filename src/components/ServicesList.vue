@@ -22,6 +22,11 @@ import { servicesList } from '../content/homeView';
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  padding-top: 2rem;
+
+  @include breakpoint-min('md') {
+    padding-top: 0;
+  }
 }
 
 @include breakpoint-min('sm') {
