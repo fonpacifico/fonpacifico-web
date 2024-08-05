@@ -11,14 +11,15 @@
         </div>
         <div class="newsletter-section__content-ctas">
           <a
-            href=""
+            href="mailto:info@fonpacifico.org"
             class="button button--white"
             >Escribir al correo</a
           >
-          <a
+          <router-link
+            :to="{ name: 'contacto' }"
             href=""
             class="button button--white--outlined"
-            >Contacto</a
+            >Contacto</router-link
           >
         </div>
       </div>

@@ -14,24 +14,35 @@ const classes = computed(() => ({
   card: true,
   [`card-${props.project.style}`]: true,
 }));
+
+const croppedText = computed(() => {
+  const text = props.project.description;
+  const maxLength = 80;
+
+  if (text.length > maxLength) {
+    return `${text.substring(0, maxLength)}...`;
+  }
+
+  return text;
+});
 </script>
 
 <template>
   <li v-fade-in>
     <div :class="classes">
-      <div class="card__text">
-        <h3>{{ project.name }}</h3>
-        <p>{{ project.description }}</p>
-        <button @click="emit('cardClick')">
-          Ver mas
-          <span class="material-symbols-outlined">arrow_forward</span>
-        </button>
-      </div>
       <div class="card__image">
         <img
           :src="project.image"
           alt=""
         />
+      </div>
+      <div class="card__text">
+        <h3>{{ project.name }}</h3>
+        <p>{{ croppedText }}</p>
+        <button @click="emit('cardClick')">
+          Ver mas
+          <span class="material-symbols-outlined">arrow_forward</span>
+        </button>
       </div>
     </div>
   </li>
@@ -45,7 +56,7 @@ const classes = computed(() => ({
   overflow: hidden;
   color: black;
   display: flex;
-  flex-flow: column-reverse nowrap;
+  flex-flow: column nowrap;
   place-items: center;
   place-content: center;
   width: 100%;
@@ -53,32 +64,33 @@ const classes = computed(() => ({
   position: relative;
   height: 100%;
 
-  &-large {
-    flex-flow: column nowrap;
+  @include breakpoint-min('lg') {
+    place-content: flex-start;
+  }
 
+  &-large {
     .card__text {
       padding: 3rem;
+    }
+
+    @include breakpoint-min('lg') {
+      flex-flow: column-reverse nowrap;
     }
   }
 
   &-small {
-    flex-flow: column-reverse nowrap;
-
     .card__text {
-      padding: 1.5rem;
+      padding: 1.5rem 1rem;
+      flex: 1 0 50%;
     }
 
     @include breakpoint-min('lg') {
       flex-flow: row nowrap;
-
-      .card__text {
-        padding: 3rem;
-      }
     }
   }
 
   &__text {
-    text-align: center;
+    text-align: left;
 
     h3 {
       margin-bottom: 1rem;
@@ -88,7 +100,9 @@ const classes = computed(() => ({
       margin-bottom: 2rem;
     }
 
-    a {
+    button {
+      cursor: pointer;
+      background-color: transparent;
       display: flex;
       place-items: center;
       place-content: flex-start;
@@ -97,10 +111,14 @@ const classes = computed(() => ({
       font-size: 1.2rem;
       color: get-color('primary');
       text-decoration: none;
-    }
+      padding: 0.5rem 1rem;
+      border-radius: 1rem;
+      transition: background-color 0.2s ease-in-out;
 
-    @include breakpoint-min('md') {
-      text-align: left;
+      &:hover,
+      &:focus {
+        background-color: get-color('accent');
+      }
     }
   }
 
@@ -109,13 +127,17 @@ const classes = computed(() => ({
     width: 100%;
     flex: 1 0 50%;
 
+    @include breakpoint-min('md') {
+      // max-height: 400px;
+    }
+
     img {
       max-width: 100%;
       max-height: 100%;
       height: 100%;
       width: 100%;
       object-fit: cover;
-      object-position: left;
+      object-position: center;
     }
   }
 }

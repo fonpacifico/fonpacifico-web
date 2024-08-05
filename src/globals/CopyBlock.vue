@@ -22,6 +22,10 @@ const props = defineProps({
     type: Array,
     default: () => [],
   },
+  customClass: {
+    type: String,
+    default: '',
+  },
 });
 
 const eyebrowClasses = computed(() => [
@@ -29,15 +33,15 @@ const eyebrowClasses = computed(() => [
   `eyebrow--${props.eyebrow.color}`,
   'copy-block__eyebrow',
 ]);
+
+const classes = computed(() => [
+  'copy-block',
+  `copy-block--${props.alignment}`,
+]);
 </script>
 
 <template>
-  <div
-    class="copy-block"
-    :class="{
-      'copy-block--centered': alignment === 'centered',
-    }"
-  >
+  <div :class="[{ [customClass]: customClass }, classes]">
     <span
       v-if="eyebrow"
       :class="eyebrowClasses"
@@ -93,7 +97,8 @@ const eyebrowClasses = computed(() => [
   }
 
   &__subheading {
-    font-size: 1.215rem;
+    font-size: 18px;
+    font-weight: 400;
     grid-column: 1 / -1;
   }
 

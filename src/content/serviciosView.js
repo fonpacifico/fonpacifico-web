@@ -85,3 +85,10 @@ export const programasInteres = [
 		image: "/programas_interes/redes_lab.png",
 	},
 ];
+
+export const heroData = {
+	heading: "Experiencia que marca la diferencia",
+	subHeading:
+		"Nuestras capacidades en gestión y tecnología nos permite entregar proyectos completados en las metas establecidas",
+	imgUrl: "/nosotros-hero.jpg",
+};

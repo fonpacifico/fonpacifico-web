@@ -48,7 +48,7 @@ import * as content from '@/content/homeView';
         <copy-block
           alignment="centered"
           :eyebrow="{
-            text: 'BANCO DE EXITOS',
+            text: 'BANCO DE ÉXITOS',
             color: 'blue',
             position: 'center',
           }"

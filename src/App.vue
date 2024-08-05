@@ -17,7 +17,6 @@ import MainFooter from './globals/MainFooter.vue';
 </template>
 
 <style scope>
-/* we will explain what these classes do next! */
 .slide-enter-active,
 .slide-leave-active {
   transition: opacity 0.5s ease;

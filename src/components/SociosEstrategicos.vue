@@ -35,10 +35,13 @@ defineProps({
     <div class="fp-grid asociados-tecnicos">
       <div class="asociados-tecnicos__heading">
         <h3>Asociados técnicos</h3>
-        <button class="button">
+        <router-link
+          :to="{ name: 'contratacion' }"
+          class="button"
+        >
           Ver todos los asociados
           <span class="material-symbols-outlined">arrow_forward</span>
-        </button>
+        </router-link>
       </div>
       <ul class="asociados-list">
         <asociado-item
@@ -117,6 +120,11 @@ defineProps({
     color: get-color('primary');
     font-weight: 700;
     border: 1px solid get-color('accent');
+
+    &:hover {
+      text-decoration: none;
+      background-color: darken(get-color('accent'), 10%);
+    }
   }
 }
 </style>

@@ -48,7 +48,12 @@ const handleCloseModal = () => {
           <div class="modal-element__wrapper">
             <div class="modal-element__header">
               <h2>{{ modalContent.name }}</h2>
-              <button @click="modalElement.close()">close</button>
+              <button @click="modalElement.close()">
+                <img
+                  src="/icons/close.svg"
+                  alt="close"
+                />
+              </button>
             </div>
 
             <div class="modal-element__carousel">
@@ -58,7 +63,7 @@ const handleCloseModal = () => {
             <div class="modal-element__content">
               <article>
                 <h3>Descripción</h3>
-                <p>{{ modalContent.modalDescription }}</p>
+                <p>{{ modalContent.description }}</p>
               </article>
               <aside>
                 <h4>Convenio interadministrativo</h4>
@@ -174,11 +179,12 @@ const handleCloseModal = () => {
     }
 
     button {
+      cursor: pointer;
       background-color: get-color('primary');
       color: get-color('white');
       border: none;
       padding: 1rem;
-      border-radius: 1rem;
+      border-radius: 50%;
       font-size: 1.2rem;
       font-weight: 700;
     }
@@ -186,6 +192,9 @@ const handleCloseModal = () => {
 
   &__content {
     display: grid;
+    padding-block-end: 1.5rem;
+    column-gap: 6rem;
+    row-gap: 1rem;
     grid-template-areas:
       'descripcion'
       'data1'
@@ -202,18 +211,29 @@ const handleCloseModal = () => {
 
     article {
       grid-area: descripcion;
+      display: grid;
+      row-gap: 1rem;
+    }
+
+    aside {
+      display: grid;
+      row-gap: 1rem;
+
+      h4 {
+        font-size: 20px;
+      }
     }
 
     aside:nth-child(1) {
-      grid-area: data1;
+      grid-area: data3;
     }
 
     aside:nth-child(2) {
-      grid-area: data2;
+      grid-area: data1;
     }
 
     aside:nth-child(3) {
-      grid-area: data3;
+      grid-area: data2;
     }
   }
 }

@@ -1,4 +1,6 @@
 <script setup>
+import { router } from '@/server';
+
 defineProps({
   items: {
     type: Array,
@@ -14,12 +16,21 @@ defineProps({
   >
     <div class="programas-interes__heading">
       <h2>Programas de interés público</h2>
-      <p>
-        En Fonpacífico estamos convencidos de que el desarrollo social es la
-        clave para un país más equitativo en oportunidades y conocimiento. Por
-        eso, desarrollamos programas que han impactado a muchas personas,
-        generando cambios positivos en sus comunidades.
-      </p>
+      <div>
+        <p>
+          En Fonpacífico estamos convencidos de que el desarrollo social es la
+          clave para un país más equitativo en oportunidades y conocimiento. Por
+          eso, desarrollamos programas que han impactado a muchas personas,
+          generando cambios positivos en sus comunidades.
+        </p>
+        <router-link
+          class="button programas-interes__button"
+          to="/programas-interes"
+        >
+          Programas y cursos
+          <span class="material-symbols-outlined">arrow_forward</span>
+        </router-link>
+      </div>
     </div>
     <div class="programas-interes__cards">
       <article
@@ -33,12 +44,6 @@ defineProps({
         />
         <h3>{{ item.title }}</h3>
         <p>{{ item.description }}</p>
-        <a
-          :href="item.link"
-          target="_blank"
-          >Ver más
-          <span class="material-symbols-outlined">arrow_forward</span>
-        </a>
       </article>
     </div>
   </section>
@@ -69,10 +74,24 @@ defineProps({
     }
   }
 
+  &__button {
+    background-color: get-color('accent');
+    color: get-color('primary');
+    font-weight: 700;
+    border: 1px solid get-color('accent');
+    margin-top: 1.5rem;
+
+    &:hover {
+      text-decoration: none;
+      background-color: darken(get-color('accent'), 10%);
+    }
+  }
+
   &__cards {
     display: flex;
-    gap: 2rem;
-    place-content: center;
+    column-gap: 2rem;
+    row-gap: 4rem;
+    place-content: flex-start;
     flex-flow: column wrap;
 
     @include breakpoint-min('md') {
@@ -81,7 +100,7 @@ defineProps({
   }
 
   &__card {
-    flex: 1 0 30%;
+    flex: 0 0 30%;
     display: flex;
     flex-flow: column nowrap;
     gap: 1.5rem;

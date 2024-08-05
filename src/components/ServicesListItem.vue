@@ -22,7 +22,7 @@ defineProps({
   >
     <span class="services-list__item-icon"
       ><img
-        src="/services-icon.svg"
+        :src="icon"
         alt="services icon"
     /></span>
     <h3 class="services-list__item-heading">{{ heading }}</h3>
@@ -40,11 +40,19 @@ defineProps({
   gap: 1.5rem;
 
   &-icon {
+    display: block;
+    padding: 1rem;
+    border-radius: 50%;
+    background-color: get-color(accent);
     width: fit-content;
   }
 
   &-heading {
     text-align: center;
+  }
+
+  &-description > ul {
+    background-color: red;
   }
 
   @include breakpoint-min('md') {

@@ -105,7 +105,7 @@ onUnmounted(() => {
 </script>
 <template>
   <section
-    class="carousel-section fp-padded"
+    class="carousel-section fp-padded-top"
     v-fade-in
   >
     <div

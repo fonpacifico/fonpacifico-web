@@ -2,6 +2,7 @@
 import CarouselSection from '@/globals/CarouselSection.vue';
 import CopyBlock from '@/globals/CopyBlock.vue';
 
+import SplitHero from '@/components/SplitHero.vue';
 import ServicesSection from '@/components/ServicesSection.vue';
 import StatisticsSection from '@/components/StatisticsSection.vue';
 import SociosEstrategicos from '@/components/SociosEstrategicos.vue';
@@ -13,6 +14,11 @@ import * as content from '@/content/nosotrosView';
 
 <template>
   <main>
+    <split-hero
+      :img-url="content.heroData.imgUrl"
+      :heading="content.heroData.heading"
+      :subHeading="content.heroData.subHeading"
+    />
     <services-section>
       <template #heading>
         <copy-block

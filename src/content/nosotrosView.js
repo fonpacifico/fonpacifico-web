@@ -229,3 +229,10 @@ export const sociosEstrategicos = {
 		},
 	],
 };
+
+export const heroData = {
+	heading: "Somos el aliado estratégico para el éxito de sus proyectos",
+	subHeading:
+		"Nuestras soluciones integrales para proyectos públicos permiten a nuestros clientes centrarse en el crecimiento y la innovación, optimizando recursos y maximizando resultados.",
+	imgUrl: "/nosotros-hero.jpg",
+};

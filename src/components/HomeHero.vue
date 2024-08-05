@@ -14,7 +14,7 @@
           class="home-hero__video"
           allow="autoplay"
           frameBorder="0"
-          src="https://www.youtube.com/embed/EColTNIbOko?autoplay=1&mute=1&controls=0&loop=1&playsinline=1"
+          src="https://www.youtube.com/embed/6FrpMyPD900?autoplay=1&mute=1&controls=0&loop=1&playsinline=1"
         >
         </iframe>
       </div>

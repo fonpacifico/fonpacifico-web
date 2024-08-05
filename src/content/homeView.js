@@ -1,3 +1,10 @@
+export const homeHero = {
+	heading: "Un aliado estratégico para proyectos de interés público",
+	subheading:
+		"Contamos con una amplia experiencia y un profundo conocimiento del sector público, que nos permite ofrecer soluciones integrales que garantizan el éxito de sus proyectos.",
+	alignment: "centered",
+};
+
 export const servicesEyebrow = {
 	text: "Servicios",
 	color: "blue",
@@ -5,10 +12,10 @@ export const servicesEyebrow = {
 };
 
 export const servicesHeading =
-	"Somos un agente dinamizador en la implementación de las políticas públicas";
+	"Somos un  agente dinamizador en la implementación  de las políticas públicas gestión, fomento e intervención.";
 
 export const servicesSubheading =
-	"Mediante la  gestión, gerencia y control de proyectos, coadyudamos en el desarrollo nacional integral e inclusivo de nuestros país.";
+	"Mediante la  gestión, gerencia y control de proyectos, coadyudamos en el desarrollo nacional integral e inclusivo de nuestro país.";
 
 export const servicesCtas = [
 	{
@@ -25,78 +32,51 @@ export const servicesCtas = [
 
 export const servicesList = [
 	{
-		icon: "icon name",
-		heading: "Gestión de proyectos y programas de interés público",
-		description:
-			"Ponemos al servicio de los entes territoriales nuestra  experiencia, y el concurso de profesionales especializados en procesos de contratación y administración de recursos, así como la experticia en el manejo técnico económico y legal de acuerdo con los requisitos establecidos por la Ley.",
-	},
-	{
-		icon: "icon name",
-		heading: "Supervisión e interventoría",
-		description:
-			"Realizamos supervisión de los proyectos en todo su desarrollo, desde la formulación, la etapa precontractual, la contractual, y posteriormente durante el proceso de ejecución, así como acompañamiento a la relación contratista-interventoría, hasta el cierre del proceso.",
-	},
-	{
-		icon: "icon name",
+		icon: "/icons/carnet.svg",
 		heading: "Apoyo a la gestión pública",
 		description:
-			"En FONPACÍFICO tenemos una amplia oferta de servicios para apoyar la gestión de las entidades públicas en el territorio nacional. Apoyamos la implementación de políticas públicas, procesos administrativos, financieros, de planeación, entre otras áreas.",
+			"Nos especializamos en dinamizar los recursos para la gestión de los  planes,  programas y proyectos orientados a la implementación efectiva de políticas públicas y el desarrollo territorial, asegurando una ejecución eficiente y colaborativa que impulse un impacto positivo y sostenible en la sociedad.",
+	},
+	{
+		icon: "/icons/suitcase.svg",
+		heading: "Gestión y gerenciamiento  de proyectos",
+		description:
+			"A través de la gestión de planes, programas y proyectos fomentamos alianzas estratégicas que  contribuyen a la paz, al fortalecimiento de las entidades públicas y al desarrollo regional inclusivo. Tenemos una amplia oferta de servicios para apoyar a las entidades públicas en el gerenciamiento eficiente de los recursos del estado.",
+	},
+	{
+		icon: "/icons/world.svg",
+		heading: "Cooperación internacional",
+		description:
+			"Facilitamos la gestión y gerenciamiento de recursos de cooperación internacional que apoyan el despliegue de las políticas públicas, la intervención y el desarrollo social sostenible (ODS), así como iniciativas de organizaciones donantes.",
 	},
 ];
 
 export const carouselItems = [
 	{
-		logo: "/logoipsum.svg",
-		text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.",
+		logo: "/logos_testimonios/logo_roy.png",
+		text: '"La experiencia fue inmejorable. El equipo de la interventoría demostró un alto nivel de profesionalismo y compromiso. Me sentí muy cómodo y confiado durante todo el proceso. Sin duda, recomendaría sus servicios."',
 		user: {
 			avatar: "https://picsum.photos/id/501/40/40",
-			name: "John Doe",
-			position: "CEO",
+			name: "Roy Alejandro Rodríguez",
+			position: "Ingeniero civil",
 		},
 	},
 	{
-		logo: "/logoipsum.svg",
-		text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.",
+		logo: "/logos_testimonios/logo_ec.png",
+		text: '"Desde que iniciamos el proyecto con FONPACIFICO en septiembre de 2023, hemos experimentado una colaboración muy positiva. El trabajo en equipo ha sido clave para cumplir con las metas establecidas en tiempo y forma."',
 		user: {
 			avatar: "https://picsum.photos/id/501/40/40",
-			name: "John Doe",
-			position: "CEO",
+			name: "Freddy Delgado Ortiz",
+			position: "CER.L. ECOWASICHII SAS",
 		},
 	},
 	{
-		logo: "/logoipsum.svg",
-		text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.",
+		logo: "/logos_testimonios/logo_mile.png",
+		text: '"La transparencia en la comunicación y la alta competencia del equipo técnico, jurídico y financiero me han brindado total confianza. Recomiendo a FONPACIFICO por su profesionalismo y su capacidad para desarrollar proyectos exitosos."',
 		user: {
 			avatar: "https://picsum.photos/id/501/40/40",
-			name: "John Doe",
-			position: "CEO",
-		},
-	},
-	{
-		logo: "/logoipsum.svg",
-		text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.",
-		user: {
-			avatar: "https://picsum.photos/id/501/40/40",
-			name: "John Doe",
-			position: "CEO",
-		},
-	},
-	{
-		logo: "/logoipsum.svg",
-		text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.",
-		user: {
-			avatar: "https://picsum.photos/id/501/40/40",
-			name: "John Doe",
-			position: "CEO",
-		},
-	},
-	{
-		logo: "/logoipsum.svg",
-		text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.",
-		user: {
-			avatar: "https://picsum.photos/id/501/40/40",
-			name: "John Doe",
-			position: "CEO",
+			name: "Luz Milena Hoyos Palacios",
+			position: "Ingeniera civil",
 		},
 	},
 ];
@@ -104,105 +84,193 @@ export const carouselItems = [
 export const projectCards = [
 	{
 		id: 1,
-		name: "Proyecto 1",
+		name: "Transformando movilidad e impulsando desarrollo",
 		description:
-			"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius",
-		link: "https://www.google.com",
-		image: "/project-card-1.png",
+			"Estamos orgullosos de liderar el proyecto de pavimentación de vías urbanas en Guacarí, un esfuerzo que no solo mejorará la movilidad de peatones y vehículos, sino que también transformará la urbanística del municipio. Con una capa de rodadura de material de afirmado y estampado, estamos creando calles más seguras y accesibles que favorecerá el comercio local y potenciarán el turismo. Este proyecto es una apuesta por el desarrollo económico de Guacarí, fomentando la integración de las familias y revitalizando la economía del municipio. ¡Juntos, estamos construyendo un futuro más próspero y conectado.",
+		image:
+			"/imagenes_proyectos/1_Guacari/Fonpacifico-Proyectos-1-Guacari-01.jpg",
 		style: "large",
 		images: [
 			{
-				image: "/test.jpg",
+				image:
+					"/imagenes_proyectos/1_Guacari/Fonpacifico-Proyectos-1-Guacari-01.jpg",
 			},
 			{
-				image: "/test.jpg",
+				image:
+					"/imagenes_proyectos/1_Guacari/Fonpacifico-Proyectos-1-Guacari-02.jpg",
 			},
 			{
-				image: "/test.jpg",
+				image:
+					"/imagenes_proyectos/1_Guacari/Fonpacifico-Proyectos-1-Guacari-03.jpg",
+			},
+			{
+				image:
+					"/imagenes_proyectos/1_Guacari/Fonpacifico-Proyectos-1-Guacari-04.jpg",
+			},
+			{
+				image:
+					"/imagenes_proyectos/1_Guacari/Fonpacifico-Proyectos-1-Guacari-05.jpg",
+			},
+			{
+				image:
+					"/imagenes_proyectos/1_Guacari/Fonpacifico-Proyectos-1-Guacari-06.jpg",
+			},
+			{
+				image:
+					"/imagenes_proyectos/1_Guacari/Fonpacifico-Proyectos-1-Guacari-07.jpg",
+			},
+			{
+				image:
+					"/imagenes_proyectos/1_Guacari/Fonpacifico-Proyectos-1-Guacari-08.jpg",
 			},
 		],
-		modalDescription: "lorem description",
 		modalData: {
-			convenio: "convenio",
-			fecha: "2XXX",
-			proposito: "proposito del proyecto",
+			convenio: "BPIN 2023763180030",
+			fecha: "2023",
+			proposito:
+				"Cumplir con los objetivos de la Alianza Paz Pacífico con el Municipio de Guacarí",
 		},
 	},
 	{
 		id: 2,
-		name: "Proyecto 2",
+		name: " ¡Zarzal brilla con nueva luz y creatividad!",
 		description:
-			"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius ",
-		link: "https://www.google.com",
-		image: "/project-card-1.png",
+			"A través de este proyecto se han embellecido varios puntos estratégicos del municipio con obras de arte cuidadosamente seleccionadas y ubicadas, destacando y celebrando la rica identidad cultural de la región. Estas instalaciones no solo han embellecido el entorno urbfecha, sino que también han convertido estos espacios en atractivos turísticos y en centros de encuentro para la comunidad, fomentando un fuerte sentido de pertenencia y orgullo por el patrimonio artístico de Zarzal. ",
+		image: "/imagenes_proyectos/2_Zarzal/Fonpacifico-Proyectos-1-Zarzal-01.jpg",
 		style: "small",
 		images: [
 			{
-				image: "/test.jpg",
+				image:
+					"/imagenes_proyectos/2_Zarzal/Fonpacifico-Proyectos-1-Zarzal-01.jpg",
 			},
 			{
-				image: "/test.jpg",
+				image:
+					"/imagenes_proyectos/2_Zarzal/Fonpacifico-Proyectos-1-Zarzal-02.jpg",
 			},
 			{
-				image: "/test.jpg",
+				image:
+					"/imagenes_proyectos/2_Zarzal/Fonpacifico-Proyectos-1-Zarzal-03.jpg",
+			},
+			{
+				image:
+					"/imagenes_proyectos/2_Zarzal/Fonpacifico-Proyectos-1-Zarzal-04.jpg",
+			},
+			{
+				image:
+					"/imagenes_proyectos/2_Zarzal/Fonpacifico-Proyectos-1-Zarzal-05.jpg",
+			},
+			{
+				image:
+					"/imagenes_proyectos/2_Zarzal/Fonpacifico-Proyectos-1-Zarzal-06.jpg",
+			},
+			{
+				image:
+					"/imagenes_proyectos/2_Zarzal/Fonpacifico-Proyectos-1-Zarzal-07.jpg",
+			},
+			{
+				image:
+					"/imagenes_proyectos/2_Zarzal/Fonpacifico-Proyectos-1-Zarzal-08.jpg",
 			},
 		],
-		modalDescription: "lorem description",
 		modalData: {
-			convenio: "convenio",
-			ano: "2XXX",
+			convenio: "N. 130.21.03.410-2022",
+			fecha: "2023",
 			proposito: "proposito del proyecto",
 		},
 	},
 	{
 		id: 3,
-		name: "Proyecto 3",
+		name: "Fomentando la salud y el talento local",
 		description:
-			"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius",
-		link: "https://www.google.com",
-		image: "/project-card-1.png",
+			" La creación de una cancha de fútbol con césped sintético en Alban corregimiento de El Cairo marca un paso importante hacia un futuro más saludable y activo para nuestra comunidad. Este proyecto busca incrementar significativamente la participación en actividades deportivas,  también funcionará como centro comunitario donde las familias podrán disfrutar del deporte y fortalecer los lazos sociales.  ¡Un paso más hacia una comunidad más unida y saludable!",
+		image:
+			"/imagenes_proyectos/3_El_Cairo/Fonpacifico-Proyectos-1-Cairo-01.jpg",
 		style: "small",
 		images: [
 			{
-				image: "/test.jpg",
+				image:
+					"/imagenes_proyectos/3_El_Cairo/Fonpacifico-Proyectos-1-Cairo-01.jpg",
 			},
 			{
-				image: "/test.jpg",
+				image:
+					"/imagenes_proyectos/3_El_Cairo/Fonpacifico-Proyectos-1-Cairo-02.jpg",
 			},
 			{
-				image: "/test.jpg",
+				image:
+					"/imagenes_proyectos/3_El_Cairo/Fonpacifico-Proyectos-1-Cairo-03.jpg",
+			},
+			{
+				image:
+					"/imagenes_proyectos/3_El_Cairo/Fonpacifico-Proyectos-1-Cairo-04.jpg",
+			},
+			{
+				image:
+					"/imagenes_proyectos/3_El_Cairo/Fonpacifico-Proyectos-1-Cairo-05.jpg",
+			},
+			{
+				image:
+					"/imagenes_proyectos/3_El_Cairo/Fonpacifico-Proyectos-1-Cairo-06.jpg",
+			},
+			{
+				image:
+					"/imagenes_proyectos/3_El_Cairo/Fonpacifico-Proyectos-1-Cairo-07.jpg",
+			},
+			{
+				image:
+					"/imagenes_proyectos/3_El_Cairo/Fonpacifico-Proyectos-1-Cairo-08.jpg",
 			},
 		],
-		modalDescription: "lorem description",
 		modalData: {
-			convenio: "convenio",
-			ano: "2XXX",
+			convenio: " BPIN 2023762460009",
+			fecha: "2023",
 			proposito: "proposito del proyecto",
 		},
 	},
 	{
 		id: 4,
-		name: "Proyecto 4",
+		name: "Un nuevo horizonte para la Unión",
 		description:
-			"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius",
-		link: "https://www.google.com",
-		image: "/project-card-1.png",
+			"Este proyecto apunta a transformar  la ciudad en un referente turístico, cultural y recreativo. El mirador ofrece  vistas panorámicas de todo el territorio, convirtiéndolo en un atractivo para residentes y visitantes por igual. La mejora del monumento emblemático del sitio refuerza la identidad cultural de la comunidad, creando un punto de referencia significativo. Este proyecto no solo embellece y revitaliza el entorno urbano, sino que también promueve un sentido de orgullo y pertenencia entre los habitantes. Con estas mejoras, La Unión  se consolida como destino clave para el turismo y la recreación.",
+		image:
+			"/imagenes_proyectos/4_La_Union/Fonpacifico-Proyectos-1-Union-01.jpg",
 		style: "large",
 		images: [
 			{
-				image: "/project-card-1.png",
+				image:
+					"/imagenes_proyectos/4_La_Union/Fonpacifico-Proyectos-1-Union-01.jpg",
 			},
 			{
-				image: "/project-card-1.png",
+				image:
+					"/imagenes_proyectos/4_La_Union/Fonpacifico-Proyectos-1-Union-02.jpg",
 			},
 			{
-				image: "/project-card-1.png",
+				image:
+					"/imagenes_proyectos/4_La_Union/Fonpacifico-Proyectos-1-Union-03.jpg",
+			},
+			{
+				image:
+					"/imagenes_proyectos/4_La_Union/Fonpacifico-Proyectos-1-Union-04.jpg",
+			},
+			{
+				image:
+					"/imagenes_proyectos/4_La_Union/Fonpacifico-Proyectos-1-Union-05.jpg",
+			},
+			{
+				image:
+					"/imagenes_proyectos/4_La_Union/Fonpacifico-Proyectos-1-Union-06.jpg",
+			},
+			{
+				image:
+					"/imagenes_proyectos/4_La_Union/Fonpacifico-Proyectos-1-Union-07.jpg",
+			},
+			{
+				image:
+					"/imagenes_proyectos/4_La_Union/Fonpacifico-Proyectos-1-Union-08.jpg",
 			},
 		],
-		modalDescription: "lorem description",
 		modalData: {
-			convenio: "convenio",
-			ano: "2XXX",
+			convenio: "BPIN 2022764000012",
+			fecha: "2023",
 			proposito: "proposito del proyecto",
 		},
 	},
@@ -316,22 +384,31 @@ export const programasInteres = [
 		title: "Alianza Paz Pacífico",
 		description:
 			"Programa de interés público para el fomento de cierre de brechas socioeconómicas y el fortalecimiento de capacidades que beneficien a los Municipios y Departamentos del país, contribuyendo a superar inequidades, y los factores sociales que incentivan la violencia y perpetúan la pobreza, facilitando la unión de esfuerzos del sector privado y público de las regiones.",
-		link: "https://www.google.com",
 		image: "/programas_interes/alianza_paz.png",
 	},
 	{
 		title: "Tejiendo Vínculos",
 		description:
 			"Programa para la promoción de la inteligencia emocional, Pautas de Crianza y Habilidades Para la Vida a través de procesos pedagógicos, campañas de comunicación y movilización social contribuyendo a la construcción de imaginarios colectivos de una sociedad incluzyente, próspera, en paz y mentalmente sana.",
-		link: "https://www.google.com",
 		image: "/programas_interes/tejiendo_vinculos.png",
 	},
 	{
 		title: "RedesLab",
 		description:
 			"Redes lab es el laboratorio de paz, emprendimiento e innovación, se compromete a movilizar recursos y conexiones para promover oportunidades y capacidades de respuesta social, e instrumentalizar activos sociales generando soluciones reales que impacten problemáticas institucionales, económicas y sociales de los territorios afectados por la pobreza y la violencia en Colombia.",
-		link: "https://www.google.com",
 		image: "/programas_interes/redes_lab.png",
+	},
+	{
+		title: "Afro Colombian Channel",
+		description:
+			"Es una plataforma innovadora diseñada para amplificar y potenciar la riqueza étnica y cultural de las comunidades afrocolombianas. Nuestro objetivo es  fortalecer su identidad y contribuir de manera significativa al desarrollo sostenible de etnico. ",
+		image: "/programas_interes/afro_colombia.png",
+	},
+	{
+		title: "Cursos Fonpacífico",
+		description:
+			"Creemos firmemente en el poder transformador de la educación para cambiar vidas y revitalizar comunidades enteras. Nuestra misión es construir puentes hacia un futuro mejor, donde la inclusión, la diversidad y la igualdad de oportunidades no sean solo aspiraciones, sino una realidad tangible para todos.",
+		image: "/programas_interes/cursos_fonpacifico.png",
 	},
 ];
 
@@ -375,11 +452,4 @@ export const newsLetterData = {
 			href: "#",
 		},
 	],
-};
-
-export const homeHero = {
-	heading: "Un aliado estratégico para proyectos de interés público",
-	subheading:
-		"Contamos con una amplia experiencia y un profundo conocimiento del sector público, que nos permite ofrecer soluciones integrales que garantizan el éxito de sus proyectos.",
-	alignment: "centered",
 };
