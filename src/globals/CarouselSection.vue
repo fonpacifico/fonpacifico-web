@@ -249,7 +249,7 @@ onUnmounted(() => {
   }
 
   &-controls {
-    display: flex;
+    display: none;
     flex-flow: row nowrap;
     place-content: space-between;
     place-items: center;

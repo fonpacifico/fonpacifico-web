@@ -51,6 +51,7 @@ h3 {
 
 p {
     line-height: 24px;
+    color: rgba($color: black, $alpha: .7);
 }
 
 /* Links decoration */
@@ -140,6 +141,7 @@ main {
 }
 
 .eyebrow {
+    font-family: 'Plus Jakarta Sans';
     font-weight: 700;
     font-size: 1.125rem;
     line-height: 27px;

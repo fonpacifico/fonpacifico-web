@@ -100,6 +100,7 @@ const classes = computed(() => [
     font-size: 18px;
     font-weight: 400;
     grid-column: 1 / -1;
+    color: inherit;
   }
 
   @include breakpoint-min('sm') {

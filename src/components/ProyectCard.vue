@@ -17,7 +17,7 @@ const classes = computed(() => ({
 
 const croppedText = computed(() => {
   const text = props.project.description;
-  const maxLength = 80;
+  const maxLength = 60;
 
   if (text.length > maxLength) {
     return `${text.substring(0, maxLength)}...`;
@@ -38,7 +38,7 @@ const croppedText = computed(() => {
       </div>
       <div class="card__text">
         <h3>{{ project.name }}</h3>
-        <p>{{ croppedText }}</p>
+        <p>{{ project.description }}</p>
         <button @click="emit('cardClick')">
           Ver mas
           <span class="material-symbols-outlined">arrow_forward</span>
@@ -97,7 +97,11 @@ const croppedText = computed(() => {
     }
 
     p {
-      margin-bottom: 2rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      // block-overflow: ellipsis;
+      overflow: hidden;
     }
 
     button {
@@ -106,18 +110,25 @@ const croppedText = computed(() => {
       display: flex;
       place-items: center;
       place-content: flex-start;
-      gap: 1rem;
+      gap: 0.5rem;
       font-weight: 700;
       font-size: 1.2rem;
       color: get-color('primary');
       text-decoration: none;
-      padding: 0.5rem 1rem;
+      padding: 0.5rem 1rem 0.5rem 0;
       border-radius: 1rem;
       transition: background-color 0.2s ease-in-out;
+      margin-top: 2rem;
+
+      span {
+        transition: transform 0.15s ease-in-out;
+      }
 
       &:hover,
       &:focus {
-        background-color: get-color('accent');
+        span {
+          transform: translateX(0.25rem);
+        }
       }
     }
   }

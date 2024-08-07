@@ -137,12 +137,13 @@ const handleCloseModal = () => {
   max-width: calc(100% - 6rem);
   max-height: calc(100% - 6rem);
   border-radius: 1.5rem;
-  padding: 3rem 1.5rem 3rem 3rem;
+  padding: 0.5rem;
   overflow: hidden;
 
   @include breakpoint-min('lg') {
     max-width: 1280px;
     margin: 3rem auto;
+    padding: 3rem 1.5rem 3rem 3rem;
   }
 
   &::backdrop {
@@ -158,7 +159,7 @@ const handleCloseModal = () => {
   &__wrapper {
     display: flex;
     flex-flow: column nowrap;
-    gap: 1.5rem;
+    gap: 3rem;
   }
 
   &__carousel {
@@ -192,9 +193,9 @@ const handleCloseModal = () => {
 
   &__content {
     display: grid;
-    padding-block-end: 1.5rem;
-    column-gap: 6rem;
+    padding-block-end: 3rem;
     row-gap: 1rem;
+    column-gap: 2rem;
     grid-template-areas:
       'descripcion'
       'data1'
@@ -213,11 +214,13 @@ const handleCloseModal = () => {
       grid-area: descripcion;
       display: grid;
       row-gap: 1rem;
+      max-width: 640px;
     }
 
     aside {
       display: grid;
       row-gap: 1rem;
+      padding-bottom: 1rem;
 
       h4 {
         font-size: 20px;

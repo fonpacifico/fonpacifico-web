@@ -104,7 +104,7 @@ onMounted(() => {});
   }
 
   &__item {
-    width: calc(100svw - 12rem);
+    width: calc(100svw - 8rem);
     aspect-ratio: 2.3;
 
     img {

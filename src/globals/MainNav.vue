@@ -252,7 +252,7 @@ header {
   display: flex;
   place-items: center;
   height: 64px;
-
+  box-shadow: 0px 2px 16px 0px #0000001a;
   > .fp-container {
     display: flex;
     width: 100%;
@@ -262,7 +262,7 @@ header {
 
 .nav {
   position: fixed;
-  top: 64px;
+  top: 63px;
   width: 100%;
   right: 100%;
   bottom: 0;
@@ -354,14 +354,15 @@ header {
     display: none;
     background: white;
     border-top: 1px solid white;
+    z-index: 10;
 
     @include breakpoint-min('md2') {
       position: absolute;
-      top: 100%;
       left: 0;
       right: 0;
       width: 100vw;
       padding: 2rem 0;
+      box-shadow: 0px 2px 16px 0px #0000001a;
     }
 
     > ul {
