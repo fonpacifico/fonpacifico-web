@@ -32,7 +32,7 @@
 .newsletter-section {
   position: relative;
   color: get-color('white');
-  background-image: url('/newsletter-background.png');
+  background-image: url('/newsletter-background.jpeg');
   background-size: cover;
   background-position: center;
 
@@ -50,6 +50,11 @@
       display: flex;
       flex-flow: column nowrap;
       gap: 1rem;
+      color: white;
+
+      p {
+        color: inherit;
+      }
     }
 
     &-ctas {

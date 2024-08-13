@@ -221,8 +221,11 @@ const closeMenu = (e) => {
   display: none;
 
   @include breakpoint-min('md2') {
+    display: block;
     font-size: 14px;
     font-weight: 400;
+    color: rgba($color: #000000, $alpha: 0.7);
+    text-decoration: none;
   }
 }
 
@@ -379,6 +382,7 @@ header {
 
         @include breakpoint-min('md2') {
           padding: 1rem 2rem;
+          min-width: 312px;
         }
 
         > a {
