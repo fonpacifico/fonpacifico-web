@@ -3,6 +3,7 @@ import { ref, onMounted, onUnmounted } from 'vue';
 
 const showMenu = ref(false);
 const isDesktop = ref(false);
+const overlay = ref(null);
 
 const menuClasses = ref({
   nav: true,
@@ -23,6 +24,32 @@ const closeMenu = (e) => {
   e.target.blur();
   showMenu.value = false;
 };
+
+onMounted(() => {
+  // biome-ignore lint/complexity/noForEach: <explanation>
+  document
+    .querySelectorAll('.nav__list-item > button, .subnav-link')
+    .forEach((button) => {
+      button.addEventListener('focus', () => {
+        overlay.value.style.display = 'block';
+      });
+
+      button.addEventListener('blur', () => {
+        overlay.value.style.display = 'none';
+      });
+    });
+});
+
+onUnmounted(() => {
+  // biome-ignore lint/complexity/noForEach: <explanation>
+  document
+    .querySelectorAll('.nav__list-item > button, .subnav-link')
+    .forEach((button) => {
+      button.removeEventListener('focus', () => {
+        overlay.value.style.display = 'block';
+      });
+    });
+});
 </script>
 
 <template>
@@ -51,8 +78,8 @@ const closeMenu = (e) => {
               <ul class="fp-container">
                 <li>
                   <router-link
+                    class="subnav-link"
                     :to="{ name: 'nosotros' }"
-                    :tabindex="showMenu ? 0 : -1"
                     @click="(e) => closeMenu(e)"
                     >Acerca de Fonpacífico <br />
                     <span class="subtitle">Conoce más sobre nosotros</span>
@@ -60,8 +87,8 @@ const closeMenu = (e) => {
                 </li>
                 <li>
                   <router-link
+                    class="subnav-link"
                     :to="{ name: 'servicios' }"
-                    :tabindex="showMenu ? 0 : -1"
                     @click="(e) => closeMenu(e)"
                     >Servicios <br />
                     <span class="subtitle"
@@ -71,8 +98,8 @@ const closeMenu = (e) => {
                 </li>
                 <li>
                   <router-link
+                    class="subnav-link"
                     :to="{ name: 'programasYCursos' }"
-                    :tabindex="showMenu ? 0 : -1"
                     @click="(e) => closeMenu(e)"
                     >Programas y cursos <br />
                     <span class="subtitle">Desarrollados por nosotros</span>
@@ -90,8 +117,8 @@ const closeMenu = (e) => {
               <ul class="fp-container">
                 <li>
                   <router-link
+                    class="subnav-link"
                     :to="{ name: 'convocatorias' }"
-                    :tabindex="showMenu ? 0 : -1"
                     @click="(e) => closeMenu(e)"
                     >Convocatorias <br />
                     <span class="subtitle"
@@ -102,8 +129,8 @@ const closeMenu = (e) => {
                 <li>
                   <!-- link a drive -->
                   <router-link
+                    class="subnav-link"
                     :to="{ name: 'home' }"
-                    :tabindex="showMenu ? 0 : -1"
                     @click="(e) => closeMenu(e)"
                     >Manual de contratación (PDF) <br />
                     <span class="subtitle">Descarga nuestro manual en PDF</span>
@@ -112,8 +139,8 @@ const closeMenu = (e) => {
                 <li>
                   <!-- link a drive -->
                   <router-link
+                    class="subnav-link"
                     :to="{ name: 'home' }"
-                    :tabindex="showMenu ? 0 : -1"
                     @click="(e) => closeMenu(e)"
                     >Documentos precontractuales<br />
                     <span class="subtitle">
@@ -133,8 +160,8 @@ const closeMenu = (e) => {
               <ul class="fp-container">
                 <li>
                   <router-link
+                    class="subnav-link"
                     :to="{ name: 'inscripcion' }"
-                    :tabindex="showMenu ? 0 : -1"
                     @click="(e) => closeMenu(e)"
                     >Inscripción de asociado técnico <br />
                     <span class="subtitle"
@@ -154,8 +181,8 @@ const closeMenu = (e) => {
               <ul class="fp-container">
                 <li>
                   <router-link
+                    class="subnav-link"
                     :to="{ name: 'transparencia' }"
-                    :tabindex="showMenu ? 0 : -1"
                     @click="(e) => closeMenu(e)"
                     >Información pública <br />
                     <span class="subtitle">Datos de interés público</span>
@@ -163,8 +190,8 @@ const closeMenu = (e) => {
                 </li>
                 <li>
                   <router-link
+                    class="subnav-link"
                     :to="{ name: 'pqrsd' }"
-                    :tabindex="showMenu ? 0 : -1"
                     @click="(e) => closeMenu(e)"
                     >PQRSD <br />
                     <span class="subtitle"
@@ -174,8 +201,8 @@ const closeMenu = (e) => {
                 </li>
                 <li>
                   <router-link
+                    class="subnav-link"
                     :to="{ name: 'politicas' }"
-                    :tabindex="showMenu ? 0 : -1"
                     @click="(e) => closeMenu(e)"
                     >Políticas <br />
                     <span class="subtitle"
@@ -204,10 +231,25 @@ const closeMenu = (e) => {
       </button>
     </div>
   </header>
+  <div
+    ref="overlay"
+    class="overlay"
+  ></div>
 </template>
 
 <style lang="scss" scoped>
 @use '../sass/abstracts' as *;
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($color: #000000, $alpha: 0.35);
+  z-index: 1;
+}
 
 .logo {
   margin-right: 16px;
@@ -255,6 +297,7 @@ header {
   display: flex;
   place-items: center;
   height: 64px;
+  border-bottom: 2px solid rgba($color: #000000, $alpha: 0.1);
   box-shadow: 0px 2px 16px 0px #0000001a;
   > .fp-container {
     display: flex;
@@ -319,6 +362,10 @@ header {
         display: block;
       }
 
+      .overlay {
+        display: block;
+      }
+
       > button > span {
         transform: rotate(180deg);
       }
@@ -356,16 +403,15 @@ header {
   &__submenu {
     display: none;
     background: white;
-    border-top: 1px solid white;
     z-index: 10;
 
     @include breakpoint-min('md2') {
       position: absolute;
       left: 0;
       right: 0;
+      top: calc(100% + 2px);
       width: 100vw;
       padding: 2rem 0;
-      box-shadow: 0px 2px 16px 0px #0000001a;
     }
 
     > ul {

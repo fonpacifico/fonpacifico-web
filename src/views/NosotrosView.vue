@@ -7,8 +7,9 @@ import ServicesSection from '@/components/ServicesSection.vue';
 import StatisticsSection from '@/components/StatisticsSection.vue';
 import SociosEstrategicos from '@/components/SociosEstrategicos.vue';
 import NewsLetter from '@/components/NewsLetter.vue';
-
+import SplitContent from '@/globals/SplitContent.vue';
 import { carouselItems } from '@/content/nosotrosView';
+
 import * as content from '@/content/nosotrosView';
 </script>
 
@@ -19,6 +20,21 @@ import * as content from '@/content/nosotrosView';
       :heading="content.heroData.heading"
       :subHeading="content.heroData.subHeading"
     />
+    <split-content>
+      <template #left>
+        <img
+          :src="content.splitContentOne.imgUrl"
+          alt=""
+        />
+      </template>
+      <template #right>
+        <copy-block
+          :eyebrow="content.splitContentOne.eyebrow"
+          :heading="content.splitContentOne.heading"
+          :subHeading="content.splitContentOne.body"
+        />
+      </template>
+    </split-content>
     <services-section>
       <template #heading>
         <copy-block

@@ -1,3 +1,23 @@
+export const heroData = {
+	heading: "Somos el aliado estratégico para el éxito de sus proyectos",
+	subHeading:
+		"Nuestras soluciones integrales para proyectos públicos permiten a nuestros clientes centrarse en el crecimiento y la innovación, optimizando recursos y maximizando resultados.",
+	imgUrl: "/nosotros-hero.jpg",
+};
+
+export const splitContentOne = {
+	imgUrl: "/nosotros-split.png",
+	eyebrow: {
+		color: "blue",
+		text: "historia",
+	},
+	heading: "Fonpacífico",
+	body: [
+		"El Fondo Mixto de Etnocultura y Desarrollo Social “FONPACÍFICO”, es una entidad descentralizada de segundo orden creada por ordenanza departamental, y por la afiliación mediante acuerdo de concejos y convenios con múltiples municipios del país.",
+		"Dedicada a la gestión, supervisión y control de proyectos que han beneficiado a más de 42 entidades territoriales de Colombia. Promovemos el desarrollo social desde una perspectiva que reconoce y valora la diversidad étnica del territorio.",
+	],
+};
+
 export const servicesEyebrow = {
 	text: "Servicios",
 	color: "blue",
@@ -61,7 +81,7 @@ export const statisticsItems = [
 		text: "Departamentos en los que tenemos presencia",
 	},
 	{
-		heading: "110",
+		heading: "+130",
 		text: "Poyectos como ejecutores de Regalías",
 	},
 	{
@@ -228,11 +248,4 @@ export const sociosEstrategicos = {
 			text: "Por definir",
 		},
 	],
-};
-
-export const heroData = {
-	heading: "Somos el aliado estratégico para el éxito de sus proyectos",
-	subHeading:
-		"Nuestras soluciones integrales para proyectos públicos permiten a nuestros clientes centrarse en el crecimiento y la innovación, optimizando recursos y maximizando resultados.",
-	imgUrl: "/nosotros-hero.jpg",
 };

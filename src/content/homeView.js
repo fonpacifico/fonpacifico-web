@@ -429,7 +429,7 @@ export const statisticsItems = [
 		text: "Departamentos en los que tenemos presencia",
 	},
 	{
-		heading: "110",
+		heading: "+130",
 		text: "Poyectos como ejecutores de Regalías",
 	},
 	{

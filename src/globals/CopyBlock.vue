@@ -50,11 +50,20 @@ const classes = computed(() => [
     </span>
     <h2 class="copy-block__heading">{{ heading }}</h2>
     <p
-      v-if="subHeading"
+      v-if="subHeading && typeof subHeading === 'string'"
       class="copy-block__subheading"
     >
       {{ subHeading }}
     </p>
+    <div v-else-if="subHeading && typeof subHeading !== 'string'">
+      <p
+        v-for="line in subHeading"
+        class="copy-block__subheading"
+        :key="line"
+      >
+        {{ line }}
+      </p>
+    </div>
     <div
       v-if="ctas.length !== 0"
       class="copy-block__ctas"
@@ -101,6 +110,11 @@ const classes = computed(() => [
     font-weight: 400;
     grid-column: 1 / -1;
     color: inherit;
+    opacity: 0.7;
+
+    & + p {
+      margin-top: 1rem;
+    }
   }
 
   @include breakpoint-min('sm') {
