@@ -134,11 +134,6 @@ onUnmounted(() => {
             {{ item.text }}
           </p>
           <div class="carousel__item-user">
-            <img
-              class="carousel__item-user-avatar"
-              src="https://picsum.photos/id/501/60/60"
-              alt=""
-            />
             <div class="carousel__item-user-data">
               <p class="carousel__item-user-name">{{ item.user.name }}</p>
               <p class="carousel__item-user-job">{{ item.user.position }}</p>

@@ -112,7 +112,7 @@ const croppedText = computed(() => {
       place-content: flex-start;
       gap: 0.5rem;
       font-weight: 700;
-      font-size: 1.2rem;
+      font-size: 1rem;
       color: get-color('primary');
       text-decoration: none;
       padding: 0.5rem 1rem 0.5rem 0;

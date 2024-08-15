@@ -171,6 +171,7 @@ footer {
         p {
           font-size: 14px;
           font-weight: 400;
+          color: white;
         }
 
         a {
@@ -213,6 +214,10 @@ footer {
       flex-flow: row wrap;
       gap: 2rem;
       place-items: center;
+
+      p {
+        color: white;
+      }
 
       .pqrs-links {
         display: flex;

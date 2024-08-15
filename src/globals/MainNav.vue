@@ -353,10 +353,6 @@ header {
       place-content: center;
     }
 
-    &-item:focus {
-      color: get-color('primary');
-    }
-
     &-item:focus-within {
       .nav__submenu {
         display: block;
@@ -384,6 +380,11 @@ header {
       font-weight: 700;
       font-size: 20px;
       color: get-color('primary');
+
+      &:focus,
+      &:active {
+        color: get-color('primary');
+      }
 
       span {
         transition: transform 0.3s ease-in-out;
