@@ -40,7 +40,7 @@ const croppedText = computed(() => {
         <h3>{{ project.name }}</h3>
         <p>{{ project.description }}</p>
         <button @click="emit('cardClick')">
-          Ver mas
+          Ver más
           <span class="material-symbols-outlined">arrow_forward</span>
         </button>
       </div>
@@ -82,6 +82,12 @@ const croppedText = computed(() => {
     .card__text {
       padding: 1.5rem 1rem;
       flex: 1 0 50%;
+
+      @include breakpoint-min('lg') {
+        button {
+          margin-top: 1.5rem;
+        }
+      }
     }
 
     @include breakpoint-min('lg') {
