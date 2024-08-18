@@ -30,6 +30,30 @@ export const servicesHeading =
 export const servicesSubheading =
 	"Mediante la  gestión, gerencia y control de proyectos, coadyudamos en el desarrollo nacional integral e inclusivo de nuestros país.";
 
+export const splitListContent = {
+	listContent: [
+		{
+			title: "Misión",
+			description:
+				"Gerenciar proyectos y fomentar alianzas que contribuyan a la paz, al fortalecimiento de las políticas públicas y al desarrollo regional inclusivo.",
+		},
+		{
+			title: "Visión",
+			description:
+				"Ser reconocido como el mejor dinamizador en la gestión de las políticas públicas, los programas de paz y el desarrollo territorial inclusivo.",
+		},
+		{
+			title: "Desempeño",
+			description: "Visualiza nuestro desempeño actual en IGPR.",
+			link: "#",
+			linkText: "Ver desempeño",
+		},
+	],
+	img: {
+		src: "/imagen-mision-vision.jpeg",
+	},
+};
+
 export const servicesCtas = [
 	{
 		text: "Ver nuestros servicios",

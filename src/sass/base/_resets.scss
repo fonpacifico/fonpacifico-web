@@ -112,6 +112,12 @@ main {
         background-color: get-color('white');
         color: get-color(primary);
         border: 2px solid get-color(primary);
+
+        &-outlined {
+            background-color: transparent;
+            color: get-color(light-blue);
+            border: 2px solid get-color(light-blue);
+        }
     }
 
     &--white {

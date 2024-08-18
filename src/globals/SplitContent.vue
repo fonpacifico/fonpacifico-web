@@ -1,4 +1,7 @@
-<script setup></script>
+<script setup>
+import SplitListContent from '@/globals/SplitListContent.vue';
+import { splitListContent } from '@/content/nosotrosView';
+</script>
 <template>
   <div class="split-copy-background fp-padded">
     <div class="split-copy fp-container">
@@ -9,6 +12,10 @@
         <slot name="right" />
       </div>
     </div>
+    <split-list-content
+      :list-content="splitListContent.listContent"
+      :img="splitListContent.img.src"
+    />
   </div>
 </template>
 
@@ -17,6 +24,15 @@
 
 .split-copy-background {
   background-color: get-color('primary-dark');
+  display: flex;
+  flex-flow: column nowrap;
+  place-items: center;
+  place-content: center;
+  gap: 4rem;
+
+  @include breakpoint-min('md') {
+    gap: 8rem;
+  }
 }
 
 .split-copy {
@@ -36,6 +52,11 @@
       flex: 0 1 50%;
       object-fit: cover;
       height: 100%;
+      width: 100%;
+
+      @include breakpoint-min('md') {
+        width: 100%;
+      }
     }
   }
 

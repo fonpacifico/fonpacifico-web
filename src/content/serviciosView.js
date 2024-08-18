@@ -1,3 +1,10 @@
+export const heroData = {
+	heading: "Experiencia que marca la diferencia",
+	subHeading:
+		"Nuestras capacidades en gestión y tecnología nos permite entregar proyectos completados en las metas establecidas",
+	imgUrl: "/servicios-hero.jpg",
+};
+
 export const statisticsHeading = {
 	heading: "Superamos las expectativas como ejecutores de Regalías",
 	subheading:
@@ -62,6 +69,30 @@ export const carouselItems = [
 	},
 ];
 
+export const servicesCards = [
+	{
+		logo: "/icons/carnet.svg",
+		heading: "Apoyo a la gestión pública",
+		body: "Nos especializamos en dinamizar los recursos para la gestión de los  planes,  programas y proyectos orientados a la implementación efectiva de políticas públicas y el desarrollo territorial, asegurando una ejecución eficiente y colaborativa que impulse un impacto positivo y sostenible en la sociedad.",
+		image: "/servicios_imgs/image.jpg",
+	},
+	{
+		logo: "/icons/suitcase.svg",
+		heading: "Gestión y gerenciamiento  de proyectos",
+		body: [
+			"A través de la gestión de planes, programas y proyectos fomentamos alianzas estratégicas que  contribuyen a la paz, al fortalecimiento de las entidades públicas y al desarrollo regional inclusivo.",
+			"Tenemos una amplia oferta de servicios para apoyar a las entidades públicas en el gerenciamiento eficiente de los recursos del estado",
+		],
+		image: "/servicios_imgs/image-1.jpg",
+	},
+	{
+		logo: "/icons/world.svg",
+		heading: "Cooperación internacional",
+		body: "Facilitamos la gestión y gerenciamiento de recursos de cooperación internacional que apoyan el despliegue de las políticas públicas, la intervención y el desarrollo social sostenible (ODS), así como iniciativas de organizaciones donantes.",
+		image: "/servicios_imgs/image-2.jpg",
+	},
+];
+
 export const programasInteres = [
 	{
 		title: "Alianza Paz Pacífico",
@@ -85,10 +116,3 @@ export const programasInteres = [
 		image: "/programas_interes/redes_lab.png",
 	},
 ];
-
-export const heroData = {
-	heading: "Experiencia que marca la diferencia",
-	subHeading:
-		"Nuestras capacidades en gestión y tecnología nos permite entregar proyectos completados en las metas establecidas",
-	imgUrl: "/nosotros-hero.jpg",
-};

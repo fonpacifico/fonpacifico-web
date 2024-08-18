@@ -135,7 +135,9 @@ onUnmounted(() => {
           </p>
           <div class="carousel__item-user">
             <div class="carousel__item-user-data">
-              <p class="carousel__item-user-name">{{ item.user.name }}</p>
+              <p class="carousel__item-user-name">
+                <strong>{{ item.user.name }}</strong>
+              </p>
               <p class="carousel__item-user-job">{{ item.user.position }}</p>
             </div>
           </div>

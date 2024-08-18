@@ -1,11 +1,12 @@
 Prioridad de paginas:
-- Inicio - 90% (estructura)
-- Nosotros - 90% (estructura)
-- Servicios - 90% (estructura)
-- Contacto - pending 7/18 (estructura)
+- Inicio
+- Nosotros
+- Servicios - dark bg section
+- Contacto
 - Programas y cursos
 - Inscripción
 - PQRSD
 - Politicas
 - Convocatorias
+- Transparencia
 - Transparencia

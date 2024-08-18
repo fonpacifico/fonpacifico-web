@@ -3,6 +3,7 @@ import CarouselSection from '@/globals/CarouselSection.vue';
 import CopyBlock from '@/globals/CopyBlock.vue';
 
 import SplitHero from '@/components/SplitHero.vue';
+import SplitSection from '@/globals/SplitSection.vue';
 import ProgramasInteres from '@/components/ProgramasInteres.vue';
 import StatisticsSection from '@/components/StatisticsSection.vue';
 import NewsLetter from '@/components/NewsLetter.vue';
@@ -19,6 +20,29 @@ import * as content from '@/content/serviciosView';
       :heading="content.heroData.heading"
       :subHeading="content.heroData.subHeading"
     />
+    <split-section>
+      <template #heading>
+        <copy-block
+          light
+          alignment="centered"
+          :eyebrow="{
+            text: 'SERVICIOS',
+            color: 'blue',
+            position: 'center',
+          }"
+          heading="Lista de servicios"
+          sub-heading="Apoyamos con nuestras habilidades el desarrollo de un futuro próspero para Colombia."
+          :ctas="[
+            {
+              text: 'Brochure de servicios',
+              type: 'secondary-outlined',
+              icon: 'download',
+              url: '#',
+            },
+          ]"
+        />
+      </template>
+    </split-section>
     <carousel-section :items="carouselItems">
       <template #heading>
         <copy-block

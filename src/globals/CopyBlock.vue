@@ -26,6 +26,10 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  light: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const eyebrowClasses = computed(() => [
@@ -41,7 +45,10 @@ const classes = computed(() => [
 </script>
 
 <template>
-  <div :class="[{ [customClass]: customClass }, classes]">
+  <div
+    :class="[{ [customClass]: customClass }, classes]"
+    :style="{ color: light ? 'white' : 'currentColor' }"
+  >
     <span
       v-if="eyebrow"
       :class="eyebrowClasses"
@@ -68,10 +75,12 @@ const classes = computed(() => [
       v-if="ctas.length !== 0"
       class="copy-block__ctas"
     >
-      <button
+      <a
         class="button"
+        :href="cta.url"
         :class="{
           'button--secondary': cta.type === 'secondary',
+          'button--secondary-outlined': cta.type === 'secondary-outlined',
         }"
         v-for="cta in ctas"
         key="cta.text"
@@ -82,7 +91,7 @@ const classes = computed(() => [
           class="material-symbols-outlined"
           >{{ cta.icon }}</span
         >
-      </button>
+      </a>
     </div>
   </div>
 </template>
