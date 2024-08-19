@@ -46,14 +46,26 @@
 }
 
 .#{$prefix}padded {
-    padding-block: 8rem;
+    padding-block: 4rem;
+
+    @include breakpoint-min('md') {
+        padding-block: 8rem;
+    }
 }
 
 .#{$prefix}padded-bottom {
-    padding-block: 0 8rem;
+    padding-block: 0 4rem;
+
+    @include breakpoint-min('md') {
+        padding-block: 0 8rem;
+    }
 }
 .#{$prefix}padded-top {
     padding-block: 8rem 0;
+    
+    @include breakpoint-min('md') {
+        padding-block: 8rem 0;
+    }
 }
 .#{$prefix}padded-top--small {
     padding-block: 4rem 0;
