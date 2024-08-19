@@ -17,7 +17,7 @@ export const programs = [
 		ctas: [
 			{
 				text: "Ir al sitio web",
-				link: "#",
+				link: "https://tejiendovinculos.org/",
 			},
 			{
 				icon: "/icons/facebook.svg",
@@ -62,6 +62,12 @@ export const programs = [
 		title: "Cursos Fonpacífico",
 		body: [
 			"Creemos firmemente en el poder transformador de la educación para cambiar vidas y revitalizar comunidades enteras. Nuestra misión es construir puentes hacia un futuro mejor, donde la inclusión, la diversidad y la igualdad de oportunidades no sean solo aspiraciones, sino una realidad tangible para todos.",
+		],
+		ctas: [
+			{
+				text: "Ir al sitio web",
+				link: "https://www.fonpacificocursos.com/",
+			},
 		],
 	},
 ];

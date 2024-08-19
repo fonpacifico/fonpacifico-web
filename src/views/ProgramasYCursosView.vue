@@ -45,6 +45,7 @@ import { programs } from '@/content/programasYCursosView.js';
             class="program-button button button--secondary"
             v-for="link in program.ctas"
             :key="link.text"
+            :href="link.link"
           >
             <span v-if="link.icon">
               <img
