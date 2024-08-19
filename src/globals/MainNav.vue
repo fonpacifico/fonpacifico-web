@@ -353,7 +353,8 @@ header {
       place-content: center;
     }
 
-    &-item:focus-within {
+    &-item:focus-within,
+    &-item:active {
       .nav__submenu {
         display: block;
       }
