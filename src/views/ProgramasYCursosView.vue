@@ -3,62 +3,64 @@ import { programs } from '@/content/programasYCursosView.js';
 </script>
 
 <template>
-  <figure class="hero__image">
-    <img
-      src="/hero-programas-y-cursos.jpeg"
-      alt=""
-    />
-  </figure>
-  <section class="heading fp-container fp-padded">
-    <h1>Programas y cursos</h1>
-    <p>
-      En Fonpacífico nos esforzamos por devolverle a la comunidad tanto como sea
-      posible. Para lo cual, hemos creado varios programas y cursos con el
-      objetivo de fortalecer la calidad de vida colombiana.
-    </p>
-  </section>
-  <section class="programs fp-container fp-padded-bottom">
-    <article
-      v-for="program in programs"
-      class="program"
-    >
-      <figure class="program-image">
-        <img
-          :src="program.imgRoute"
-          alt=""
-        />
-      </figure>
-      <div class="program-copy">
-        <h3>{{ program.title }}</h3>
-        <p v-if="program.body.length === 1">
-          {{ program.body[0] }}
-        </p>
-        <p
-          v-else-if="program.body.length > 1"
-          v-for="paragraph in program.body"
-          :key="paragraph"
-        >
-          {{ paragraph }}
-        </p>
-        <div class="program-buttons">
-          <a
-            class="program-button button button--secondary"
-            v-for="link in program.ctas"
-            :key="link.text"
-            :href="link.link"
+  <div>
+    <figure class="hero__image">
+      <img
+        src="/hero-programas-y-cursos.jpeg"
+        alt=""
+      />
+    </figure>
+    <section class="heading fp-container fp-padded">
+      <h1>Programas y cursos</h1>
+      <p>
+        En Fonpacífico nos esforzamos por devolverle a la comunidad tanto como
+        sea posible. Para lo cual, hemos creado varios programas y cursos con el
+        objetivo de fortalecer la calidad de vida colombiana.
+      </p>
+    </section>
+    <section class="programs fp-container fp-padded-bottom">
+      <article
+        v-for="program in programs"
+        class="program"
+      >
+        <figure class="program-image">
+          <img
+            :src="program.imgRoute"
+            alt=""
+          />
+        </figure>
+        <div class="program-copy">
+          <h3>{{ program.title }}</h3>
+          <p v-if="program.body.length === 1">
+            {{ program.body[0] }}
+          </p>
+          <p
+            v-else-if="program.body.length > 1"
+            v-for="paragraph in program.body"
+            :key="paragraph"
           >
-            <span v-if="link.icon">
-              <img
-                :src="link.icon"
-                alt=""
-              />
-            </span>
-            {{ link.text }}
-          </a>
+            {{ paragraph }}
+          </p>
+          <div class="program-buttons">
+            <a
+              class="program-button button button--secondary"
+              v-for="link in program.ctas"
+              :key="link.text"
+              :href="link.link"
+            >
+              <span v-if="link.icon">
+                <img
+                  :src="link.icon"
+                  alt=""
+                />
+              </span>
+              {{ link.text }}
+            </a>
+          </div>
         </div>
-      </div>
-    </article>
-  </section>
+      </article>
+    </section>
+  </div>
 </template>
 
 <style lang="scss" scoped>
@@ -115,7 +117,7 @@ import { programs } from '@/content/programasYCursosView.js';
   .program {
     display: flex;
     flex-flow: column nowrap;
-    place-items: center;
+    place-items: flex-start;
     gap: 2rem;
 
     @include breakpoint-min('md') {

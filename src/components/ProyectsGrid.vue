@@ -88,6 +88,10 @@ const handleCloseModal = () => {
 <style lang="scss">
 @use '@/sass/abstracts' as *;
 
+.proyects-section {
+  padding-top: 8rem;
+}
+
 .cards-container {
   grid-column: 1 / -1;
   display: flex;

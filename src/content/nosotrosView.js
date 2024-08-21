@@ -14,7 +14,7 @@ export const splitContentOne = {
 	heading: "Fonpacífico",
 	body: [
 		"El Fondo Mixto de Etnocultura y Desarrollo Social “FONPACÍFICO”, es una entidad descentralizada de segundo orden creada por ordenanza departamental, y por la afiliación mediante acuerdo de concejos y convenios con múltiples municipios del país.",
-		"Dedicada a la gestión, supervisión y control de proyectos que han beneficiado a más de 42 entidades territoriales de Colombia. Promovemos el desarrollo social desde una perspectiva que reconoce y valora la diversidad étnica del territorio.",
+		"Dedicada a la gestión, supervisión y control de proyectos que han beneficiado a más de XX comunidades en Colombia. Promovemos el desarrollo social desde una perspectiva que reconoce y valora la diversidad étnica del territorio.",
 	],
 };
 
@@ -116,57 +116,27 @@ export const statisticsItems = [
 
 export const carouselItems = [
 	{
-		logo: "/logoipsum.svg",
-		text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.",
+		logo: "/logos_testimonios/logo_roy.png",
+		text: '"La experiencia fue inmejorable. El equipo de la interventoría demostró un alto nivel de profesionalismo y compromiso. Me sentí muy cómodo y confiado durante todo el proceso. Sin duda, recomendaría sus servicios."',
 		user: {
-			avatar: "https://picsum.photos/id/501/40/40",
-			name: "John Doe",
-			position: "CEO",
+			name: "Roy Alejandro Rodríguez",
+			position: "Ingeniero civil",
 		},
 	},
 	{
-		logo: "/logoipsum.svg",
-		text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.",
+		logo: "/logos_testimonios/logo_ec.png",
+		text: '"Desde que iniciamos el proyecto con FONPACIFICO en septiembre de 2023, hemos experimentado una colaboración muy positiva. El trabajo en equipo ha sido clave para cumplir con las metas establecidas en tiempo y forma."',
 		user: {
-			avatar: "https://picsum.photos/id/501/40/40",
-			name: "John Doe",
-			position: "CEO",
+			name: "Freddy Delgado Ortiz",
+			position: "CER.L. ECOWASICHII SAS",
 		},
 	},
 	{
-		logo: "/logoipsum.svg",
-		text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.",
+		logo: "/logos_testimonios/logo_mile.png",
+		text: '"La transparencia en la comunicación y la alta competencia del equipo técnico, jurídico y financiero me han brindado total confianza. Recomiendo a FONPACIFICO por su profesionalismo y su capacidad para desarrollar proyectos exitosos."',
 		user: {
-			avatar: "https://picsum.photos/id/501/40/40",
-			name: "John Doe",
-			position: "CEO",
-		},
-	},
-	{
-		logo: "/logoipsum.svg",
-		text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.",
-		user: {
-			avatar: "https://picsum.photos/id/501/40/40",
-			name: "John Doe",
-			position: "CEO",
-		},
-	},
-	{
-		logo: "/logoipsum.svg",
-		text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.",
-		user: {
-			avatar: "https://picsum.photos/id/501/40/40",
-			name: "John Doe",
-			position: "CEO",
-		},
-	},
-	{
-		logo: "/logoipsum.svg",
-		text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.",
-		user: {
-			avatar: "https://picsum.photos/id/501/40/40",
-			name: "John Doe",
-			position: "CEO",
+			name: "Luz Milena Hoyos Palacios",
+			position: "Ingeniera civil",
 		},
 	},
 ];

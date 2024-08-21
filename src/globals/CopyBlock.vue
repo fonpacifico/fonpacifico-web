@@ -40,7 +40,7 @@ const eyebrowClasses = computed(() => [
 
 const classes = computed(() => [
   'copy-block',
-  `copy-block--${props.alignment}`,
+  { [`copy-block--${props.alignment}`]: props.alignment },
 ]);
 </script>
 
@@ -104,8 +104,8 @@ const classes = computed(() => [
   display: flex;
   gap: 1.5rem;
   flex-direction: column;
-  text-align: center;
-  place-items: center;
+  text-align: left;
+  place-items: flex-start;
 
   &__ctas {
     display: flex;

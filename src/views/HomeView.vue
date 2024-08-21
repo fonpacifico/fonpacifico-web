@@ -27,6 +27,7 @@ import * as content from '@/content/homeView';
     <services-section>
       <template #heading>
         <copy-block
+          alignment="left"
           :eyebrow="content.servicesEyebrow"
           :heading="content.servicesHeading"
           :subHeading="content.servicesSubheading"
@@ -46,7 +47,7 @@ import * as content from '@/content/homeView';
     <proyects-grid>
       <template #heading>
         <copy-block
-          alignment="centered"
+          alignment="left"
           :eyebrow="{
             text: 'BANCO DE ÉXITOS',
             color: 'blue',
@@ -60,7 +61,7 @@ import * as content from '@/content/homeView';
     <carousel-section :items="carouselItems">
       <template #heading>
         <copy-block
-          alignment="centered"
+          alignment="left"
           :eyebrow="{
             text: 'EXPERIENCIAS COMPARTIDAS',
             color: 'blue',

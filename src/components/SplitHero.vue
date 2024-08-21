@@ -23,7 +23,7 @@ defineProps({
 
 <template>
   <div
-    class="split-hero fp-container fp-grid"
+    class="split-hero fp-container fp-grid fp-padded-bottom"
     :class="{ 'split-hero--reverse': reverse }"
   >
     <div class="split-hero__heading">

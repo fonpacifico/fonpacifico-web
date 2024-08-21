@@ -22,6 +22,7 @@ export const servicesCtas = [
 		text: "Ver nuestros servicios",
 		type: "primary",
 		icon: "arrow_outward",
+		url: "servicios",
 	},
 	{
 		text: "Brochure de servicios",
@@ -56,7 +57,6 @@ export const carouselItems = [
 		logo: "/logos_testimonios/logo_roy.png",
 		text: '"La experiencia fue inmejorable. El equipo de la interventoría demostró un alto nivel de profesionalismo y compromiso. Me sentí muy cómodo y confiado durante todo el proceso. Sin duda, recomendaría sus servicios."',
 		user: {
-			avatar: "https://picsum.photos/id/501/40/40",
 			name: "Roy Alejandro Rodríguez",
 			position: "Ingeniero civil",
 		},
@@ -65,7 +65,6 @@ export const carouselItems = [
 		logo: "/logos_testimonios/logo_ec.png",
 		text: '"Desde que iniciamos el proyecto con FONPACIFICO en septiembre de 2023, hemos experimentado una colaboración muy positiva. El trabajo en equipo ha sido clave para cumplir con las metas establecidas en tiempo y forma."',
 		user: {
-			avatar: "https://picsum.photos/id/501/40/40",
 			name: "Freddy Delgado Ortiz",
 			position: "CER.L. ECOWASICHII SAS",
 		},
@@ -74,7 +73,6 @@ export const carouselItems = [
 		logo: "/logos_testimonios/logo_mile.png",
 		text: '"La transparencia en la comunicación y la alta competencia del equipo técnico, jurídico y financiero me han brindado total confianza. Recomiendo a FONPACIFICO por su profesionalismo y su capacidad para desarrollar proyectos exitosos."',
 		user: {
-			avatar: "https://picsum.photos/id/501/40/40",
 			name: "Luz Milena Hoyos Palacios",
 			position: "Ingeniera civil",
 		},

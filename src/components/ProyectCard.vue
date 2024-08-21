@@ -70,7 +70,7 @@ const croppedText = computed(() => {
 
   &-large {
     .card__text {
-      padding: 3rem;
+      padding: 1.5rem;
     }
 
     @include breakpoint-min('lg') {

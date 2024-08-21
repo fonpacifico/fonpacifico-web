@@ -11,13 +11,10 @@
 
 
 /* Standart mobile first typography */
-@include font-sizes(3.2rem, 2.6rem, 2rem, 1.8rem, 1rem);
+@include font-sizes(2.5rem, 2.25rem, 2rem, 1.5rem, 1.25rem, 1.125rem, 1rem);
 
 
 @include breakpoint-min('md') {
-    @include font-sizes(3.2rem, 2.6rem, 2rem, 1.8rem, 1rem);
+    @include font-sizes(3.5rem, 3rem, 2.5rem, 2rem, 1.5rem, 1.25rem, 1.125rem);
 }
 
-@include breakpoint-min('lg') {
-    @include font-sizes(4rem, 2.5rem, 2rem, 1.8rem, 1rem);
-}

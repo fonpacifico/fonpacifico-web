@@ -429,12 +429,18 @@ header {
         padding: 1rem 0.5rem;
 
         @include breakpoint-min('md2') {
-          padding: 1rem 2rem;
+          padding: 1rem 2rem 1rem 0;
           min-width: 312px;
         }
 
         > a {
           font-weight: 700;
+
+          &:hover,
+          &:focus {
+            text-decoration: none;
+            color: get-color('primary');
+          }
         }
       }
     }

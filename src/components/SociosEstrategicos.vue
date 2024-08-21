@@ -16,7 +16,7 @@ defineProps({
 
 <template>
   <section
-    class="fp-container fp-padded socios-section"
+    class="fp-container fp-padded-bottom socios-section"
     v-fade-in
   >
     <div class="fp-grid socios-main-heading">
@@ -36,7 +36,7 @@ defineProps({
       <div class="asociados-tecnicos__heading">
         <h3>Asociados técnicos</h3>
         <router-link
-          :to="{ name: 'contratacion' }"
+          :to="{ name: 'inscripcion' }"
           class="button"
         >
           Ver todos los asociados
@@ -65,7 +65,9 @@ defineProps({
 
 .socios-heading {
   grid-column: 1 / -1;
-  text-align: center;
+  text-align: left;
+  margin-bottom: 2rem;
+  font-size: 20px;
 
   @include breakpoint-min('md') {
     grid-column: 1 / span 5;
@@ -106,8 +108,13 @@ defineProps({
     grid-column: 1 / -1;
     display: flex;
     flex-flow: column nowrap;
-    place-items: center;
+    place-items: flex-start;
     gap: 1rem;
+    margin-bottom: 2rem;
+
+    h3 {
+      font-size: 20px;
+    }
 
     @include breakpoint-min('md') {
       flex-flow: row nowrap;

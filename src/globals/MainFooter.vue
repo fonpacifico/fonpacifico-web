@@ -37,7 +37,7 @@ const footerAddresses = [
         <footer-nav-items :items="footerNavItems" />
         <div class="footer__get-in-touch">
           <h5>Trabajemos juntos</h5>
-          <a href="#">info@fonpacifico.org</a>
+          <a href="mailto:info@fonpacifico.org">info@fonpacifico.org</a>
         </div>
       </nav>
       <div class="footer-contact">
@@ -59,8 +59,8 @@ const footerAddresses = [
         </div>
         <div class="footer-contact__phone">
           <h6 class="footer-contact__h6-title">Teléfonos</h6>
-          <a href="#">+(57) 313 748 8307</a>
-          <a href="#">+(57) 311 788 6674</a>
+          <a href="tel:+573137488307">+(57) 313 748 8307</a>
+          <a href="tel:+573117886674">+(57) 311 788 6674</a>
         </div>
       </div>
       <div class="footer__social-media">
