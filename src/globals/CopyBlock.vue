@@ -15,7 +15,7 @@ const props = defineProps({
     required: true,
   },
   subHeading: {
-    type: String,
+    type: String || Array,
     default: '',
   },
   ctas: {

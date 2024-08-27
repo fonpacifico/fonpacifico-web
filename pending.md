@@ -9,4 +9,3 @@ Prioridad de paginas:
 - Politicas
 - Convocatorias
 - Transparencia
-- Transparencia

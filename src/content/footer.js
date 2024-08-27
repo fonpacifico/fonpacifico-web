@@ -71,12 +71,12 @@ export const footerNavItems = [
 			{
 				name: "Acceso empleados",
 				text: "Acceso empleados",
-				href: "#",
+				href: "https://wzjn8jk.localto.net/",
 			},
 			{
 				name: "Acceso asociados",
 				text: "Acceso asociados",
-				href: "#",
+				href: "https://tyc43hr.localto.net/",
 			},
 		],
 	},

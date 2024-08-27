@@ -1,8 +1,97 @@
 <script setup>
+import NewsLetter from '@/components/NewsLetter.vue';
+import { items } from '@/content/transparencia';
+import { ref } from 'vue';
+
+const handleClick = (index) => {
+  console.log(index);
+};
 </script>
 
 <template>
-  <div>transparencia</div>
+  <main>
+    <div class="transparencia fp-padded fp-container">
+      <div class="transparencia__heading">
+        <h1>Comprometidos con la transparencia</h1>
+        <p>
+          Fonpacífico al ser una empresa público-privada, comparte todos los
+          documentos necesarios de manera responsable para que estén disponibles
+          para visualización pública.
+        </p>
+        <a
+          href="#"
+          class="button"
+          >Quiero más información</a
+        >
+      </div>
+      <div class="transparencia__accordion">
+        <details v-for="(item, index) in items">
+          <summary @click="() => handleClick(index)">
+            <span>
+              <span style="margin-right: 0.5rem">{{ index + 1 }}.</span
+              ><span> {{ item.title }}</span></span
+            >
+            <span
+              class="material-symbols-outlined"
+              :class="{ rotate: index }"
+              >expand_more</span
+            >
+          </summary>
+          <p>content</p>
+        </details>
+      </div>
+    </div>
+  </main>
 </template>
 
-<style scoped></style>
+<style lang="scss" scoped>
+@use '../sass/abstracts/_mixins' as *;
+
+.transparencia {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 2rem;
+
+  @include breakpoint-min('md') {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &__heading {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1.5rem;
+  }
+
+  &__accordion {
+    details {
+      summary {
+        display: flex;
+        flex-flow: row nowrap;
+        gap: 1rem;
+        align-items: center;
+        place-content: space-between;
+        padding: 1rem 0;
+        cursor: pointer;
+
+        span {
+          font-size: 18px;
+          font-weight: 700;
+        }
+
+        span:last-of-type {
+          transition: transform 0.2 s ease-in-out;
+        }
+      }
+    }
+
+    details[open] {
+      summary {
+        span:last-of-type {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+}
+</style>
