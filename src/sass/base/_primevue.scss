@@ -1,0 +1,97 @@
+@use '../abstracts/' as *;
+
+.p-datatable-table-container {
+  border: 2px solid get-color(table-border);
+  margin: 2.5rem 0;
+  border-radius: 1rem;
+}
+
+.p-iconfield {
+  width: fit-content;
+  border: 1px solid get-color(primary);
+  border-radius: 1.5rem;
+}
+
+.p-inputtext {
+  --p-form-field-padding-x: .75rem;
+  --p-inputtext-padding-y: 0.75rem;
+  --p-inputtext-padding-x: 0.5rem;
+  --p-icon-size: 1rem;
+}
+
+.p-inputicon {
+  --p-form-field-padding-x: .5rem;
+  transform: translateY(-50%);
+  height: 1.5rem;
+  
+  span {
+    color: get-color(primary);
+    user-select: none;
+  }
+}
+
+.p-datatable-table {
+  border-collapse: collapse;
+
+  .p-datatable-thead {
+    tr + tr {
+      display: none;
+    }
+  }
+
+    .p-datatable-header-cell, .p-datatable-tbody > tr:not(.p-datatable-row-expansion) > td {
+      border-bottom: 1px solid get-color(table-border);
+      
+      &:first-child {
+        width: 0;
+        padding: 0;
+      }
+    }
+
+    .p-datatable-header-cell {
+      padding: 1rem 1.5rem;
+      font-weight: bold;
+
+      &.p-datatable-sortable-column .p-datatable-column-title {
+        margin-right: .5rem;
+
+        & + span {
+          color: get-color(primary);
+        }
+      }
+    }
+
+    .p-datatable-tbody > tr > td {
+      padding: 1.5rem 1.75rem;
+
+      .p-datatable-row-toggle-button {
+        color: get-color(primary);
+        position: absolute;
+        left: 1.5rem;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      &:first-child {
+        position: relative;
+      }
+
+      &:first-child + td {
+        padding-left: 3rem;
+      }
+    }
+
+    .p-datatable-tbody > .p-datatable-row-expansion > td {
+      border-bottom: 1px solid get-color(table-border);
+      padding-left: 3rem;
+      background-color: get-color('lightgray');
+    }
+}
+
+.convocatorias__table .p-datatable-paginator-bottom {
+  border-style: unset;
+}
+
+.convocatorias__table .p-paginator-content {
+  --p-paginator-gap: .25rem;
+}
