@@ -1,13 +1,10 @@
 <script setup>
 import SocioItem from './SocioItem.vue';
 import AsociadoItem from './AsociadoItem.vue';
+import AsociadosTecnicos from './AsociadosTecnicos.vue';
 
 defineProps({
   sociositems: {
-    type: Array,
-    required: true,
-  },
-  asociadosItems: {
     type: Array,
     required: true,
   },
@@ -32,25 +29,9 @@ defineProps({
         />
       </ul>
     </div>
-    <div class="fp-grid asociados-tecnicos">
-      <div class="asociados-tecnicos__heading">
-        <h3>Asociados técnicos</h3>
-        <router-link
-          :to="{ name: 'inscripcion' }"
-          class="button"
-        >
-          Ver todos los asociados
-          <span class="material-symbols-outlined">arrow_forward</span>
-        </router-link>
-      </div>
-      <ul class="asociados-list">
-        <asociado-item
-          v-for="item in asociadosItems"
-          :item="item"
-          class="asociado-item"
-        />
-      </ul>
-    </div>
+    <suspense>
+      <asociados-tecnicos />
+    </suspense>
   </section>
 </template>
 
@@ -75,8 +56,7 @@ defineProps({
   }
 }
 
-.socios-list,
-.asociados-list {
+.socios-list {
   display: flex;
   flex-flow: column nowrap;
   place-items: center;
@@ -95,42 +75,6 @@ defineProps({
 
     @include breakpoint-min('md') {
       flex: 1 1 30%;
-    }
-  }
-}
-
-.asociados-tecnicos {
-  display: flex;
-  flex-flow: column nowrap;
-  gap: 2rem;
-
-  &__heading {
-    grid-column: 1 / -1;
-    display: flex;
-    flex-flow: column nowrap;
-    place-items: flex-start;
-    gap: 1rem;
-    margin-bottom: 2rem;
-
-    h3 {
-      font-size: 20px;
-    }
-
-    @include breakpoint-min('md') {
-      flex-flow: row nowrap;
-      place-content: space-between;
-    }
-  }
-
-  .button {
-    background-color: get-color('accent');
-    color: get-color('primary');
-    font-weight: 700;
-    border: 1px solid get-color('accent');
-
-    &:hover {
-      text-decoration: none;
-      background-color: darken(get-color('accent'), 10%);
     }
   }
 }

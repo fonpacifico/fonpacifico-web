@@ -1,24 +1,46 @@
 <script setup>
 import CopyBlock from '@/globals/CopyBlock.vue';
+import GlobalAccordion from '@/globals/GlobalAccordion.vue';
+import DataView from 'primevue/dataview';
 import {
   inscripcionPersonasNaturales,
   inscripcionPersonasJuridicas,
 } from '@/content/inscripcion';
-import { ref } from 'vue';
+import { ref, computed, onBeforeMount, onUnmounted, onMounted } from 'vue';
+import { items } from '@/content/transparencia';
 
-const showAccordion = ref(false);
-const showAccordion2 = ref(false);
+const asociados = ref([]);
+const layout = ref('grid');
+const rows = ref(12);
+
+const fetchAsociadosTecnicos = async () => {
+  try {
+    const response = await fetch(
+      'https://j4hvvf8.localto.net/asociadostecnicos'
+    );
+    const data = await response.json();
+
+    return data;
+  } catch (error) {
+    console.error('Error fetching asociados tecnicos data:', error);
+  }
+};
+
+onBeforeMount(async () => {
+  asociados.value = await fetchAsociadosTecnicos();
+  console.log(asociados.value);
+});
 </script>
 
 <template>
-  <section class="heading fp-container fp-padded">
-    <h3>Sé parte de nuestro equipo de asociados técnicos</h3>
-    <p>
-      ¡Únete a nosotros en el desarrollo nacional, integral e inclusivo de
-      nuestro país!
-    </p>
-  </section>
   <main>
+    <section class="heading fp-container fp-padded--small">
+      <h3>Sé parte de nuestro equipo de asociados técnicos</h3>
+      <p>
+        ¡Únete a nosotros en el desarrollo nacional, integral e inclusivo de
+        nuestro país!
+      </p>
+    </section>
     <section class="requirements fp-container">
       <div class="requirements__heading">
         <h4>Requerimientos</h4>
@@ -27,31 +49,21 @@ const showAccordion2 = ref(false);
         </p>
       </div>
       <div class="requirements__accordion">
-        <details>
-          <summary class="accordion__button">
-            <span>1. Personas naturales</span>
-            <span class="material-symbols-outlined">expand_more</span>
-          </summary>
-          <ol class="accordion__content">
-            <li v-for="item in inscripcionPersonasNaturales">{{ item }}</li>
-          </ol>
-        </details>
-        <details>
-          <summary class="accordion__button">
-            <span>2. Personas juridicas</span>
-            <span class="material-symbols-outlined">expand_more</span>
-          </summary>
-          <ol class="accordion__content">
-            <li v-for="item in inscripcionPersonasJuridicas">{{ item }}</li>
-          </ol>
-        </details>
+        <global-accordion
+          title="1. Personas naturales"
+          :items="inscripcionPersonasNaturales"
+        />
+        <global-accordion
+          title="2. Personas jurídicas"
+          :items="inscripcionPersonasJuridicas"
+        />
       </div>
     </section>
     <section class="inscription-form fp-container fp-padded-bottom">
       <figure>
         <img
           src="/imagenes_inscripciones/inscripcion-form.jpeg"
-          alt=""
+          alt="Formulario de inscripción"
         />
       </figure>
       <div class="inscription-form__copy">
@@ -63,9 +75,31 @@ const showAccordion2 = ref(false);
         <a
           href="#"
           class="button"
+          target="_blank"
           >Ir al formulario de inscripción</a
         >
       </div>
+    </section>
+    <section class="asociados-grid fp-container">
+      <data-view
+        data-key="id"
+        layout="list"
+        :value="asociados"
+        :rows="rows"
+        paginator
+      >
+        <template #list="{ items }">
+          <div class="asociados-grid-wrapper">
+            <article
+              v-for="(item, index) in items"
+              key="index"
+            >
+              {{ item.nombre }}
+            </article>
+          </div>
+        </template>
+        <template #footer> </template>
+      </data-view>
     </section>
   </main>
 </template>
@@ -98,31 +132,6 @@ const showAccordion2 = ref(false);
   }
 }
 
-.accordion {
-  position: relative;
-
-  &__button {
-    flex: 1;
-    padding: 1rem 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: white;
-    font-weight: 700;
-    font-size: 18px;
-  }
-
-  &__content {
-    list-style: auto;
-    padding-left: 1.2rem;
-
-    li {
-      font-size: 1rem;
-      color: rgba($color: #000000, $alpha: 0.7);
-    }
-  }
-}
-
 .inscription-form {
   display: flex;
   flex-flow: column nowrap;
@@ -145,7 +154,11 @@ const showAccordion2 = ref(false);
     }
 
     img {
+      display: block;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
+      object-position: center;
     }
   }
 
@@ -158,6 +171,36 @@ const showAccordion2 = ref(false);
     @include breakpoint-min('md') {
       grid-row: 1;
       grid-column: 1;
+    }
+  }
+}
+
+.asociados-grid-wrapper {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  @include breakpoint-min('md') {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+details {
+  summary {
+    cursor: pointer;
+    span:last-of-type {
+      cursor: pointer;
+    }
+  }
+}
+
+details[open] {
+  summary {
+    span:last-of-type {
+      transform: rotate(180deg);
     }
   }
 }

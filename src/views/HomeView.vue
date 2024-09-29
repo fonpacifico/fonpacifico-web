@@ -71,10 +71,7 @@ import * as content from '@/content/homeView';
         />
       </template>
     </carousel-section>
-    <socios-estrategicos
-      :sociositems="content.sociosEstrategicos.sociosItems"
-      :asociadosItems="content.sociosEstrategicos.asociadosItems"
-    >
+    <socios-estrategicos :sociositems="content.sociosEstrategicos.sociosItems">
       <template #heading>
         <copy-block
           :heading="content.sociosEstrategicos.heading"

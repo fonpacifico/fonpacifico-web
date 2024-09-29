@@ -337,44 +337,6 @@ export const sociosEstrategicos = {
 			socios: ["Alcaldía de Guainía"],
 		},
 	],
-	asociadosItems: [
-		{
-			image: "https://picsum.photos/id/501/60/60",
-			text: "Por definir",
-		},
-		{
-			image: "https://picsum.photos/id/501/60/60",
-			text: "Por definir",
-		},
-		{
-			image: "https://picsum.photos/id/501/60/60",
-			text: "Por definir",
-		},
-		{
-			image: "https://picsum.photos/id/501/60/60",
-			text: "Por definir",
-		},
-		{
-			image: "https://picsum.photos/id/501/60/60",
-			text: "Por definir",
-		},
-		{
-			image: "https://picsum.photos/id/501/60/60",
-			text: "Por definir",
-		},
-		{
-			image: "https://picsum.photos/id/501/60/60",
-			text: "Por definir",
-		},
-		{
-			image: "https://picsum.photos/id/501/60/60",
-			text: "Por definir",
-		},
-		{
-			image: "https://picsum.photos/id/501/60/60",
-			text: "Por definir",
-		},
-	],
 };
 
 export const programasInteres = [

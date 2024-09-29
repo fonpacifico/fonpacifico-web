@@ -93,5 +93,23 @@
 }
 
 .convocatorias__table .p-paginator-content {
-  --p-paginator-gap: .25rem;
+  --p-paginator-gap: .5rem;
+}
+
+.p-dataview {
+  --p-dataview-border-width: 0;
+  border-width: 0 !important;
+  
+  &-content {
+    --p-dataview-border-width: 0;
+    border-width: 0 !important;
+  }
+}
+
+.p-dataview-paginator-bottom {
+  border-width: 0 !important;
+}
+
+.p-dataview-footer {
+  border-width: 0 !important;
 }

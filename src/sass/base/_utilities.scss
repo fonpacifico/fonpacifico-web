@@ -53,6 +53,14 @@
     }
 }
 
+.#{$prefix}padded--small {
+    padding-block: 2rem;
+
+    @include breakpoint-min('md') {
+        padding-block: 4rem;
+    }
+}
+
 .#{$prefix}padded-bottom {
     padding-block: 0 4rem;
 
