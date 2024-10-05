@@ -1,11 +1,6 @@
 <script setup>
 import NewsLetter from '@/components/NewsLetter.vue';
 import { items } from '@/content/transparencia';
-import { ref } from 'vue';
-
-const handleClick = (index) => {
-  console.log(index);
-};
 </script>
 
 <template>
@@ -26,7 +21,7 @@ const handleClick = (index) => {
       </div>
       <div class="transparencia__accordion">
         <details v-for="(item, index) in items">
-          <summary @click="() => handleClick(index)">
+          <summary>
             <span>
               <span style="margin-right: 0.5rem">{{ index + 1 }}.</span
               ><span> {{ item.title }}</span></span

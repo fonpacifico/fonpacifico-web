@@ -101,7 +101,6 @@ const fetchAndBuildConvocatorias = async () => {
 onMounted(async () => {
   fetchAndBuildConvocatorias()
     .then((data) => {
-      console.log('Complete data with documents:', data);
       convocatorias.value = data;
       loading.value = false;
     })

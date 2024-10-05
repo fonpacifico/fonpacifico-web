@@ -4,6 +4,80 @@ import { ref, onMounted, onUnmounted } from 'vue';
 const showMenu = ref(false);
 const isDesktop = ref(false);
 const overlay = ref(null);
+const activeSubmenu = ref(null);
+
+const links = ref([
+  {
+    name: 'Nosotros',
+    sublinks: [
+      {
+        name: 'Acerca de Fonpacífico',
+        link: 'nosotros',
+        subtitle: 'Conoce más sobre nosotros',
+      },
+      {
+        name: 'Servicios',
+        link: 'servicios',
+        subtitle: 'Soluciones para tus necesidades',
+      },
+      {
+        name: 'Programas y cursos',
+        link: 'programasYCursos',
+        subtitle: 'Desarrollados por nosotros',
+      },
+    ],
+  },
+  {
+    name: 'Contratación',
+    sublinks: [
+      {
+        name: 'convocatorias',
+        link: 'convocatorias',
+        subtitle: 'Abiertas, en proceso y finalizadas',
+      },
+      {
+        name: 'Manual de contratación (PDF)',
+        link: 'home',
+        subtitle: 'Descarga nuestro manual en PDF',
+      },
+      {
+        name: 'Documentos precontractuales',
+        link: 'home',
+        subtitle: 'Acceso a PDFs de nuestro documentos',
+      },
+    ],
+  },
+  {
+    name: 'Asociados Técnicos',
+    sublinks: [
+      {
+        name: 'Inscripción de asociado técnico',
+        link: 'inscripcion',
+        subtitle: 'Regístrate para ser asociado de Fonpacífico',
+      },
+    ],
+  },
+  {
+    name: 'Transparencia',
+    sublinks: [
+      {
+        name: 'Información pública',
+        link: 'transparencia',
+        subtitle: 'Datos de interés público',
+      },
+      {
+        name: 'PQRSD',
+        link: 'pqrsd',
+        subtitle: 'Instrumento de solicitud de Fonpacífico',
+      },
+      {
+        name: 'Políticas',
+        link: 'politicas',
+        subtitle: 'Relacionadas con el uso del sitio web',
+      },
+    ],
+  },
+]);
 
 const menuClasses = ref({
   nav: true,
@@ -16,13 +90,38 @@ mql.addEventListener('change', (e) => {
   if (e.matches) {
     showMenu.value = false;
     isDesktop.value = false;
-    console.log(isDesktop.value);
   }
 });
 
 const closeMenu = (e) => {
   e.target.blur();
   showMenu.value = false;
+};
+
+const toggleSubmenu = (index) => {
+  // If clicking the same submenu that's already open, close it
+  if (activeSubmenu.value === index) {
+    activeSubmenu.value = null;
+    if (overlay.value) {
+      overlay.value.style.display = 'none';
+    }
+  } else {
+    // If clicking a different submenu, close the current one and open the new one
+    activeSubmenu.value = index;
+    if (overlay.value) {
+      overlay.value.style.display = 'block';
+    }
+  }
+};
+
+const handleClickOutside = (event) => {
+  const nav = document.querySelector('.nav');
+  if (nav && !nav.contains(event.target) && !isDesktop.value) {
+    activeSubmenu.value = null;
+    if (overlay.value) {
+      overlay.value.style.display = 'none';
+    }
+  }
 };
 
 onMounted(() => {
@@ -38,6 +137,8 @@ onMounted(() => {
         overlay.value.style.display = 'none';
       });
     });
+
+  document.addEventListener('click', handleClickOutside);
 });
 
 onUnmounted(() => {
@@ -69,145 +170,37 @@ onUnmounted(() => {
         :class="{ open: showMenu }"
       >
         <ul class="nav__list">
-          <li class="nav__list-item">
-            <button>
-              Nosotros
-              <span class="material-symbols-outlined">keyboard_arrow_down</span>
+          <li
+            v-for="(link, index) in links"
+            :key="link.name"
+            class="nav__list-item"
+          >
+            <button
+              @click="toggleSubmenu(index)"
+              @focus="toggleSubmenu(index)"
+            >
+              {{ link.name }}
+              <span class="material-symbols-outlined">
+                keyboard_arrow_down
+              </span>
             </button>
-            <div class="nav__submenu">
+            <div
+              class="nav__submenu"
+              :class="{ 'nav__submenu--open': activeSubmenu === index }"
+            >
               <ul class="fp-container">
-                <li>
+                <li
+                  v-for="sublink in link.sublinks"
+                  :key="sublink.name"
+                >
                   <router-link
+                    :to="sublink.link"
                     class="subnav-link"
-                    :to="{ name: 'nosotros' }"
                     @click="(e) => closeMenu(e)"
-                    >Acerca de Fonpacífico <br />
-                    <span class="subtitle">Conoce más sobre nosotros</span>
-                  </router-link>
-                </li>
-                <li>
-                  <router-link
-                    class="subnav-link"
-                    :to="{ name: 'servicios' }"
-                    @click="(e) => closeMenu(e)"
-                    >Servicios <br />
-                    <span class="subtitle"
-                      >Soluciones para tus necesidades</span
-                    >
-                  </router-link>
-                </li>
-                <li>
-                  <router-link
-                    class="subnav-link"
-                    :to="{ name: 'programasYCursos' }"
-                    @click="(e) => closeMenu(e)"
-                    >Programas y cursos <br />
-                    <span class="subtitle">Desarrollados por nosotros</span>
-                  </router-link>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav__list-item">
-            <button>
-              Contratación
-              <span class="material-symbols-outlined">keyboard_arrow_down</span>
-            </button>
-            <div class="nav__submenu">
-              <ul class="fp-container">
-                <li>
-                  <router-link
-                    class="subnav-link"
-                    :to="{ name: 'convocatorias' }"
-                    @click="(e) => closeMenu(e)"
-                    >Convocatorias <br />
-                    <span class="subtitle"
-                      >Abiertas, en proceso y finalizadas</span
-                    >
-                  </router-link>
-                </li>
-                <li>
-                  <!-- link a drive -->
-                  <router-link
-                    class="subnav-link"
-                    :to="{ name: 'home' }"
-                    @click="(e) => closeMenu(e)"
-                    >Manual de contratación (PDF) <br />
-                    <span class="subtitle">Descarga nuestro manual en PDF</span>
-                  </router-link>
-                </li>
-                <li>
-                  <!-- link a drive -->
-                  <router-link
-                    class="subnav-link"
-                    :to="{ name: 'home' }"
-                    @click="(e) => closeMenu(e)"
-                    >Documentos precontractuales<br />
-                    <span class="subtitle">
-                      Acceso a PDFs de nuestro documentos
-                    </span>
-                  </router-link>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav__list-item">
-            <button>
-              Asociados Técnicos
-              <span class="material-symbols-outlined">keyboard_arrow_down</span>
-            </button>
-            <div class="nav__submenu">
-              <ul class="fp-container">
-                <li>
-                  <router-link
-                    class="subnav-link"
-                    :to="{ name: 'inscripcion' }"
-                    @click="(e) => closeMenu(e)"
-                    >Inscripción de asociado técnico <br />
-                    <span class="subtitle"
-                      >Regístrate para ser asociado de Fonpacífico</span
-                    >
-                  </router-link>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav__list-item">
-            <button>
-              Transparencia
-              <span class="material-symbols-outlined">keyboard_arrow_down</span>
-            </button>
-            <div class="nav__submenu">
-              <ul class="fp-container">
-                <li>
-                  <router-link
-                    class="subnav-link"
-                    :to="{ name: 'transparencia' }"
-                    @click="(e) => closeMenu(e)"
-                    >Información pública <br />
-                    <span class="subtitle">Datos de interés público</span>
-                  </router-link>
-                </li>
-                <li>
-                  <router-link
-                    class="subnav-link"
-                    :to="{ name: 'pqrsd' }"
-                    @click="(e) => closeMenu(e)"
-                    >PQRSD <br />
-                    <span class="subtitle"
-                      >Instrumento de solicitud de Fonpacífico</span
-                    >
-                  </router-link>
-                </li>
-                <li>
-                  <router-link
-                    class="subnav-link"
-                    :to="{ name: 'politicas' }"
-                    @click="(e) => closeMenu(e)"
-                    >Políticas <br />
-                    <span class="subtitle"
-                      >Relacionadas con el uso del sitio web</span
-                    >
+                  >
+                    {{ sublink.name }}
+                    <br />
+                    <span class="subtitle">{{ sublink.subtitle }}</span>
                   </router-link>
                 </li>
               </ul>
@@ -353,20 +346,24 @@ header {
       place-content: center;
     }
 
-    &-item:focus-within,
-    &-item:active {
-      .nav__submenu {
-        display: block;
-      }
-
-      .overlay {
-        display: block;
-      }
-
-      > button > span {
-        transform: rotate(180deg);
-      }
+    .nav__submenu--open {
+      display: block;
     }
+
+    // &-item:focus-within,
+    // &-item:active {
+    //   .nav__submenu {
+    //     display: block;
+    //   }
+
+    //   .overlay {
+    //     display: block;
+    //   }
+
+    //   > button > span {
+    //     transform: rotate(180deg);
+    //   }
+    // }
 
     &-item > button {
       cursor: pointer;

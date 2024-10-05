@@ -18,7 +18,6 @@ const fetchAsociados = async () => {
 
 onBeforeMount(async () => {
   asociadosItems.value = await fetchAsociados();
-  console.log(asociadosItems.value);
 });
 </script>
 
