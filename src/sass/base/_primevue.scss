@@ -113,3 +113,59 @@
 .p-dataview-footer {
   border-width: 0 !important;
 }
+
+.p-dataview-paginator-bottom {
+  margin-top: 1rem;
+  padding: 1.5rem 0 ;
+  // background-color: red;
+
+  .p-paginator-content {
+    display: flex;
+    gap: .5rem;
+
+    .p-paginator-pages {
+      display: flex;
+      gap: .25rem;
+
+      .p-paginator-page {
+        display: flex;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        padding: 1rem;
+        color: get-color(primary);
+
+        @include breakpoint-min(md) {
+          width: 40px;
+          height: 40px;
+          padding: 1.5rem;
+        }
+
+        &-selected {
+          color: white;
+          background-color: get-color(primary);
+        }
+      }
+    }
+
+    .p-paginator-prev {
+      margin-right: .5rem;
+
+      @include breakpoint-min(md) {
+        margin-right: 4rem;
+      }
+    }
+
+    .p-paginator-next {
+      margin-left: .5rem;
+
+      @include breakpoint-min(md) {
+        margin-left: 4rem;
+      }
+    }
+
+    .p-disabled {
+      color: lightgray;
+    }
+  }
+}

@@ -99,14 +99,13 @@ const closeMenu = (e) => {
 };
 
 const toggleSubmenu = (index) => {
-  // If clicking the same submenu that's already open, close it
   if (activeSubmenu.value === index) {
     activeSubmenu.value = null;
+
     if (overlay.value) {
       overlay.value.style.display = 'none';
     }
   } else {
-    // If clicking a different submenu, close the current one and open the new one
     activeSubmenu.value = index;
     if (overlay.value) {
       overlay.value.style.display = 'block';
@@ -175,18 +174,17 @@ onUnmounted(() => {
             :key="link.name"
             class="nav__list-item"
           >
-            <button
-              @click="toggleSubmenu(index)"
-              @focus="toggleSubmenu(index)"
-            >
+            <button @click.stop.prevent="toggleSubmenu(index)">
               {{ link.name }}
               <span class="material-symbols-outlined">
                 keyboard_arrow_down
               </span>
             </button>
             <div
-              class="nav__submenu"
-              :class="{ 'nav__submenu--open': activeSubmenu === index }"
+              :class="{
+                nav__submenu: true,
+                'nav__submenu--open': activeSubmenu === index,
+              }"
             >
               <ul class="fp-container">
                 <li
@@ -274,10 +272,16 @@ onUnmounted(() => {
   font-weight: 700;
   width: calc(100% - 2rem);
   margin: 2rem auto 0;
+  transition: all 0.2s ease-in-out;
 
   @include breakpoint-min('md2') {
     width: fit-content;
     margin: 0;
+  }
+
+  &:hover {
+    text-decoration: none;
+    background-color: darken(get-color('primary'), 10%);
   }
 }
 
@@ -408,7 +412,7 @@ header {
       position: absolute;
       left: 0;
       right: 0;
-      top: calc(100% + 2px);
+      top: calc(100% + 1px);
       width: 100vw;
       padding: 2rem 0;
     }

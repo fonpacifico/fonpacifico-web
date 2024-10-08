@@ -13,6 +13,10 @@ const asociados = ref([]);
 const layout = ref('grid');
 const rows = ref(12);
 
+const sortedAsociados = computed(() => {
+  return asociados.value.sort((a, b) => a.nombre.localeCompare(b.nombre));
+});
+
 const fetchAsociadosTecnicos = async () => {
   try {
     const response = await fetch(
@@ -83,7 +87,7 @@ onBeforeMount(async () => {
       <data-view
         data-key="id"
         layout="list"
-        :value="asociados"
+        :value="sortedAsociados"
         :rows="rows"
         paginator
       >
@@ -93,7 +97,10 @@ onBeforeMount(async () => {
               v-for="(item, index) in items"
               key="index"
             >
-              {{ item.nombre }}
+              <span class="asociados-grid-wrapper__icon">
+                {{ item.nombre.slice(0, 1) }}</span
+              >
+              <p>{{ item.nombre }}</p>
             </article>
           </div>
         </template>
@@ -184,6 +191,27 @@ onBeforeMount(async () => {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
+  }
+
+  article {
+    display: grid;
+    grid-template-columns: 48px 1fr 1fr 1fr 1fr;
+    gap: 1.5rem;
+    align-items: center;
+    place-content: center;
+
+    p {
+      grid-column: 2 / -1;
+    }
+  }
+
+  &__icon {
+    display: flex;
+    place-content: center;
+    place-items: center;
+    width: 48px !important;
+    height: 48px !important;
+    background-color: #ebebeb;
   }
 }
 
