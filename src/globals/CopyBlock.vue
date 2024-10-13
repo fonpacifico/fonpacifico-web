@@ -76,14 +76,14 @@ const classes = computed(() => [
       class="copy-block__ctas"
     >
       <a
-        class="button"
+        v-for="cta in ctas"
+        key="cta.text"
         :href="cta.url"
         :class="{
+          button: true,
           'button--secondary': cta.type === 'secondary',
           'button--secondary-outlined': cta.type === 'secondary-outlined',
         }"
-        v-for="cta in ctas"
-        key="cta.text"
       >
         {{ cta.text }}
         <span

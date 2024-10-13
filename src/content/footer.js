@@ -1,80 +1,81 @@
 export const footerNavItems = [
 	{
 		link: {
-			name: "nosotros",
+			link: "nosotros",
 			text: "Nosotros",
-			href: "#",
 		},
 		sublinks: [
 			{
-				name: "acerca de Fonpacífico",
+				link: "nosotros",
 				text: "Acerca de Fonpacífico",
-				href: "#",
+				href: "nosotros",
 			},
 			{
-				name: "servicios",
+				link: "servicios",
 				text: "Servicios",
-				href: "#",
+				href: "servicios",
+			},
+			{
+				link: "programas-y-cursos",
+				text: "Programas y Cursos",
+				href: "programas-y-cursos",
 			},
 		],
 	},
 	{
 		link: {
-			name: "contratacion",
+			link: "contratacion",
 			text: "Contratación",
-			href: "#",
 		},
 		sublinks: [
 			{
-				name: "convocatorias",
+				link: "convocatorias",
 				text: "Convocatorias",
-				href: "#",
-			},
-			{
-				name: "asociados técnicos",
-				text: "Asociados técnicos",
-				href: "#",
+				href: "convocatorias",
 			},
 		],
 	},
 	{
 		link: {
-			name: "transparencia",
+			link: "transparencia",
 			text: "Transparencia",
-			href: "#",
 		},
 		sublinks: [
 			{
-				name: "Información pública",
+				link: "Información pública",
 				text: "Información pública",
-				href: "#",
+				href: "transparencia",
 			},
 			{
-				name: "Políticas",
+				link: "politicas",
 				text: "Políticas",
-				href: "#",
+				href: "politicas",
 			},
 			{
-				name: "PQRSD",
+				link: "pqrsd",
 				text: "PQRSD",
-				href: "#",
+				href: "pqrsd",
 			},
 		],
 	},
 	{
 		link: {
-			name: "Otros",
+			link: "Otros",
 			text: "Otros",
-			href: "#",
 		},
 		sublinks: [
 			{
-				name: "Acceso empleados",
+				link: "Asociados Técnicos",
+				text: "Asociados Técnicos",
+				href: "inscripcion",
+			},
+			{
+				link: "Acceso empleados",
 				text: "Acceso empleados",
 				href: "https://wzjn8jk.localto.net/",
 			},
 			{
-				name: "Acceso asociados",
+				link: "Acceso asociados",
 				text: "Acceso asociados",
 				href: "https://tyc43hr.localto.net/",
 			},

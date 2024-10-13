@@ -14,18 +14,14 @@ defineProps({
       v-for="item in items"
       :key="item.link.name"
     >
-      <router-link
-        class="footer__main-link"
-        :to="{ name: 'nosotros' }"
-        >{{ item.link.text }}</router-link
-      >
+      <strong>{{ item.link.text }}</strong>
       <ul v-if="item.sublinks.length > 0">
         <li v-for="sublink in item.sublinks">
-          <a
-            target="_blank"
-            :href="sublink.href"
+          <router-link
+            class="sublink"
+            :to="sublink.href"
           >
-            {{ sublink.text }}</a
+            {{ sublink.text }}</router-link
           >
         </li>
       </ul>
@@ -38,18 +34,29 @@ defineProps({
 
 .footer {
   &__menu-item {
+    max-width: 180px;
     display: flex;
     flex-flow: column nowrap;
-    gap: 1rem;
+    gap: 1.5rem;
+
+    strong {
+      font-size: 16px;
+    }
 
     a {
-      font-weight: 700;
+      font-weight: 400;
     }
 
     ul {
       display: flex;
       flex-flow: column nowrap;
       gap: 1rem;
+
+      li {
+        a {
+          font-size: 14px;
+        }
+      }
     }
   }
 }

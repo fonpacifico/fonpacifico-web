@@ -22,7 +22,7 @@ const links = ref([
       },
       {
         name: 'Programas y cursos',
-        link: 'programasYCursos',
+        link: 'programas-y-cursos',
         subtitle: 'Desarrollados por nosotros',
       },
     ],
@@ -31,19 +31,15 @@ const links = ref([
     name: 'Contratación',
     sublinks: [
       {
-        name: 'convocatorias',
+        name: 'Convocatorias',
         link: 'convocatorias',
         subtitle: 'Abiertas, en proceso y finalizadas',
       },
       {
         name: 'Manual de contratación (PDF)',
-        link: 'home',
+        link: 'https://drive.google.com/file/d/12iRC5BZFZFhTkict-vy2rp3-XvVFQg5K/view?usp=drive_link',
+        linkType: 'download',
         subtitle: 'Descarga nuestro manual en PDF',
-      },
-      {
-        name: 'Documentos precontractuales',
-        link: 'home',
-        subtitle: 'Acceso a PDFs de nuestro documentos',
       },
     ],
   },
@@ -96,6 +92,8 @@ mql.addEventListener('change', (e) => {
 const closeMenu = (e) => {
   e.target.blur();
   showMenu.value = false;
+  activeSubmenu.value = null;
+  console.log('close menu');
 };
 
 const toggleSubmenu = (index) => {
@@ -191,7 +189,17 @@ onUnmounted(() => {
                   v-for="sublink in link.sublinks"
                   :key="sublink.name"
                 >
+                  <a
+                    v-if="sublink.linkType === 'download'"
+                    target="_blank"
+                    :href="sublink.link"
+                    :download="sublink.linkType === 'download'"
+                    >{{ sublink.name }}
+                    <br />
+                    <span class="subtitle">{{ sublink.subtitle }}</span></a
+                  >
                   <router-link
+                    v-else
                     :to="sublink.link"
                     class="subnav-link"
                     @click="(e) => closeMenu(e)"
@@ -353,21 +361,6 @@ header {
     .nav__submenu--open {
       display: block;
     }
-
-    // &-item:focus-within,
-    // &-item:active {
-    //   .nav__submenu {
-    //     display: block;
-    //   }
-
-    //   .overlay {
-    //     display: block;
-    //   }
-
-    //   > button > span {
-    //     transform: rotate(180deg);
-    //   }
-    // }
 
     &-item > button {
       cursor: pointer;

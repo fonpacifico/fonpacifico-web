@@ -107,6 +107,15 @@ footer {
     flex-flow: row wrap;
     display: flex;
     gap: 2rem;
+    margin-bottom: 2rem;
+
+    span {
+      width: 100%;
+
+      @include breakpoint-min('md') {
+        width: auto;
+      }
+    }
 
     @include breakpoint-min('md') {
       gap: 3rem;
@@ -119,9 +128,14 @@ footer {
     flex-flow: row wrap;
     gap: 2rem;
     place-content: flex-start;
+    width: 100%;
 
     @include breakpoint-min('md') {
-      place-content: space-evenly;
+      place-content: space-between;
+    }
+
+    @include breakpoint-min('lg') {
+      width: auto;
     }
   }
 
