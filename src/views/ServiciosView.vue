@@ -37,7 +37,7 @@ import * as content from '@/content/serviciosView';
               text: 'Brochure de servicios',
               type: 'secondary-outlined',
               icon: 'download',
-              url: '#',
+              url: 'servicios',
             },
           ]"
         />

@@ -15,7 +15,7 @@ const props = defineProps({
     required: true,
   },
   subHeading: {
-    type: String || Array,
+    type: [String, Array],
     default: '',
   },
   ctas: {
@@ -78,7 +78,7 @@ const classes = computed(() => [
       <router-link
         v-for="cta in ctas"
         key="cta.text"
-        :to="{ nam: cta.url }"
+        :to="{ name: cta.url }"
         :class="{
           button: true,
           'button--secondary': cta.type === 'secondary',

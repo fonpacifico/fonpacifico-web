@@ -22,7 +22,7 @@ export const servicesCtas = [
 		text: "Ver nuestros servicios",
 		type: "primary",
 		icon: "arrow_outward",
-		url: "/servicios",
+		url: "servicios",
 	},
 	{
 		text: "Brochure de servicios",
