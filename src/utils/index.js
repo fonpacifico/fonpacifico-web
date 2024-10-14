@@ -19,3 +19,9 @@ export const capitalizeFirstLetter = (str) => {
 	if (!str) return str; // Return if the string is empty
 	return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
 };
+
+export const makeObjectKeysLowercase = (obj) => {
+	return Object.fromEntries(
+		Object.entries(obj).map(([key, value]) => [key.toLowerCase(), value]),
+	);
+};

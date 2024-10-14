@@ -93,7 +93,6 @@ const closeMenu = (e) => {
   e.target.blur();
   showMenu.value = false;
   activeSubmenu.value = null;
-  console.log('close menu');
 };
 
 const toggleSubmenu = (index) => {
@@ -237,7 +236,7 @@ onUnmounted(() => {
 </template>
 
 <style lang="scss" scoped>
-@use '../sass/abstracts' as *;
+@use '@/sass/abstracts' as *;
 
 .overlay {
   display: none;

@@ -20,7 +20,6 @@ defineProps({
           v-for="sublink in item.sublinks"
           :key="sublink.text"
         >
-          {{ sublink.href }}
           <router-link
             class="sublink"
             :to="sublink.href"
@@ -34,7 +33,7 @@ defineProps({
 </template>
 
 <style lang="scss" scoped>
-@use '../sass/abstracts' as *;
+@use '@/sass/abstracts' as *;
 
 .footer {
   &__menu-item {

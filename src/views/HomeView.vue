@@ -85,5 +85,5 @@ import * as content from '@/content/homeView';
 </template>
 
 <style lang="scss">
-@use '../sass/abstracts' as *;
+@use '@/sass/abstracts' as *;
 </style>

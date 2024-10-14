@@ -88,7 +88,7 @@ const footerAddresses = [
 </template>
 
 <style lang="scss" scoped>
-@use '../sass/abstracts' as *;
+@use '@/sass/abstracts' as *;
 
 footer {
   background-color: get-color('primary-dark');

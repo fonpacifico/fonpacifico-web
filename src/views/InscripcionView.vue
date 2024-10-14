@@ -8,36 +8,16 @@ import {
 } from '@/content/inscripcion';
 import { ref, computed, onBeforeMount, onUnmounted, onMounted } from 'vue';
 import { items } from '@/content/transparencia';
+import { useAsociados } from '@/store';
 
-const asociados = ref([]);
 const layout = ref('grid');
 const rows = ref(12);
-
-const sortedAsociados = computed(() => {
-  return asociados.value.sort((a, b) => a.nombre.localeCompare(b.nombre));
-});
-
-const fetchAsociadosTecnicos = async () => {
-  try {
-    const response = await fetch(
-      'https://j4hvvf8.localto.net/asociadostecnicos'
-    );
-    const data = await response.json();
-
-    return data;
-  } catch (error) {
-    console.error('Error fetching asociados tecnicos data:', error);
-  }
-};
-
-onBeforeMount(async () => {
-  asociados.value = await fetchAsociadosTecnicos();
-});
+const store = useAsociados();
 </script>
 
 <template>
   <main>
-    <section class="heading fp-container fp-padded--small">
+    <section class="inscripcion__heading fp-container fp-padded--small">
       <h3>Sé parte de nuestro equipo de asociados técnicos</h3>
       <p>
         ¡Únete a nosotros en el desarrollo nacional, integral e inclusivo de
@@ -87,7 +67,7 @@ onBeforeMount(async () => {
       <data-view
         data-key="id"
         layout="list"
-        :value="sortedAsociados"
+        :value="store.asociados"
         :rows="rows"
         paginator
       >
@@ -112,6 +92,12 @@ onBeforeMount(async () => {
 
 <style lang="scss" scoped>
 @use '@/sass/abstracts' as *;
+
+.inscripcion__heading {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+}
 
 .rotate {
   transform: rotate(180deg);

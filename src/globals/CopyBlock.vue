@@ -97,7 +97,7 @@ const classes = computed(() => [
 </template>
 
 <style lang="scss" scoped>
-@use '../sass/abstracts/_mixins' as *;
+@use '@/sass/abstracts' as *;
 
 .copy-block {
   grid-column: 1 / -1;

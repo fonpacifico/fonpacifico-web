@@ -37,7 +37,7 @@ const croppedText = computed(() => {
         />
       </div>
       <div class="card__text">
-        <h3>{{ project.name }}</h3>
+        <h4>{{ project.name }}</h4>
         <p>{{ project.description }}</p>
         <button @click="emit('cardClick')">
           Ver más
@@ -98,11 +98,12 @@ const croppedText = computed(() => {
   &__text {
     text-align: left;
 
-    h3 {
+    h4 {
       margin-bottom: 1rem;
     }
 
     p {
+      font-size: 1rem;
       display: -webkit-box;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;

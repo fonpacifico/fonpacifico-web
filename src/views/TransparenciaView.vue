@@ -1,5 +1,6 @@
 <script setup>
 import NewsLetter from '@/components/NewsLetter.vue';
+import GlobalAccordion from '@/globals/GlobalAccordion.vue';
 import { items } from '@/content/transparencia';
 </script>
 
@@ -20,27 +21,19 @@ import { items } from '@/content/transparencia';
         >
       </div>
       <div class="transparencia__accordion">
-        <details v-for="(item, index) in items">
-          <summary>
-            <span>
-              <span style="margin-right: 0.5rem">{{ index + 1 }}.</span
-              ><span> {{ item.title }}</span></span
-            >
-            <span
-              class="material-symbols-outlined"
-              :class="{ rotate: index }"
-              >expand_more</span
-            >
-          </summary>
-          <p>content</p>
-        </details>
+        <global-accordion
+          v-for="item in items"
+          :title="item.title"
+          :items="item.items"
+          :ordered="false"
+        />
       </div>
     </div>
   </main>
 </template>
 
 <style lang="scss" scoped>
-@use '../sass/abstracts/_mixins' as *;
+@use '@/sass/abstracts' as *;
 
 .transparencia {
   display: flex;
@@ -58,35 +51,37 @@ import { items } from '@/content/transparencia';
     gap: 1.5rem;
   }
 
-  &__accordion {
-    details {
-      summary {
-        display: flex;
-        flex-flow: row nowrap;
-        gap: 1rem;
-        align-items: center;
-        place-content: space-between;
-        padding: 1rem 0;
-        cursor: pointer;
+  // &__accordion {
+  //   details {
+  //     border-top: 2px solid get-color('card-border');
+  //     padding: 1.5rem 0;
 
-        span {
-          font-size: 18px;
-          font-weight: 700;
-        }
+  //     summary {
+  //       display: flex;
+  //       flex-flow: row nowrap;
+  //       gap: 1rem;
+  //       align-items: center;
+  //       place-content: space-between;
+  //       cursor: pointer;
 
-        span:last-of-type {
-          transition: transform 0.2 s ease-in-out;
-        }
-      }
-    }
+  //       span {
+  //         font-size: 18px;
+  //         font-weight: 700;
+  //       }
 
-    details[open] {
-      summary {
-        span:last-of-type {
-          transform: rotate(180deg);
-        }
-      }
-    }
-  }
+  //       span:last-of-type {
+  //         transition: transform 0.2 s ease-in-out;
+  //       }
+  //     }
+  //   }
+
+  // details[open] {
+  //   summary {
+  //     span:last-of-type {
+  //       transform: rotate(180deg);
+  //     }
+  //   }
+  // }
+  // }
 }
 </style>

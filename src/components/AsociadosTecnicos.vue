@@ -1,24 +1,7 @@
 <script setup>
-import { onBeforeMount, ref } from 'vue';
+import { useAsociados } from '@/store';
 
-const asociadosItems = ref([]);
-
-const fetchAsociados = async () => {
-  try {
-    const response = await fetch(
-      'https://j4hvvf8.localto.net/asociadostecnicos'
-    );
-    const data = await response.json();
-
-    return data;
-  } catch (error) {
-    console.error('Error fetching asociados data:', error);
-  }
-};
-
-onBeforeMount(async () => {
-  asociadosItems.value = await fetchAsociados();
-});
+const store = useAsociados();
 </script>
 
 <template>
@@ -34,14 +17,15 @@ onBeforeMount(async () => {
       </router-link>
     </div>
     <ul class="asociados-list">
-      <div v-for="item in asociadosItems">
-        {{ item }}
+      <div
+        v-for="item in store.asociadosConAvatar"
+        class="asociado"
+      >
+        <figure class="asociado__img">
+          <img :src="item.avatarUrl" />
+        </figure>
+        <p class="asociado__name">{{ item.nombre }}</p>
       </div>
-      <!-- <asociado-item
-        v-for="item in asociadosItems"
-        :item="item"
-        class="asociado-item"
-      /> -->
     </ul>
   </main>
 </template>
@@ -49,17 +33,34 @@ onBeforeMount(async () => {
 <style lang="scss" scoped>
 @use '@/sass/abstracts' as *;
 
-.asociados-list {
+.asociado {
   display: flex;
-  flex-flow: column nowrap;
+  align-items: center;
+  gap: 1rem;
+  place-self: baseline;
+
+  &__img {
+    width: 72px;
+    height: 72px;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+}
+
+.asociados-list {
+  display: grid;
   place-items: center;
   gap: 2rem;
-  grid-column: 1 / -1;
+  grid-template-columns: 1fr 1fr;
   width: 100%;
 
-  @include breakpoint-min('sm') {
-    flex-flow: row wrap;
-    place-items: flex-start;
+  @include breakpoint-min('md') {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
   li {

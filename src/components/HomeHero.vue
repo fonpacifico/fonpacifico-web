@@ -24,7 +24,7 @@
 </template>
 
 <style lang="scss" scoped>
-@use '../sass/abstracts' as *;
+@use '@/sass/abstracts' as *;
 
 .home-hero {
   background-image: url('/home-hero-background.png');

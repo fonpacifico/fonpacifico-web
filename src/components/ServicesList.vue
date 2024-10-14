@@ -15,7 +15,7 @@ import { servicesList } from '../content/homeView';
 </template>
 
 <style lang="scss" scoped>
-@use '../sass/abstracts/_mixins' as *;
+@use '@/sass/abstracts' as *;
 
 .services-list {
   grid-column: 1 / -1;

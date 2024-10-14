@@ -10,6 +10,10 @@ const props = defineProps({
     type: Array,
     required: true,
   },
+  ordered: {
+    type: Boolean,
+    default: true,
+  },
 });
 
 // Track the open state of accordion items
@@ -38,7 +42,10 @@ onMounted(() => {
         <span>{{ title }}</span>
         <span class="material-symbols-outlined">expand_more</span>
       </summary>
-      <ol class="accordion__content">
+      <ol
+        v-if="ordered"
+        class="accordion__content"
+      >
         <li
           v-for="item in items"
           :key="item"
@@ -46,15 +53,30 @@ onMounted(() => {
           {{ item }}
         </li>
       </ol>
+      <ul
+        v-else
+        class="accordion__content"
+      >
+        <li
+          v-for="item in items"
+          :key="item"
+        >
+          {{ item }}
+        </li>
+      </ul>
     </details>
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
+@use '@/sass/abstracts' as *;
+
 .accordion {
+  margin-top: 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  border-top: 2px solid get-color('card-border');
 }
 
 .accordion__button {
@@ -69,7 +91,6 @@ onMounted(() => {
 }
 
 .accordion__content {
-  list-style: auto;
   padding-left: 1.2rem;
   display: flex;
   flex-direction: column;
@@ -83,6 +104,14 @@ onMounted(() => {
 
 .rotate {
   transform: rotate(180deg);
+}
+
+ol {
+  list-style: auto;
+}
+
+ul {
+  list-style-type: disc;
 }
 
 details {

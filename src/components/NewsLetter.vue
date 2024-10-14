@@ -27,7 +27,7 @@
   </section>
 </template>
 <style lang="scss">
-@use '../sass/abstracts' as *;
+@use '@/sass/abstracts' as *;
 
 .newsletter-section {
   position: relative;

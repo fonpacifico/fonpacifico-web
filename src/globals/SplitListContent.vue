@@ -42,7 +42,7 @@ defineProps({
 </template>
 
 <style lang="scss">
-@use '../sass/abstracts' as *;
+@use '@/sass/abstracts' as *;
 
 .split-list {
   display: flex;

@@ -20,7 +20,7 @@ import { splitListContent } from '@/content/nosotrosView';
 </template>
 
 <style lang="scss">
-@use '../sass/abstracts' as *;
+@use '@/sass/abstracts' as *;
 
 .split-copy-background {
   background-color: get-color('primary-dark');

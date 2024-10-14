@@ -54,7 +54,7 @@ import { servicesCards } from '@/content/serviciosView';
   </section>
 </template>
 <style lang="scss">
-@use '../sass/abstracts' as *;
+@use '@/sass/abstracts' as *;
 
 .split-section {
   background-color: get-color('primary-dark');
