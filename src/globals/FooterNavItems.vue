@@ -16,7 +16,11 @@ defineProps({
     >
       <strong>{{ item.link.text }}</strong>
       <ul v-if="item.sublinks.length > 0">
-        <li v-for="sublink in item.sublinks">
+        <li
+          v-for="sublink in item.sublinks"
+          :key="sublink.text"
+        >
+          {{ sublink.href }}
           <router-link
             class="sublink"
             :to="sublink.href"
