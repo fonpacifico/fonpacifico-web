@@ -75,10 +75,10 @@ const classes = computed(() => [
       v-if="ctas.length !== 0"
       class="copy-block__ctas"
     >
-      <a
+      <router-link
         v-for="cta in ctas"
         key="cta.text"
-        :href="cta.url"
+        :to="{ nam: cta.url }"
         :class="{
           button: true,
           'button--secondary': cta.type === 'secondary',
@@ -91,7 +91,7 @@ const classes = computed(() => [
           class="material-symbols-outlined"
           >{{ cta.icon }}</span
         >
-      </a>
+      </router-link>
     </div>
   </div>
 </template>
