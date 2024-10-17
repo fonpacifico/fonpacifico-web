@@ -98,21 +98,30 @@ export const programasInteres = [
 		title: "Alianza Paz Pacífico",
 		description:
 			"Programa de interés público para el fomento de cierre de brechas socioeconómicas y el fortalecimiento de capacidades que beneficien a los Municipios y Departamentos del país, contribuyendo a superar inequidades, y los factores sociales que incentivan la violencia y perpetúan la pobreza, facilitando la unión de esfuerzos del sector privado y público de las regiones.",
-		link: "https://www.google.com",
 		image: "/programas_interes/alianza_paz.png",
 	},
 	{
 		title: "Tejiendo Vínculos",
 		description:
 			"Programa para la promoción de la inteligencia emocional, Pautas de Crianza y Habilidades Para la Vida a través de procesos pedagógicos, campañas de comunicación y movilización social contribuyendo a la construcción de imaginarios colectivos de una sociedad incluzyente, próspera, en paz y mentalmente sana.",
-		link: "https://www.google.com",
 		image: "/programas_interes/tejiendo_vinculos.png",
 	},
 	{
 		title: "RedesLab",
 		description:
 			"Redes lab es el laboratorio de paz, emprendimiento e innovación, se compromete a movilizar recursos y conexiones para promover oportunidades y capacidades de respuesta social, e instrumentalizar activos sociales generando soluciones reales que impacten problemáticas institucionales, económicas y sociales de los territorios afectados por la pobreza y la violencia en Colombia.",
-		link: "https://www.google.com",
 		image: "/programas_interes/redes_lab.png",
+	},
+	{
+		title: "Afro Colombian Channel",
+		description:
+			"Es una plataforma innovadora diseñada para amplificar y potenciar la riqueza étnica y cultural de las comunidades afrocolombianas. Nuestro objetivo es  fortalecer su identidad y contribuir de manera significativa al desarrollo sostenible de etnico. ",
+		image: "/programas_interes/afro_colombia.png",
+	},
+	{
+		title: "Cursos Fonpacífico",
+		description:
+			"Creemos firmemente en el poder transformador de la educación para cambiar vidas y revitalizar comunidades enteras. Nuestra misión es construir puentes hacia un futuro mejor, donde la inclusión, la diversidad y la igualdad de oportunidades no sean solo aspiraciones, sino una realidad tangible para todos.",
+		image: "/programas_interes/cursos_fonpacifico.png",
 	},
 ];

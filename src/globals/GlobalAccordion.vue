@@ -76,11 +76,9 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  border-top: 2px solid get-color('card-border');
 }
 
 .accordion__button {
-  padding: 1rem 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -91,7 +89,7 @@ onMounted(() => {
 }
 
 .accordion__content {
-  padding-left: 1.2rem;
+  padding: 1.5rem 0 0 1.2rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -115,9 +113,16 @@ ul {
 }
 
 details {
+  padding: 1.5rem 1rem;
+  border: 2px solid get-color('card-border');
+  border-radius: 0.5rem;
+
   summary {
     cursor: pointer;
+
     span:last-of-type {
+      color: get-color('primary');
+      font-size: 2.5rem;
       cursor: pointer;
     }
   }

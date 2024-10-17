@@ -45,7 +45,7 @@ export const splitListContent = {
 		{
 			title: "Desempeño",
 			description: "Visualiza nuestro desempeño actual en IGPR.",
-			link: "#",
+			link: "https://www.sgr.gov.co/Vigilancia/Medici%C3%B3ndeDesempe%C3%B1oIGPR.aspx",
 			linkText: "Ver desempeño",
 		},
 	],
@@ -59,6 +59,7 @@ export const servicesCtas = [
 		text: "Ver nuestros servicios",
 		type: "primary",
 		icon: "arrow_outward",
+		url: "servicios",
 	},
 	{
 		text: "Brochure de servicios",

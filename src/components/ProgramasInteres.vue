@@ -25,7 +25,7 @@ defineProps({
         </p>
         <router-link
           class="button programas-interes__button"
-          to="/programas-interes"
+          to="/programas-y-cursos"
         >
           Programas y cursos
           <span class="material-symbols-outlined">arrow_forward</span>

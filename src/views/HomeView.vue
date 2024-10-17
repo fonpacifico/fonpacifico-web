@@ -83,7 +83,3 @@ import * as content from '@/content/homeView';
     <news-letter />
   </main>
 </template>
-
-<style lang="scss">
-@use '@/sass/abstracts' as *;
-</style>

@@ -52,6 +52,7 @@ defineProps({
 
   @include breakpoint-min('md') {
     flex-flow: row nowrap;
+    max-height: 800px;
   }
 
   &__heading {

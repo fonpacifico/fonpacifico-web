@@ -42,7 +42,7 @@ const store = useAsociados();
         />
       </div>
     </section>
-    <section class="inscription-form fp-container fp-padded-bottom">
+    <section class="inscription-form fp-container">
       <figure>
         <img
           src="/imagenes_inscripciones/inscripcion-form.jpeg"
@@ -56,7 +56,7 @@ const store = useAsociados();
           varius enim in eros elementum tristique.
         </p>
         <a
-          href="#"
+          href="https://tyc43hr.localto.net/"
           class="button"
           target="_blank"
           >Ir al formulario de inscripción</a
@@ -128,19 +128,27 @@ const store = useAsociados();
   display: flex;
   flex-flow: column nowrap;
   gap: 1.5rem;
+  border: 2px solid get-color('card-border');
+  margin-bottom: 4rem;
+  border-radius: 2rem;
+  padding: 0 0 1.5rem;
 
   @include breakpoint-min('md') {
     display: grid;
+    padding: 0;
     grid-template-columns: 1fr 1fr;
     place-items: center;
+    padding-right: 0;
+    overflow: hidden;
+    margin-bottom: 8rem;
   }
 
   figure {
     border-radius: 2rem 2rem 0 0;
     overflow: hidden;
+    height: 100%;
 
     @include breakpoint-min('md') {
-      border-radius: 0 2rem 2rem 0;
       grid-row: 1;
       grid-column: 2;
     }
@@ -158,11 +166,12 @@ const store = useAsociados();
     display: flex;
     flex-flow: column nowrap;
     gap: 1.5rem;
-    padding: 1.5rem;
+    padding: 0 1.5rem 0;
 
     @include breakpoint-min('md') {
       grid-row: 1;
       grid-column: 1;
+      padding-block: 4rem;
     }
   }
 }

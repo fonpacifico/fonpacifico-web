@@ -37,7 +37,11 @@ const footerAddresses = [
         <footer-nav-items :items="footerNavItems" />
         <div class="footer__get-in-touch">
           <h5>Trabajemos juntos</h5>
-          <a href="mailto:info@fonpacifico.org">info@fonpacifico.org</a>
+          <a
+            href="mailto:info@fonpacifico.org?
+          subject=Contacto para colaboración empresarial - Fonpacífico y [Nombre de tu empresa]"
+            >info@fonpacifico.org</a
+          >
         </div>
       </nav>
       <div class="footer-contact">
