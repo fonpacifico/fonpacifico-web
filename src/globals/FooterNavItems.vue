@@ -25,7 +25,8 @@ defineProps({
             :href="sublink.href"
             target="_blank"
             rel="noopener noreferrer"
-          ></a>
+            >{{ sublink.text }}</a
+          >
           <router-link
             v-else
             class="sublink"
