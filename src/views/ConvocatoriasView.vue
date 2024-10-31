@@ -65,37 +65,43 @@ const fetchDocuments = async (id) => {
 };
 
 const fetchAndBuildConvocatorias = async () => {
-  const cachedData = getFromLocalStorage('convocatoriasWithDocuments', MAX_AGE);
+  try {
+    const response = await fetch(
+      'https://j4hvvf8.localto.net/maestroconvocatoriasx'
+    );
 
-  if (cachedData) {
-    console.log('Loaded complete data from localStorage');
-    return cachedData;
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const convocatorias = await response.json();
+
+    const convocatoriasWithDocuments = await Promise.all(
+      convocatorias.map(async (convocatoria) => {
+        const documents = await fetchDocuments(convocatoria.id_convocatoria);
+
+        convocatoria.documents = documents.map(({ documento, ruta }) => ({
+          documento: capitalizeFirstLetter(documento),
+          url: `https://j4hvvf8.localto.net/pdf/${ruta}`,
+        }));
+
+        return convocatoria;
+      })
+    );
+
+    return convocatoriasWithDocuments;
+  } catch (error) {
+    console.error('Error fetching convocatorias:', error);
+    const cachedData = getFromLocalStorage(
+      'convocatoriasWithDocuments',
+      MAX_AGE
+    );
+
+    if (cachedData) {
+      console.log('Loaded complete data from localStorage');
+      return cachedData;
+    }
   }
-
-  const response = await fetch(
-    'https://j4hvvf8.localto.net/maestroconvocatoriasx'
-  );
-  const convocatorias = await response.json();
-
-  const convocatoriasWithDocuments = await Promise.all(
-    convocatorias.map(async (convocatoria) => {
-      const documents = await fetchDocuments(convocatoria.id_convocatoria);
-
-      convocatoria.documents = documents.map(({ documento, ruta }) => ({
-        documento: capitalizeFirstLetter(documento),
-        url: `https://j4hvvf8.localto.net/pdf/${ruta}`,
-      }));
-
-      return convocatoria;
-    })
-  );
-
-  saveToLocalStorage('convocatoriasWithDocuments', convocatoriasWithDocuments);
-
-  console.log(
-    'Fetched convocatorias and documents from network and cached the data'
-  );
-  return convocatoriasWithDocuments;
 };
 
 onMounted(async () => {
