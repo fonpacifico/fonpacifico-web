@@ -20,7 +20,14 @@ defineProps({
           v-for="sublink in item.sublinks"
           :key="sublink.text"
         >
+          <a
+            v-if="sublink.target === 'blank'"
+            :href="sublink.href"
+            target="_blank"
+            rel="noopener noreferrer"
+          ></a>
           <router-link
+            v-else
             class="sublink"
             :to="sublink.href"
           >

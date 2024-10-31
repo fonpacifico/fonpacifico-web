@@ -72,12 +72,14 @@ export const footerNavItems = [
 			{
 				link: "Acceso empleados",
 				text: "Acceso empleados",
-				href: "https://wzjn8jk.localto.net/",
+				href: "https://wzjn8jk.localto.net",
+				target: "blank",
 			},
 			{
 				link: "Acceso asociados",
 				text: "Acceso asociados",
-				href: "https://tyc43hr.localto.net/",
+				href: "https://tyc43hr.localto.net",
+				target: "blank",
 			},
 		],
 	},
