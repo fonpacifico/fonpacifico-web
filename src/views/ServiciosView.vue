@@ -37,7 +37,8 @@ import * as content from '@/content/serviciosView';
               text: 'Brochure de servicios',
               type: 'secondary-outlined',
               icon: 'download',
-              url: 'servicios',
+              target: 'blank',
+              url: 'https://drive.google.com/file/d/1DuKuOgJriiE3ZFGuwH2KNEnl1VtPV1J1/view',
             },
           ]"
         />

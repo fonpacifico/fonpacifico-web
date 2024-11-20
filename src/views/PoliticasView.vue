@@ -13,7 +13,7 @@ const DOCUMENTS = [
     <section class="politicas__heading">
       <div>
         <h1>Políticas</h1>
-        <p>Última actualización: Abril 15, 2024</p>
+        <p>Última actualización: Noviembre 19, 2024</p>
       </div>
       <div class="politicas__subheading">
         <p>
@@ -34,7 +34,8 @@ const DOCUMENTS = [
         class="document"
         :href="document.link"
         target="_blank"
-        ><img
+      >
+        <img
           :src="document.image"
           alt="icono de un documento legal"
         />
@@ -42,9 +43,9 @@ const DOCUMENTS = [
           <p>
             {{ document.text }}
           </p>
-          <span class="material-symbols-outlined">open_in_new</span>
-        </span></a
-      >
+          <span class="material-symbols-outlined icon">arrow_outward</span>
+        </span>
+      </a>
     </section>
   </main>
 </template>
@@ -93,10 +94,9 @@ const DOCUMENTS = [
     flex-direction: column;
     gap: 1rem;
     flex: 0 1 calc(100%);
-    border: 1px solid #c5c5c5;
+    border: 2px solid get-color('card-border');
     border-radius: 1rem;
     overflow: hidden;
-    padding: 1.5rem;
     transition: all 0.15s ease-in-out;
     text-decoration: none;
     box-shadow: none;
@@ -104,8 +104,13 @@ const DOCUMENTS = [
 
     &:hover,
     &:focus {
-      transform: translateY(-3px);
-      box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+      border: 2px solid get-color('primary');
+
+      .icon {
+        border: 2px solid get-color('primary');
+        background-color: get-color('primary');
+        color: white;
+      }
     }
 
     @include breakpoint-min('sm') {
@@ -125,14 +130,24 @@ const DOCUMENTS = [
       place-content: space-between;
       place-items: center;
       gap: 0.5rem;
+      padding: 1rem;
+      border-top: 2px solid get-color('card-border');
 
       span {
         color: get-color('primary');
+      }
+
+      .icon {
+        transition: all 0.15s ease-in-out;
+        border-radius: 50%;
+        padding: 0.25rem;
+        border: 2px solid get-color('card-border');
       }
     }
 
     p {
       color: get-color('primary');
+      font-weight: 700;
     }
   }
 }

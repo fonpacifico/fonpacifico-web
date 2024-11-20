@@ -120,6 +120,10 @@ footer {
       gap: 3rem;
       row-gap: 1.5rem;
     }
+
+    @include breakpoint-min('lg') {
+      place-content: space-between;
+    }
   }
 
   &__menu-list {
@@ -135,6 +139,7 @@ footer {
 
     @include breakpoint-min('lg') {
       width: auto;
+      gap: 4.5rem;
     }
   }
 
@@ -159,7 +164,6 @@ footer {
     display: flex;
     flex-flow: row wrap;
     place-content: flex-start;
-    gap: 1.5rem;
 
     &__h6-title {
       font-size: 20px;
@@ -170,7 +174,10 @@ footer {
     &__wrapper {
       display: flex;
       flex-flow: column nowrap;
-      gap: 1rem;
+
+      @include breakpoint-min('md') {
+        width: 68%;
+      }
     }
 
     &__list {
@@ -179,6 +186,11 @@ footer {
       place-content: flex-start;
       gap: 4rem;
       row-gap: 2rem;
+
+      @include breakpoint-min('md') {
+        width: 100%;
+        place-content: space-between;
+      }
 
       li {
         p {
@@ -209,6 +221,10 @@ footer {
 
       a {
         color: get-color('light-blue');
+      }
+
+      @include breakpoint-min('md') {
+        margin-left: auto;
       }
     }
   }
