@@ -5,46 +5,6 @@ const DOCUMENTS = [
     link: 'https://drive.google.com/file/d/19MdLiWOtoJH0LwlmbjnTT93mhmhYPrB5/view?usp=drive_link',
     text: 'Política de tratamiento de datos personales',
   },
-  {
-    image: '/documentos/doc_1.png',
-    link: 'https://drive.google.com/file/d/19MdLiWOtoJH0LwlmbjnTT93mhmhYPrB5/view?usp=drive_link',
-    text: 'Política de tratamiento de datos personales',
-  },
-  {
-    image: '/documentos/doc_1.png',
-    link: 'https://drive.google.com/file/d/19MdLiWOtoJH0LwlmbjnTT93mhmhYPrB5/view?usp=drive_link',
-    text: 'Política de tratamiento de datos personales',
-  },
-  {
-    image: '/documentos/doc_1.png',
-    link: 'https://drive.google.com/file/d/19MdLiWOtoJH0LwlmbjnTT93mhmhYPrB5/view?usp=drive_link',
-    text: 'Política de tratamiento de datos personales',
-  },
-  {
-    image: '/documentos/doc_1.png',
-    link: 'https://drive.google.com/file/d/19MdLiWOtoJH0LwlmbjnTT93mhmhYPrB5/view?usp=drive_link',
-    text: 'Política de tratamiento de datos personales',
-  },
-  {
-    image: '/documentos/doc_1.png',
-    link: 'https://drive.google.com/file/d/19MdLiWOtoJH0LwlmbjnTT93mhmhYPrB5/view?usp=drive_link',
-    text: 'Política de tratamiento de datos personales',
-  },
-  {
-    image: '/documentos/doc_1.png',
-    link: 'https://drive.google.com/file/d/19MdLiWOtoJH0LwlmbjnTT93mhmhYPrB5/view?usp=drive_link',
-    text: 'Política de tratamiento de datos personales',
-  },
-  {
-    image: '/documentos/doc_1.png',
-    link: 'https://drive.google.com/file/d/19MdLiWOtoJH0LwlmbjnTT93mhmhYPrB5/view?usp=drive_link',
-    text: 'Política de tratamiento de datos personales',
-  },
-  {
-    image: '/documentos/doc_1.png',
-    link: 'https://drive.google.com/file/d/19MdLiWOtoJH0LwlmbjnTT93mhmhYPrB5/view?usp=drive_link',
-    text: 'Política de tratamiento de datos personales',
-  },
 ];
 </script>
 
