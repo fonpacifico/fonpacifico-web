@@ -75,23 +75,44 @@ const classes = computed(() => [
       v-if="ctas.length !== 0"
       class="copy-block__ctas"
     >
-      <router-link
-        v-for="cta in ctas"
-        key="cta.text"
-        :to="{ name: cta.url }"
-        :class="{
-          button: true,
-          'button--secondary': cta.type === 'secondary',
-          'button--secondary-outlined': cta.type === 'secondary-outlined',
-        }"
-      >
-        {{ cta.text }}
-        <span
-          v-if="cta.icon"
-          class="material-symbols-outlined"
-          >{{ cta.icon }}</span
+      <span v-for="cta in ctas">
+        <a
+          :class="{
+            button: true,
+            'button--secondary': cta.type === 'secondary',
+            'button--secondary-outlined': cta.type === 'secondary-outlined',
+          }"
+          v-if="cta.target === 'blank'"
+          :href="cta.url"
+          target="_blank"
+          rel="noopener noreferrer"
+          href=""
         >
-      </router-link>
+          {{ cta.text }}
+          <span
+            v-if="cta.icon"
+            class="material-symbols-outlined"
+            >{{ cta.icon }}</span
+          >
+        </a>
+        <router-link
+          v-else
+          key="cta.text"
+          :to="{ name: cta.url }"
+          :class="{
+            button: true,
+            'button--secondary': cta.type === 'secondary',
+            'button--secondary-outlined': cta.type === 'secondary-outlined',
+          }"
+        >
+          {{ cta.text }}
+          <span
+            v-if="cta.icon"
+            class="material-symbols-outlined"
+            >{{ cta.icon }}</span
+          >
+        </router-link>
+      </span>
     </div>
   </div>
 </template>

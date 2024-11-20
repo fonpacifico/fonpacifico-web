@@ -222,9 +222,6 @@ onMounted(async () => {
 <style lang="scss" scoped>
 @use '@/sass/abstracts' as *;
 
-.test {
-  background-color: red;
-}
 .icon-wrapper {
   display: grid;
   place-content: flex-start;

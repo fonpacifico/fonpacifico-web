@@ -5,11 +5,6 @@ import FooterNavItems from './FooterNavItems.vue';
 
 const footerAddresses = [
   {
-    city: 'Oficina Santiago de Cali (Valle del Cauca)',
-    address: 'Carrera 57 # 2-23',
-    link: 'maps link',
-  },
-  {
     city: 'Oficina Cartago (Valle del Cauca)',
     address: 'Carrera 5 # 8-105.',
     link: 'maps link',

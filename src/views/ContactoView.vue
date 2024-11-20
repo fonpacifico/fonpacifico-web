@@ -58,19 +58,6 @@ import CopyBlock from '@/globals/CopyBlock.vue';
                 <span class="material-symbols-outlined">arrow_outward</span>
               </a>
             </li>
-            <li class="location">
-              <p>
-                Oficina Santiago de Cali  (Valle del Cauca) <br />
-                Carrera 57 # 2-23
-              </p>
-              <a
-                href="#"
-                class="footer_contact__link"
-              >
-                Ver en Maps
-                <span class="material-symbols-outlined">arrow_outward</span>
-              </a>
-            </li>
           </ul>
         </div>
       </aside>

@@ -38,6 +38,27 @@ export const programs = [
 			"Es una iniciativa de innovación social transformativa en Laboratorios de Paz. Se centra no sólo en las personas, sino también en los ecosistemas de desarrollo humano. Su objetivo es generar capacidad de respuesta social local y formar nodos como Agencias de Desarrollo Local, basados en tecnología, redes de beneficiarios y fondos fiduciarios que promuevan la sostenibilidad, la autonomía y la equidad transgeneracional.",
 			"Misión: Promover la articulación y fortalecimiento de las estructuras, actores y ecosistemas locales que materializan la paz y el desarrollo sostenible en grupos y territorios vulnerables afectados por la pobreza y la violencia. Movilizar recursos, conexiones, tecnologías y conocimientos para expandir la estructura de oportunidades y la capacidad de agencia local, dotándolos de activos sociales y herramientas (financieras y no financieras); fomentando la autogestión de las problemáticas institucionales, económicas y sociales.",
 		],
+		ctas: [
+			{
+				text: "Ir al sitio web",
+				link: "https://www.redeslab.org/",
+			},
+			{
+				icon: "/icons/instagram.svg",
+				text: "Instagram",
+				link: "https://www.instagram.com/laboratorio_redes_lab?igsh=MXMzNDgyNmo3ZzFpZA==",
+			},
+			{
+				icon: "/icons/facebook.svg",
+				text: "Facebook",
+				link: "https://www.facebook.com/redeslablaboratorio?mibextid=LQQJ4d",
+			},
+			{
+				icon: "/icons/linkedin.svg",
+				text: "LinkedIn",
+				link: "https://www.linkedin.com/company/redeslab/",
+			},
+		],
 	},
 	{
 		imgRoute: "/imagenes_programas_y_cursos/image-3.jpg",

@@ -28,6 +28,8 @@ export const servicesCtas = [
 		text: "Brochure de servicios",
 		type: "secondary",
 		icon: "download",
+		target: "blank",
+		url: "https://drive.google.com/file/d/1DuKuOgJriiE3ZFGuwH2KNEnl1VtPV1J1/view?usp=drive_link"
 	},
 ];
 
