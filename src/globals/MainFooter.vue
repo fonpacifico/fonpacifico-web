@@ -7,12 +7,12 @@ const footerAddresses = [
   {
     city: 'Oficina Cartago (Valle del Cauca)',
     address: 'Carrera 5 # 8-105.',
-    link: 'maps link',
+    link: 'https://maps.app.goo.gl/wSzPLiLezgoA3yJV6',
   },
   {
     city: 'Oficina Quibdó (Chocó)',
     address: 'Carrera 22 # 18B-10B UTCH Bloque 5 Piso 3.',
-    link: 'maps link',
+    link: 'https://maps.app.goo.gl/zu5Ez8jKzvJgsyqy5',
   },
 ];
 </script>
@@ -49,6 +49,7 @@ const footerAddresses = [
               <a
                 :href="address.link"
                 class="footer_contact__link"
+                target="_blank"
               >
                 Ver en Maps
                 <span class="material-symbols-outlined">arrow_outward</span>
