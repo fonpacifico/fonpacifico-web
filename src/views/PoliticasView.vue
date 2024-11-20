@@ -5,6 +5,46 @@ const DOCUMENTS = [
     link: 'https://drive.google.com/file/d/19MdLiWOtoJH0LwlmbjnTT93mhmhYPrB5/view?usp=drive_link',
     text: 'Política de tratamiento de datos personales',
   },
+  {
+    image: '/documentos/doc_1.png',
+    link: 'https://drive.google.com/file/d/19MdLiWOtoJH0LwlmbjnTT93mhmhYPrB5/view?usp=drive_link',
+    text: 'Política de tratamiento de datos personales',
+  },
+  {
+    image: '/documentos/doc_1.png',
+    link: 'https://drive.google.com/file/d/19MdLiWOtoJH0LwlmbjnTT93mhmhYPrB5/view?usp=drive_link',
+    text: 'Política de tratamiento de datos personales',
+  },
+  {
+    image: '/documentos/doc_1.png',
+    link: 'https://drive.google.com/file/d/19MdLiWOtoJH0LwlmbjnTT93mhmhYPrB5/view?usp=drive_link',
+    text: 'Política de tratamiento de datos personales',
+  },
+  {
+    image: '/documentos/doc_1.png',
+    link: 'https://drive.google.com/file/d/19MdLiWOtoJH0LwlmbjnTT93mhmhYPrB5/view?usp=drive_link',
+    text: 'Política de tratamiento de datos personales',
+  },
+  {
+    image: '/documentos/doc_1.png',
+    link: 'https://drive.google.com/file/d/19MdLiWOtoJH0LwlmbjnTT93mhmhYPrB5/view?usp=drive_link',
+    text: 'Política de tratamiento de datos personales',
+  },
+  {
+    image: '/documentos/doc_1.png',
+    link: 'https://drive.google.com/file/d/19MdLiWOtoJH0LwlmbjnTT93mhmhYPrB5/view?usp=drive_link',
+    text: 'Política de tratamiento de datos personales',
+  },
+  {
+    image: '/documentos/doc_1.png',
+    link: 'https://drive.google.com/file/d/19MdLiWOtoJH0LwlmbjnTT93mhmhYPrB5/view?usp=drive_link',
+    text: 'Política de tratamiento de datos personales',
+  },
+  {
+    image: '/documentos/doc_1.png',
+    link: 'https://drive.google.com/file/d/19MdLiWOtoJH0LwlmbjnTT93mhmhYPrB5/view?usp=drive_link',
+    text: 'Política de tratamiento de datos personales',
+  },
 ];
 </script>
 
@@ -92,7 +132,7 @@ const DOCUMENTS = [
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    flex: 0 1 calc(33.3333% - 1rem);
+    flex: 0 1 calc(100%);
     border: 1px solid #c5c5c5;
     border-radius: 1rem;
     overflow: hidden;
@@ -106,6 +146,18 @@ const DOCUMENTS = [
     &:focus {
       transform: translateY(-3px);
       box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    }
+
+    @include breakpoint-min('sm') {
+      flex: 0 1 calc(50% - 0.5rem);
+    }
+
+    @include breakpoint-min('md') {
+      flex: 0 1 calc(33.3333% - 0.6666rem);
+    }
+
+    @include breakpoint-min('lg') {
+      flex: 0 1 calc(25% - 0.75rem);
     }
 
     &__text {
