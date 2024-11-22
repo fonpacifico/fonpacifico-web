@@ -5,7 +5,7 @@ const store = useAsociados();
 </script>
 
 <template>
-  <main class="fp-grid asociados-tecnicos">
+  <section class="fp-grid asociados-tecnicos">
     <div class="asociados-tecnicos__heading">
       <h3>Asociados técnicos</h3>
       <router-link
@@ -17,7 +17,7 @@ const store = useAsociados();
       </router-link>
     </div>
     <ul class="asociados-list">
-      <div
+      <li
         v-for="item in store.asociadosConAvatar"
         class="asociado"
       >
@@ -25,9 +25,9 @@ const store = useAsociados();
           <img :src="item.avatarUrl" />
         </figure>
         <p class="asociado__name">{{ item.nombre }}</p>
-      </div>
+      </li>
     </ul>
-  </main>
+  </section>
 </template>
 
 <style lang="scss" scoped>
@@ -56,10 +56,14 @@ const store = useAsociados();
   display: grid;
   place-items: center;
   gap: 2rem;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   width: 100%;
 
   @include breakpoint-min('md') {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include breakpoint-min('lg') {
     grid-template-columns: 1fr 1fr 1fr;
   }
 
