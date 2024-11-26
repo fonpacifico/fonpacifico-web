@@ -93,6 +93,9 @@ const closeMenu = (e) => {
   e.target.blur();
   showMenu.value = false;
   activeSubmenu.value = null;
+  if (overlay.value) {
+    overlay.value.style.display = 'none';
+  }
 };
 
 const toggleSubmenu = (index) => {
@@ -153,7 +156,10 @@ onUnmounted(() => {
   <header>
     <div class="fp-container">
       <span>
-        <router-link :to="{ name: 'home' }">
+        <router-link
+          :to="{ name: 'home' }"
+          @click="(e) => closeMenu(e)"
+        >
           <img
             class="logo"
             src="/logo_fonpacifico.svg"

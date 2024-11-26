@@ -1,7 +1,33 @@
 <script setup>
-import { useAsociados } from '@/store';
+import { ref, computed, onBeforeMount } from 'vue';
 
-const store = useAsociados();
+const ASOCIADOS_URL = 'https://j4hvvf8.localto.net/';
+
+const asociados = ref([]);
+
+const asociadosConAvatar = computed(() => {
+  return asociados.value
+    .filter((asociado) => asociado.avatar !== '')
+    .map((asociado) => {
+      asociado.avatarUrl = `${ASOCIADOS_URL}pdf/${asociado.avatar}`;
+      return asociado;
+    });
+});
+
+const getAsociados = async () => {
+  const response = await fetch(ASOCIADOS_URL);
+  let data = await response.json();
+
+  data = data.map(makeObjectKeysLowercase);
+
+  data.sort((a, b) => a.nombre.localeCompare(b.nombre));
+
+  asociados.value = data;
+};
+
+onBeforeMount(async () => {
+  getAsociados();
+});
 </script>
 
 <template>
@@ -18,7 +44,7 @@ const store = useAsociados();
     </div>
     <ul class="asociados-list">
       <li
-        v-for="item in store.asociadosConAvatar"
+        v-for="item in asociadosConAvatar"
         class="asociado"
       >
         <figure class="asociado__img">

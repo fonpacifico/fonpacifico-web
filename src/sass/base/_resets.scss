@@ -106,11 +106,17 @@ main {
     padding: .75rem 1.5rem;
     border-radius: 4rem;
     background-color: get-color(primary);
-    transition: background-color .2s ease-in-out;
+    transition: all .2s ease-in-out !important;
     color: white;
     font-weight: 700;
     border: 2px solid get-color(primary);
     cursor: pointer;
+
+    &:hover {
+        text-decoration: none;
+        background-color: get-color(light-blue);
+        border: 2px solid get-color(light-blue);
+    }
 
     &--secondary {
         background-color: get-color('white');
@@ -121,6 +127,12 @@ main {
             background-color: transparent;
             color: get-color(light-blue);
             border: 2px solid get-color(light-blue);
+        }
+
+        &:hover{
+            border: 2px solid get-color(light-blue);
+            background-color: transparent;
+            color: get-color(light-blue);
         }
     }
 
@@ -144,10 +156,6 @@ main {
             color: get-color('black');
             text-decoration: none;
         }
-    }
-
-    &:hover {
-        text-decoration: none;
     }
 }
 

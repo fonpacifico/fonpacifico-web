@@ -29,9 +29,9 @@ import { items } from '@/content/pqrsd';
         <h4>{{ item.title }}</h4>
         <p>{{ item.descripcion }}</p>
         <a
-          :href="item.cta"
+          :href="item.url"
           class="button button--secondary"
-          >Escribir petición</a
+          >{{ item.cta }}</a
         >
       </article>
     </section>

@@ -51,10 +51,6 @@ const store = useAsociados();
       </figure>
       <div class="inscription-form__copy">
         <h2>¡Inscríbete ahora!</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-          varius enim in eros elementum tristique.
-        </p>
         <a
           href="https://tyc43hr.localto.net/"
           class="button"
@@ -64,6 +60,9 @@ const store = useAsociados();
       </div>
     </section>
     <section class="asociados-grid fp-container">
+      <div class="asociados-grid__heading">
+        <h4>Lista de asociados técnicos</h4>
+      </div>
       <data-view
         data-key="id"
         layout="list"
@@ -149,6 +148,7 @@ const store = useAsociados();
     height: 100%;
 
     @include breakpoint-min('md') {
+      border-radius: 0;
       grid-row: 1;
       grid-column: 2;
     }
@@ -173,6 +173,16 @@ const store = useAsociados();
       grid-column: 1;
       padding-block: 4rem;
     }
+  }
+}
+
+.asociados-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  &__heading {
+    font-size: 1.5rem;
   }
 }
 

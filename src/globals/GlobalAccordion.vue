@@ -89,7 +89,7 @@ onMounted(() => {
 }
 
 .accordion__content {
-  padding: 1.5rem 0 0 1.2rem;
+  padding: 1.5rem 0 0 2rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -113,11 +113,12 @@ ul {
 }
 
 details {
-  padding: 1.5rem 1rem;
+  padding-inline: 1rem;
   border: 2px solid get-color('card-border');
   border-radius: 0.5rem;
 
   summary {
+    padding: 1.5rem 1rem;
     cursor: pointer;
 
     span:last-of-type {
