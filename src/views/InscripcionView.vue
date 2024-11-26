@@ -51,6 +51,10 @@ const store = useAsociados();
       </figure>
       <div class="inscription-form__copy">
         <h2>¡Inscríbete ahora!</h2>
+        <p>
+          Con tu conocimiento técnico, transformemos ideas en progreso para un
+          país más inclusivo y fuerte.
+        </p>
         <a
           href="https://tyc43hr.localto.net/"
           class="button"

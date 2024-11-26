@@ -163,8 +163,13 @@ footer {
 
   &-contact {
     display: flex;
+    gap: 2rem;
     flex-flow: row wrap;
     place-content: flex-start;
+
+    @include breakpoint-min('md') {
+      gap: 0;
+    }
 
     &__h6-title {
       font-size: 20px;

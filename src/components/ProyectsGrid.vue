@@ -157,6 +157,7 @@ const handleCloseModal = () => {
   &__scrollable {
     overflow-y: scroll;
     height: 100%;
+    padding: 1rem;
     padding-right: calc(1.5rem - 6px);
   }
 
