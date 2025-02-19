@@ -383,7 +383,7 @@ export const statisticsHeading = {
 
 export const statisticsItems = [
 	{
-		heading: "$250+",
+		heading: "$300+",
 		text: "Mil millones invertidos en proyectos",
 	},
 	{
@@ -391,11 +391,11 @@ export const statisticsItems = [
 		text: "Departamentos en los que tenemos presencia",
 	},
 	{
-		heading: "+130",
+		heading: "+145",
 		text: "Poyectos como ejecutores de Regalías",
 	},
 	{
-		heading: "77,7",
+		heading: "87,9",
 		text: "De puntaje total en el IGPR",
 	},
 ];
