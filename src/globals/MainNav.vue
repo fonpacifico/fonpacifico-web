@@ -51,6 +51,12 @@ const links = ref([
         link: 'inscripcion',
         subtitle: 'Regístrate para ser asociado de Fonpacífico',
       },
+      {
+        name: 'Manual del asociado técnico (PDF)',
+        link: 'https://drive.google.com/file/d/1MadidaaQ09h2ceOu7PCtIYvnlNzyo4GZ/view?usp=drive_link',
+        linkType: 'download',
+        subtitle: 'Descarga nuestro manual en PDF',
+      },
     ],
   },
   {
