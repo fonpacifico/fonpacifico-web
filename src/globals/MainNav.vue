@@ -268,6 +268,7 @@ header {
     text-align: center;
     width: 100vw;
     font-size: 0.8rem;
+    padding-top: 0.5rem;
 
     @include breakpoint-min('md') {
       font-size: 1rem;
@@ -284,7 +285,7 @@ header {
   }
 
   .nav-container {
-    padding-block: .5rem;
+    padding-block: 0.5rem;
   }
 }
 
