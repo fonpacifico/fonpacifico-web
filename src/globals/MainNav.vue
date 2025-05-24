@@ -160,7 +160,14 @@ onUnmounted(() => {
 
 <template>
   <header>
-    <div class="fp-container">
+    <div class="notice-banner">
+      <b>Aviso:</b> El correo institucional info@fonpacifico.org está fuera de
+      servicio. Por favor, envía tus comunicaciones a
+      <a href="mailto:ventanillaunica@fonpacifico.org"
+        >ventanillaunica@fonpacifico.org</a
+      >
+    </div>
+    <div class="fp-container nav-container">
       <span>
         <router-link
           :to="{ name: 'home' }"
@@ -250,6 +257,37 @@ onUnmounted(() => {
 <style lang="scss" scoped>
 @use '@/sass/abstracts' as *;
 
+header {
+  display: flex;
+  flex-direction: column;
+
+  .notice-banner {
+    background-color: get-color('primary');
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    width: 100vw;
+    font-size: 0.8rem;
+
+    @include breakpoint-min('md') {
+      font-size: 1rem;
+    }
+
+    a {
+      font-size: 0.8rem;
+      text-decoration: underline;
+
+      @include breakpoint-min('md') {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .nav-container {
+    padding-block: .5rem;
+  }
+}
+
 .overlay {
   display: none;
   position: fixed;
@@ -312,7 +350,7 @@ header {
   z-index: 10;
   display: flex;
   place-items: center;
-  height: 64px;
+  // height: 64px;
   border-bottom: 2px solid rgba($color: #000000, $alpha: 0.1);
   box-shadow: 0px 2px 16px 0px #0000001a;
   > .fp-container {
