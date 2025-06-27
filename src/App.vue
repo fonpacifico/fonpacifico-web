@@ -4,7 +4,7 @@ import MainFooter from './globals/MainFooter.vue';
 </script>
 
 <template>
-  <main-nav />
+  <main-nav :show-banner="false"/>
   <router-view v-slot="{ Component }">
     <transition
       name="slide"

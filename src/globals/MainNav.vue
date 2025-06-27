@@ -6,6 +6,12 @@ const isDesktop = ref(false);
 const overlay = ref(null);
 const activeSubmenu = ref(null);
 
+defineProps({
+  showBanner: {
+    type: Boolean,
+    default: false,
+  },
+});
 const links = ref([
   {
     name: 'Nosotros',
@@ -160,7 +166,7 @@ onUnmounted(() => {
 
 <template>
   <header>
-    <div class="notice-banner">
+    <div class="notice-banner" v-if="showBanner">
       <b>Aviso:</b> El correo institucional info@fonpacifico.org está fuera de
       servicio. Por favor, envía tus comunicaciones a
       <a href="mailto:ventanillaunica@fonpacifico.org"
@@ -363,7 +369,7 @@ header {
 
 .nav {
   position: fixed;
-  top: 63px;
+  top: 52px;
   width: 100%;
   right: 100%;
   bottom: 0;
