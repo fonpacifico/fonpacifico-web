@@ -166,12 +166,8 @@ onUnmounted(() => {
 
 <template>
   <header>
-    <div class="notice-banner" v-if="showBanner">
-      <b>Aviso:</b> El correo institucional info@fonpacifico.org está fuera de
-      servicio. Por favor, envía tus comunicaciones a
-      <a href="mailto:ventanillaunica@fonpacifico.org"
-        >ventanillaunica@fonpacifico.org</a
-      >
+    <div class="notice-banner" v-if="showBanner && !showMenu">
+      <b>Aviso:</b> Fonpacifico advierte sobre casos de suplantación en el departamento del Huila. No hemos delegado gestión contractual en esa región. <a href="https://drive.google.com/file/d/1figjVm-9PfMBJDWFrPPGlAo0uGgdByIv/view?usp=sharing " target="_blank">Ver comunicado</a> 
     </div>
     <div class="fp-container nav-container">
       <span>
@@ -376,6 +372,7 @@ header {
   transition: transform 0.3s ease-in-out;
   transform: translateX(0);
   background-color: white;
+  z-index: 999;
 
   &.open {
     transform: translateX(100%);
